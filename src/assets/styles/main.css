@@ -1,0 +1,93 @@
+@font-face {
+  font-family: TitleFont;
+  src: url(../fonts/xpsj.subset.woff2) format('woff2');
+  font-display: swap;
+}
+body {
+  --el-color-primary: #2254f4;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #333333;
+  font-family: Hiragino Sans GB, Hiragino Sans GB W3, Arial, Microsoft Yahei, STHeiti, sans-serif;
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+  scrollbar-width: none;
+  /* 火狐滚动条无法自定义宽度，只能通过此属性使滚动条宽度变细 */
+  -ms-overflow-style: none;
+  /* 隐藏滚动条（在IE和Edge两个浏览器中很难更改样式，固采取隐藏方式） */
+}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #ccd4de;
+}
+::-webkit-scrollbar-track {
+  background-color: #f0f1f3;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+input {
+  outline: 0;
+}
+input:-moz-focusring {
+  outline: 0;
+}
+button {
+  outline: 0;
+}
+button:-moz-focusring {
+  outline: 0;
+}
+textarea {
+  outline: 0;
+}
+p {
+  max-height: 100%;
+}
+.drag_active {
+  cursor: grabbing;
+}
+.flutter {
+  position: fixed;
+  z-index: 99999;
+  pointer-events: none;
+}
+.hide {
+  opacity: 0 !important;
+}
