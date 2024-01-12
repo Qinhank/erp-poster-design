@@ -41,5 +41,20 @@ export default {
   },
   setImg(state: Type.Object, imgs: string[]) {
     state.imgs = imgs
-  }
+  },
+  setImgIndex(state: Type.Object, index: number) {
+    state.imgIndex = index
+  },
+  setEditImgVisible(state: Type.Object, status: boolean) {
+    state.editImgVisible = status
+  },
+  setImageCutoutVisible(state: Type.Object, status: boolean) {
+    state.imageCutoutVisible = status
+  },
+  setImageCutoutResult(state: Type.Object, result: any) {
+    state.imageCutoutResult = result
+  },
+  setImageCutoutRaw(state: Type.Object, raw: any) {
+    state.imageCutoutRaw = raw
+  },
 }

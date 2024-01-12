@@ -12,7 +12,7 @@ import store from '@/store'
 import SelectTemplate from './components/SelectTemplate.vue'
 import EditImg from './components/EditImg.vue'
 
-const imgs = ref(['https://cdn.erp.jinweitec.com/erpsys/FqDRsgZqneFWmC_e7Y78qJ1_s1j-?imageMogr2/format/webp/interlace/0/quality/50', 'https://cdn.erp.jinweitec.com/erpsys/Fu4UAygYcP1b1yeSREnFi64DWi0f?imageMogr2/format/webp/interlace/0/quality/50'])
+const imgs = ref(['https://cdn.erp.jinweitec.com/erpsys/FqDRsgZqneFWmC_e7Y78qJ1_s1j-?imageMogr2/format/webp/interlace/0/quality/50', 'https://cdn.erp.jinweitec.com/erpsys/o_1bjf6ul918ubhah1ag21nq2m5c.jpg'])
 const dialogVisible = ref(false)
 const editImgVisible = ref(false)
 
@@ -27,9 +27,9 @@ const editImgDone = (base64) => {
 }
 
 onMounted(() => {
-  setTimeout(() => {
-    editImgVisible.value = true
-  }, 1000)
+  // setTimeout(() => {
+  //   editImgVisible.value = true
+  // }, 1000)
 })
 </script>
 

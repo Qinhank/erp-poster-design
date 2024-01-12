@@ -11,11 +11,14 @@ import 'tui-color-picker/dist/tui-color-picker.css'
 import ImageEditor from 'tui-image-editor'
 import locale_zh from '@/utils/tui_zh'
 import { ref, watch, defineProps, computed, defineEmits } from 'vue'
+import store from '@/store'
 
 const instance = ref(null)
-const props = defineProps(['visible'])
-const emit = defineEmits(['done', 'update:visible'])
-const visible = computed(() => props.visible)
+// const props = defineProps(['visible'])
+// const emit = defineEmits(['done', 'update:visible'])
+const visible = computed(() => store.state.editImgVisible)
+const index = computed(() => store.state.imgIndex)
+const imgs = computed(() => store.state.imgs)
 
 const init = () => {
   const timer = setInterval(() => {
@@ -25,7 +28,7 @@ const init = () => {
       instance.value = new ImageEditor(dom, {
         includeUI: {
           loadImage: {
-            path: 'https://cdn.erp.jinweitec.com/erpsys/Fu4UAygYcP1b1yeSREnFi64DWi0f?imageMogr2/format/webp/interlace/0/quality/50',
+            path: imgs.value[index.value],
             name: 'image',
           },
           initMenu: 'draw', // 默认打开的菜单项
@@ -41,7 +44,12 @@ const init = () => {
 
 const onOk = () => {
   const t = instance.value.toDataURL()
-  emit('done', t)
+  const _imgs = [...imgs.value]
+  _imgs[index.value] = t
+  store.commit('setImg', _imgs)
+  console.log(_imgs)
+  store.commit('setEditImgVisible', false)
+  // emit('done', t)
 }
 
 watch(visible, (val) => {

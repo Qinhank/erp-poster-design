@@ -25,6 +25,8 @@
         </design-board>
         <style-panel></style-panel>
       </div>
+      <!-- 抠图 -->
+      <image-cutout></image-cutout>
 
       <HeaderOptions ref="options" v-model="isContinue" :noMenu="true" @change="optionsChange" />
       <!-- 标尺 -->
@@ -50,6 +52,7 @@ import Moveable from '@/components/business/moveable/Moveable.vue'
 import designBoard from '@/components/modules/layout/designBoard.vue'
 import zoomControl from '@/components/modules/layout/zoomControl.vue'
 import lineGuides from '@/components/modules/layout/lineGuides.vue'
+import imageCutout from '@/components/business/image-cutout'
 
 import shortcuts from '@/mixins/shortcuts'
 import wGroup from '@/components/modules/widgets/wGroup/wGroup.vue'
@@ -71,6 +74,7 @@ export default defineComponent({
     designBoard,
     zoomControl,
     lineGuides,
+    imageCutout,
   },
   mixins: [shortcuts],
   props: {

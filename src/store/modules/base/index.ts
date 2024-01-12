@@ -21,7 +21,12 @@ const all = {
     tempEditing: true, // 管理员是否正在编辑模板
     fonts: [], // 缓存字体列表
     app: null, // 抠图服务
-    imgs: []
+    imgs: [],
+    imgIndex: 0,
+    editImgVisible: false,
+    imageCutoutVisible: false,
+    imageCutoutRaw: null,
+    imageCutoutResult: null,
   },
   getters: {
     online: (state: Type.Object) => {
@@ -38,7 +43,7 @@ const all = {
     },
     fonts: (state: Type.Object) => {
       return state.fonts
-    }
+    },
   },
   mutations: {
     ...mutations,

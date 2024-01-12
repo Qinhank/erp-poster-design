@@ -14,7 +14,17 @@
         <!-- <color-select v-show="mode === '颜色'" v-model="innerElement.backgroundColor" :modes="['纯色']" @change="colorChange" @finish="(value) => finish('backgroundColor', value)" /> -->
         <!-- <bg-img-select :img="innerElement.backgroundImage"/> -->
         <div v-if="mode === '图片' && innerElement.backgroundImage" class="flex flex-col justify-center items-center">
-          <el-image v-for="(item, index) in imgs" :key="index" class="cursor-pointer border-[1px] border-solid border-gray-100 mb-2 rounded" style="width: 200px; height: auto" :src="item" fit="contain" @click="selectImg(item)"></el-image>
+          <div v-for="(item, index) in imgs" :key="index" class="relative -ml-[28px]">
+            <div class="tool">
+              <div class="tool-item" @click="editImg(index)">
+                <i class="iconfont icon-edit"></i>
+              </div>
+              <div class="tool-item" @click="removeBg(index)">
+                <i class="iconfont icon-magic-wand"></i>
+              </div>
+            </div>
+            <el-image class="cursor-pointer border-[1px] border-solid border-[#3468C0] mb-2" :class="{ 'border-[1px]': index !== imgIndex, 'border-[2px]': index === imgIndex }" style="width: 200px; height: auto" :src="item" fit="contain" @click="selectImg(item, index)"></el-image>
+          </div>
           <!-- <el-button style="width: 100%; margin-top: 0.7rem" size="small" @click="deleteBg">删除</el-button> -->
         </div>
         <uploader v-show="mode === '图片' && !innerElement.backgroundImage" style="width: 100%; margin-top: 0.7rem" @done="uploadImgDone">
@@ -41,6 +51,7 @@ import _dl from '@/common/methods/download'
 // import ColorPipette from '@/utils/plugins/color-pipette'
 import Tabs from '@palxp/color-picker/comps/Tabs.vue'
 import TabPanel from '@palxp/color-picker/comps/TabPanel.vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
 
 export default {
   name: NAME,
@@ -55,11 +66,16 @@ export default {
       // canvasRunning: false,
       mode: '颜色',
       modes: ['颜色', '图片'],
-      imgs: this.$store.state?.imgs
     }
   },
   computed: {
     ...mapGetters(['dActiveElement']),
+    imgs() {
+      return this.$store.state?.imgs
+    },
+    imgIndex() {
+      return this.$store.state?.imgIndex
+    },
   },
   watch: {
     dActiveElement: {
@@ -77,12 +93,45 @@ export default {
   },
   created() {
     this.change()
-    console.log(this.imgs)
   },
   methods: {
     ...mapActions(['updatePageData']),
-    selectImg(img) {
+    selectImg(img, index) {
       this.finish('backgroundImage', img)
+      this.$store.commit('setImgIndex', index)
+    },
+    editImg(index) {
+      this.$store.commit('setImgIndex', index)
+      this.$store.commit('setEditImgVisible', true)
+    },
+    async removeBg(index) {
+      ElMessageBox.confirm('点击确认后将进行智能抠图，可能需要一段时间，是否继续？', 'Warning', {
+        confirmButtonText: '开始',
+        cancelButtonText: '取消',
+        type: 'warning',
+        beforeClose: async (action, instance, done) => {
+          if (action === 'confirm') {
+            instance.confirmButtonLoading = true
+            instance.confirmButtonText = 'Loading...'
+            const _imgs = [...this.imgs]
+            const img = _imgs[index]
+            if (img?.indexOf('http') > -1) {
+              const res = await api.ai.uploadByUrl(img)
+              const resultImage = URL.createObjectURL(res)
+              this.$store.commit('setImgIndex', index)
+              this.$store.commit('setImageCutoutVisible', true)
+              this.$store.commit('setImageCutoutResult', resultImage)
+              this.$store.commit('setImageCutoutRaw', img)
+              // _imgs[index] = resultImage
+              // this.$store.commit('setImg', _imgs)
+            }
+            done()
+            instance.confirmButtonLoading = false
+          } else {
+            done()
+          }
+        },
+      })
     },
     colorChange(e) {
       if (e.mode === '渐变') {
@@ -193,5 +242,21 @@ export default {
 }
 .select {
   margin-bottom: 10px;
+}
+.tool {
+  position: absolute;
+  right: -22px;
+  background: #3468c0;
+  color: white;
+  padding: 0 3px;
+  border-radius: 0 3px 3px 0;
+  &-item {
+    margin-bottom: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      font-weight: bold;
+    }
+  }
 }
 </style>
