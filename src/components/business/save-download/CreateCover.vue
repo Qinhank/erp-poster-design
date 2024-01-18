@@ -34,21 +34,31 @@ export default defineComponent({
         scale: 0.2,
       }
       setTimeout(async () => {
-        const clonePage: HTMLElement = document.getElementById('page-design-canvas').cloneNode(true)
-        clonePage.setAttribute('id', 'clone-page')
-        document.body.appendChild(clonePage)
-        html2canvas(document.getElementById('clone-page'), opts).then((canvas: any) => {
-          canvas.toBlob(
-            async (blobObj: Blob) => {
-              const result: any = await Qiniu.upload(blobObj, { bucket: 'xp-design', prePath: 'cover/user' })
-              cb(result)
-            },
-            'image/jpeg',
-            0.15,
-          )
-          proxy?.updateZoom(nowZoom)
-          clonePage.remove()
-        })
+        // const clonePage: HTMLElement = document.getElementById('page-design-canvas').cloneNode(true)
+        // clonePage.setAttribute('id', 'clone-page')
+        // document.body.appendChild(clonePage)
+        const dom = document.getElementById('page-design-canvas')
+        const canvas = await html2canvas(dom, { ...opts, useCORS: true, allowTaint: true, backgroundColor: null })
+        // 创建图片
+        const image = canvas.toDataURL('image/jpg')
+        const url = await api.home.base64ToImg({ filedata: image })
+        if (url) {
+          cb(url?.data?.http_path)
+        }
+        proxy?.updateZoom(nowZoom)
+        // clonePage.remove()
+        // html2canvas(document.getElementById('clone-page'), opts).then((canvas: any) => {
+        //   canvas.toBlob(
+        //     async (blobObj: Blob) => {
+        //       const result: any = await Qiniu.upload(blobObj, { bucket: 'xp-design', prePath: 'cover/user' })
+        //       cb(result)
+        //     },
+        //     'image/jpeg',
+        //     0.15,
+        //   )
+        //   proxy?.updateZoom(nowZoom)
+        //   clonePage.remove()
+        // })
       }, 10)
     }
 

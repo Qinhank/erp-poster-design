@@ -10,7 +10,7 @@ import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import viteCompression from 'vite-plugin-compression'
 import ElementPlus from 'unplugin-element-plus/vite'
-import tailwindcss from  'tailwindcss'
+import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 
 const resolve = (...data: string[]) => path.resolve(__dirname, ...data)
@@ -20,18 +20,36 @@ export default defineConfig({
   // base: '/web',
   plugins: [
     vue(),
-    viteCompression({
-      verbose: true,
-      disable: false,
-      threshold: 10240,
-      algorithm: 'gzip',
-      ext: '.gz',
-    }),
+    // viteCompression({
+    //   verbose: true,
+    //   disable: false,
+    //   threshold: 10240,
+    //   algorithm: 'gzip',
+    //   ext: '.gz',
+    // }),
     ElementPlus({
       // options
     }),
   ],
   build: {
+    lib: {
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'erp-poster-design',
+      fileName: (format) => `erp-poster-design.${format}.js`,
+    },
+    sourcemap: true,
+    rollupOptions: {
+      // 确保外部化处理那些你不想打包进库的依赖
+      external: ['vue', 'element-plus', 'vuex'], // 注意看这里
+      output: {
+        // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+        globals: {
+          vue: 'Vue',
+          vuex: 'Vuex',
+          'element-plus': 'elementPlus',
+        },
+      },
+    },
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -48,10 +66,7 @@ export default defineConfig({
   },
   css: {
     postcss: {
-      plugins: [
-        tailwindcss, 
-        autoprefixer,
-      ]
+      plugins: [tailwindcss, autoprefixer],
     },
     preprocessorOptions: {
       less: {
@@ -74,5 +89,5 @@ export default defineConfig({
     //     rewrite: (path) => path.replace(/^\/api/, ''),
     //   },
     // },
-  }
+  },
 })

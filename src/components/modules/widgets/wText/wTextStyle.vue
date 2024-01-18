@@ -40,8 +40,9 @@
       <icon-item-select class="style-item" :data="alignIconList" @finish="alignAction" />
 
       <!-- v-show="!innerElement.editable"  -->
-      <div style="margin-top: 10px" class="line-layout style-item">
-        <text-input-area v-model="innerElement.text" @finish="(value) => finish('text', value)" />
+      <div v-if="isModel" style="margin-top: 10px" class="line-layout style-item">
+        <!-- <text-input-area v-model="innerElement.text" @finish="(value) => finish('text', value)" /> -->
+        <text-area v-model="innerElement.text" />
       </div>
       <!-- </el-collapse-item> -->
     </el-collapse>
@@ -64,11 +65,12 @@ import textInputArea from '../../settings/textInputArea.vue'
 import valueSelect from '../../settings/valueSelect.vue'
 import effectWrap from '../../settings/EffectSelect/TextWrap.vue'
 import { useFontStore } from '@/common/methods/fonts'
+import textArea from '@/components/common/Textarea/index.vue'
 import usePageFontsFilter from './pageFontsFilter.ts'
 
 export default {
   name: NAME,
-  components: { numberInput, colorSelect, iconItemSelect, textInputArea, valueSelect, effectWrap, numberSlider },
+  components: { numberInput, colorSelect, iconItemSelect, textInputArea, textArea, valueSelect, effectWrap, numberSlider },
   data() {
     return {
       activeNames: [],
@@ -87,6 +89,9 @@ export default {
   },
   computed: {
     ...mapGetters(['dActiveElement', 'dMoving']),
+    isModel() {
+      return this.$store.state.templateMode === 2
+    },
     isDraw() {
       return this.$route.name === 'Draw'
     },

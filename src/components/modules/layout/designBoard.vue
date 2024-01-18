@@ -1,5 +1,5 @@
 <template>
-  <div id="page-design" ref="page-design" :style="{ paddingTop: dPaddingTop + 'px' }">
+  <div id="page-design" ref="page-design" :style="{ paddingTop: dPaddingTop + 'px', minHeight: '81vh' }">
     <div
       id="out-page"
       class="out-page"
@@ -252,6 +252,7 @@ export default defineComponent({
       }
     },
     getlayers() {
+      console.log(this.dWidgets.filter((item) => item.parent === this.dPage.uuid))
       return this.dWidgets.filter((item) => item.parent === this.dPage.uuid)
     },
     getChilds(uuid) {

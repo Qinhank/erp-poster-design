@@ -15,11 +15,11 @@
       </keep-alive>
     </div>
     <!-- <div v-show="active" class="side-wrap"><div class="pack__up" @click="active = false">&lt;</div></div> -->
-    <div v-show="active" class="side-wrap">
+    <!-- <div v-show="active" class="side-wrap">
       <el-tooltip v-if="!noMenu" effect="dark" content="收起侧边栏" placement="right">
         <div class="pack__up" @click="active = false"></div>
       </el-tooltip>
-    </div>
+    </div> -->
   </div>
 </template>
 

@@ -19,8 +19,8 @@ import { useRoute, useRouter } from 'vue-router'
 import useNotification from '@/common/methods/notification'
 import SaveImage from '@/components/business/save-download/CreateCover.vue'
 import { useFontStore } from '@/common/methods/fonts'
-import _config from '@/config'
-import github from '@/api/github'
+// import _config from '@/config'
+// import github from '@/api/github'
 
 export default defineComponent({
   components: { SaveImage },
@@ -28,7 +28,7 @@ export default defineComponent({
   emits: ['change', 'update:modelValue'],
   setup(props, context) {
     const { proxy }: any = getCurrentInstance() as ComponentInternalInstance
-    const route = useRoute()
+    // const route = useRoute()
     const router = useRouter()
     const store = useStore()
     const state: any = reactive({
@@ -43,8 +43,9 @@ export default defineComponent({
     // 生成封面
     const draw = () => {
       return new Promise((resolve) => {
-        state.canvasImage.createCover(({ key }: any) => {
-          resolve(_config.IMG_URL + key)
+        state.canvasImage.createCover((url: any) => {
+          console.log(222222)
+          resolve(url)
         })
       })
     }
@@ -65,7 +66,7 @@ export default defineComponent({
 
       if (page.backgroundImage) {
         context.emit('change', { downloadPercent: 1, downloadText: '正在准备上传', downloadMsg: '请等待..' })
-        page.backgroundImage = await github.putPic(page.backgroundImage.split(',')[1])
+        // page.backgroundImage = await github.putPic(page.backgroundImage.split(',')[1])
       }
 
       for (const item of widgets) {
@@ -81,12 +82,12 @@ export default defineComponent({
     async function uploadImgs() {
       if (queue.length > 0) {
         const item = queue.pop()
-        const url = await github.putPic(item.imgUrl.split(',')[1])
+        const url = await api.home.base64ToImg({ filedata: item.imgUrl })
         addition += item.imgUrl.length
         let downloadPercent: any = (addition / lenCount) * 100
         downloadPercent >= 100 && (downloadPercent = null)
         context.emit('change', { downloadPercent, downloadText: '上传资源中', downloadMsg: `已完成：${lens - queue.length} / ${lens}` })
-        item.imgUrl = url
+        item.imgUrl = url?.data?.http_path
         uploadImgs()
       } else {
         uploadTemplate()
@@ -98,8 +99,11 @@ export default defineComponent({
       const cover = await draw()
       const { id, stat, msg } = await api.home.saveWorks({ cover, title: '自设计模板', data: JSON.stringify({ page, widgets }), width: page.width, height: page.height })
       stat !== 0 ? useNotification('保存成功', '可在"我的模板"中查看') : useNotification('保存失败', msg, { type: 'error' })
-      router.push({ path: '/psd', query: { id }, replace: true })
-      context.emit('change', { downloadPercent: 99.99, downloadText: '上传完成', cancelText: '查看我的作品' }) // 关闭弹窗
+      store.commit('setState', { key: 'templateVisible', value: false })
+      store.commit('setState', { key: 'templateMode', value: 1 })
+      store.commit('setState', { key: 'templateId', value: null })
+      // router.push({ path: '/psd', query: { id }, replace: true })
+      // context.emit('change', { downloadPercent: 99.99, downloadText: '上传完成', cancelText: '查看我的作品' }) // 关闭弹窗
     }
 
     return {

@@ -821,6 +821,22 @@ export default {
     store.commit('updateSelect')
     // store.state.dActiveElement = store.state.dPage
   },
+  // 初始化画布
+  resetWidget(store: any) {
+    store.state.dWidgets = [] // 已使用的组件
+    store.state.dPage.opacity = 0
+    // store.state.dHistory = [] // 记录历史操作（保存整个画布的json数据）
+    // store.state.dActiveUuidHistory = [] // 记录历史操作对应的激活的组件的uuid
+    // store.state.dPageHistory = [] // 记录历史操作对应的page
+    // store.state.dHistoryParams = {
+    //   index: -1,
+    //   length: 0,
+    //   maxLength: 20,
+    // }
+    // store.state.dColorHistory = [] // 记录历史选择的颜色
+    // store.state.dSelectWidgets = [] // 记录多选的组件
+    // store.state.dGroupJson = {} // 组合的json数据
+  },
   /**
    * 设置拖拽时在哪个图层
    */

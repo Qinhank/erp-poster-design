@@ -27,21 +27,26 @@ const all = {
     imageCutoutVisible: false,
     imageCutoutRaw: null,
     imageCutoutResult: null,
+    templateVisible: false,
+    templateMode: 1,
+    templateId: null,
+    templateDate: Date.now(),
   },
   getters: {
-    online: (state: Type.Object) => {
+    online: (state: any) => {
+      console.log(state)
       return state.online
     },
-    user: (state: Type.Object) => {
+    user: (state: any) => {
       return state.user
     },
-    manager: (state: Type.Object) => {
+    manager: (state: any) => {
       return state.manager
     },
-    tempEditing: (state: Type.Object) => {
+    tempEditing: (state: any) => {
       return state.tempEditing
     },
-    fonts: (state: Type.Object) => {
+    fonts: (state: any) => {
       return state.fonts
     },
   },

@@ -2,7 +2,7 @@
   <div class="flex" @click="onSelectImg">
     <img v-for="(item, index) in imgs" :key="index" :src="item" alt="" style="width: 200px" />
   </div>
-  <select-template :visible="dialogVisible" />
+  <select-template />
   <EditImg :visible="editImgVisible" @done="editImgDone" />
 </template>
 
@@ -13,12 +13,12 @@ import SelectTemplate from './components/SelectTemplate.vue'
 import EditImg from './components/EditImg.vue'
 
 const imgs = ref(['https://cdn.erp.jinweitec.com/erpsys/FqDRsgZqneFWmC_e7Y78qJ1_s1j-?imageMogr2/format/webp/interlace/0/quality/50', 'https://cdn.erp.jinweitec.com/erpsys/o_1bjf6ul918ubhah1ag21nq2m5c.jpg'])
-const dialogVisible = ref(false)
 const editImgVisible = ref(false)
 
 const onSelectImg = () => {
   store.commit('setImg', imgs.value)
-  dialogVisible.value = true
+  store.commit('setState', { key: 'templateVisible', value: true })
+  store.commit('setState', { key: 'templateMode', value: 1 })
 }
 
 const editImgDone = (base64) => {
@@ -26,11 +26,7 @@ const editImgDone = (base64) => {
   editImgVisible.value = false
 }
 
-onMounted(() => {
-  // setTimeout(() => {
-  //   editImgVisible.value = true
-  // }, 1000)
-})
+onMounted(() => {})
 </script>
 
 <style>

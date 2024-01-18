@@ -33,5 +33,11 @@ export const saveMyTemp = (params: Type.Object = {}) => fetch('design/user/temp'
 // 获取作品
 export const getWorks = (params: Type.Object = {}) => fetch('design/poster', params, 'get')
 
+// 获取变量
+export const getVars = (params: Type.Object = {}) => fetch('product/fields', params, 'get')
+
 // 作品列表
 export const getMyDesign = (params: Type.Object = {}) => fetch('design/my', params, 'get')
+
+// base64 转图片
+export const base64ToImg = (params: Type.Object = {}) => fetch('common/uploadByBase64', params, 'post')

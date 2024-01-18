@@ -9,7 +9,7 @@
         <el-button plain type="primary" class="gounp__btn" @click="realCombined">成组</el-button>
         <icon-item-select label="" :data="alignIconList" @finish="alignAction" />
       </div>
-      <component :is="dActiveElement.type + '-style'" v-show="!showGroupCombined" v-if="dActiveElement.type" />
+      <component :is="dActiveElement.type + '-style'" v-show="!showGroupCombined" v-if="dActiveElement.type" :noMenu="noMenu" />
     </div>
     <div v-show="activeTab === 1" class="layer-wrap">
       <layer-list :data="dWidgets" @change="layerChange" />
@@ -27,6 +27,7 @@ import iconItemSelect from '../settings/iconItemSelect.vue'
 export default {
   name: NAME,
   components: { iconItemSelect },
+  props: ['noMenu'],
   data() {
     return {
       activeTab: 0,

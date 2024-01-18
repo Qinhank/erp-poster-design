@@ -115,7 +115,6 @@ const shortcuts = {
       keyCodeOptions(e, { f })
     },
     handleKeyup(e) {
-      console.log(e)
       clearInterval(this.checkCtrl)
       hadDown = false
       if (e.key === 'Alt' || e.key === 'Shift' || e.key === 'Control' || e.key === 'Meta') {

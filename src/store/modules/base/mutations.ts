@@ -57,4 +57,7 @@ export default {
   setImageCutoutRaw(state: Type.Object, raw: any) {
     state.imageCutoutRaw = raw
   },
+  setState(state: Type.Object, { key, value }: any) {
+    state[key] = value
+  },
 }

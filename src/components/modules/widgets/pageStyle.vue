@@ -7,7 +7,7 @@
           <number-input v-model="innerElement.height" label="高" :maxValue="5000" @finish="(value) => finish('height', value)" />
         </div>
       </el-collapse-item>
-      <el-collapse-item title="产品设置" name="2">
+      <el-collapse-item v-if="noMenu" title="产品设置" name="2">
         <!-- <Tabs :value="mode" @update:value="onChangeMode">
           <TabPanel v-for="label in modes" :key="label" :label="label"></TabPanel>
         </Tabs> -->
@@ -30,6 +30,23 @@
         <uploader v-show="mode === '图片' && !innerElement.backgroundImage" style="width: 100%; margin-top: 0.7rem" @done="uploadImgDone">
           <el-button style="width: 100%" plain>{{ innerElement.backgroundImage ? '替换背景' : '上传背景' }}图</el-button>
         </uploader>
+        <!-- <el-button v-show="mode === '图片' && !innerElement.backgroundImage" style="width: 100%; margin-top: 0.7rem" size="small" @click="downloadBG">{{ downP ? downP + ' %' : '下载背景图' }}</el-button> -->
+      </el-collapse-item>
+      <el-collapse-item v-else title="背景设置" name="2">
+        <!-- <Tabs :value="mode" @update:value="onChangeMode">
+          <TabPanel v-for="label in modes" :key="label" :label="label"></TabPanel>
+        </Tabs> -->
+        <div v-if="mode === '颜色' && innerElement.backgroundColor" class="flex flex-col justify-center items-center">
+          <color-select v-show="mode === '颜色'" v-model="innerElement.backgroundColor" :modes="['纯色']" @change="colorChange" @finish="(value) => finish('backgroundColor', value)" />
+          <el-button style="width: 100%; margin-top: 0.7rem" size="small" @click="finish('backgroundColor', '')">删除颜色</el-button>
+        </div>
+        <div v-if="mode === '图片' && innerElement.backgroundImage" class="flex flex-col justify-center items-center">
+          <bg-img-select :img="innerElement.backgroundImage" />
+          <el-button style="width: 100%; margin-top: 0.7rem" size="small" @click="deleteBg">删除</el-button>
+        </div>
+        <!-- <uploader v-show="mode === '图片' && !innerElement.backgroundImage" style="width: 100%; margin-top: 0.7rem" @done="uploadImgDone">
+          <el-button style="width: 100%" plain>{{ innerElement.backgroundImage ? '替换背景' : '上传背景' }}图</el-button>
+        </uploader> -->
         <!-- <el-button v-show="mode === '图片' && !innerElement.backgroundImage" style="width: 100%; margin-top: 0.7rem" size="small" @click="downloadBG">{{ downP ? downP + ' %' : '下载背景图' }}</el-button> -->
       </el-collapse-item>
       <!-- <el-collapse-item title="其他设置" name="3">
@@ -56,6 +73,7 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 export default {
   name: NAME,
   components: { numberInput, colorSelect, uploader, Tabs, TabPanel },
+  props: ['noMenu'],
   data() {
     return {
       activeNames: ['1', '2', '3', '4'],

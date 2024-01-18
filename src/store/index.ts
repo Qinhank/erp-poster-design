@@ -9,3 +9,12 @@ export default createStore({
     design,
   },
 })
+
+// export function createMyStore() {
+//   return createStore({
+//     ...base,
+//     modules: {
+//       design,
+//     },
+//   })
+// }

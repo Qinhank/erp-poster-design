@@ -21,14 +21,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs, onMounted, ref } from 'vue'
+import { defineComponent, reactive, toRefs, ref, watch, computed, getCurrentInstance } from 'vue'
 import api from '@/api'
 import { mapActions, mapGetters, useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 // import chooseType from './components/chooseType.vue'
 // import editModel from './components/editModel.vue'
 import searchHeader from './components/searchHeader.vue'
-import useConfirm from '@/common/methods/confirm'
+// import useConfirm from '@/common/methods/confirm'
 
 export default defineComponent({
   components: { searchHeader },
@@ -38,6 +38,7 @@ export default defineComponent({
     },
   },
   setup(props: any) {
+    const instance = getCurrentInstance()
     const listRef = ref(null)
     const route = useRoute()
     const store = useStore()
@@ -53,12 +54,14 @@ export default defineComponent({
     cate && (pageOptions.cate = cate)
     edit && store.commit('managerEdit', true)
 
+    const templateDate = computed(() => store.state.templateDate)
+    const templateId = computed(() => store.state.templateId)
+
     // onMounted(async () => {
     //   console.log(props)
     // })
 
     const load = async (init: boolean = false, stat?: string) => {
-      console.log(666)
       stat && (pageOptions.state = stat)
 
       if (init) {
@@ -74,7 +77,7 @@ export default defineComponent({
       state.loading = true
       pageOptions.page += 1
 
-      const res = await api.home.getTempList({ search: state.searchKeyword, ...pageOptions })
+      const res = await api.home.getTempList({ search: state.searchKeyword, ...pageOptions, sort: 'id', order: 'desc' })
       res.list.length <= 0 && (state.loadDone = true)
       state.list = state.list.concat(res.list)
 
@@ -97,6 +100,44 @@ export default defineComponent({
       isLess && load()
     }
 
+    watch(
+      () => templateDate.value,
+      () => {
+        load(true)
+      },
+    )
+
+    watch(
+      () => templateId.value,
+      async (n) => {
+        if (n) {
+          store.commit('setShowMoveable', false)
+          store.commit('managerEdit', false)
+          store.commit('setDWidgets', [])
+          const res = await api.home.getTempDetail({ id: n })
+          const result = JSON.parse(res.data)
+          const { page, widgets } = result
+          // if (AcImg) {
+          //   page.backgroundImage = AcImg
+          // }
+          const AcImg = store.state?.imgs
+          if (AcImg && AcImg.length) {
+            page.backgroundImage = AcImg[0]
+          }
+
+          // console.log(widgets)
+          store.commit('setDPage', page)
+          instance?.proxy?.setTemplate(widgets)
+          setTimeout(() => {
+            store.commit('zoomScreenChange')
+          }, 300)
+          instance?.proxy?.selectWidget({
+            uuid: '-1',
+          })
+        }
+      },
+    )
+
     return {
       ...toRefs(state),
       load,
@@ -110,44 +151,45 @@ export default defineComponent({
   methods: {
     ...mapActions(['selectWidget', 'updatePageData', 'setTemplate', 'pushHistory']),
     async selectItem(item: any) {
-      this.$store.commit('setShowMoveable', false) // 清理掉上一次的选择框
-      // if (this.dHistoryParams.length > 0) {
-      //   const isPass = await useConfirm('提示', '使用模板后，当前页面将会被替换，是否继续', 'warning')
-      //   if (!isPass) {
-      //     return false
-      //   }
-      // }
-      this.$store.commit('managerEdit', false)
-      this.$store.commit('setDWidgets', [])
-
       this.setTempId(item.id)
+      // this.$store.commit('setShowMoveable', false) // 清理掉上一次的选择框
+      // // if (this.dHistoryParams.length > 0) {
+      // //   const isPass = await useConfirm('提示', '使用模板后，当前页面将会被替换，是否继续', 'warning')
+      // //   if (!isPass) {
+      // //     return false
+      // //   }
+      // // }
+      // this.$store.commit('managerEdit', false)
+      // this.$store.commit('setDWidgets', [])
 
-      let result = null
-      if (!item.data) {
-        const res = await api.home.getTempDetail({ id: item.id })
-        result = JSON.parse(res.data)
-      } else {
-        result = JSON.parse(item.data)
-      }
-      // const AcImg = this.$store.state?.img
-      const { page, widgets } = result
-      // if (AcImg) {
-      //   page.backgroundImage = AcImg
+      // this.setTempId(item.id)
+
+      // let result = null
+      // if (!item.data) {
+      //   const res = await api.home.getTempDetail({ id: item.id })
+      //   result = JSON.parse(res.data)
+      // } else {
+      //   result = JSON.parse(item.data)
       // }
-      const AcImg = this.$store.state?.imgs
-      if (AcImg && AcImg.length) {
-        page.backgroundImage = AcImg[0]
-      }
+      // // const AcImg = this.$store.state?.img
+      // const { page, widgets } = result
+      // // if (AcImg) {
+      // //   page.backgroundImage = AcImg
+      // // }
+      // const AcImg = this.$store.state?.imgs
+      // if (AcImg && AcImg.length) {
+      //   page.backgroundImage = AcImg[0]
+      // }
 
-      // console.log(widgets)
-      this.$store.commit('setDPage', page)
-      this.setTemplate(widgets)
-      setTimeout(() => {
-        this.$store.commit('zoomScreenChange')
-      }, 300)
-      this.selectWidget({
-        uuid: '-1',
-      })
+      // // console.log(widgets)
+      // this.$store.commit('setDPage', page)
+      // this.setTemplate(widgets)
+      // setTimeout(() => {
+      //   this.$store.commit('zoomScreenChange')
+      // }, 300)
+      // this.selectWidget({
+      //   uuid: '-1',
+      // })
     },
     // action({ name, value }: any, item: any, index: number) {
     //   switch (name) {
@@ -175,8 +217,9 @@ export default defineComponent({
     //   api.home.setTempStat({ id, stat })
     // },
     setTempId(tempId: number | string) {
-      const { id } = this.$route.query
-      this.$router.push({ path: this.$props?.isModal ? '/' : '/Home', query: { tempid: tempId, id }, replace: true })
+      this.$store.commit('setState', { key: 'templateId', value: tempId })
+      // const { id } = this.$route.query
+      // this.$router.push({ path: this.$props?.isModal ? '/' : '/home', query: { tempid: tempId, id }, replace: true })
     },
   },
 })

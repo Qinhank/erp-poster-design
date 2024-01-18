@@ -6,16 +6,18 @@
  * @LastEditTime: 2023-10-13 00:12:11
 -->
 <template>
-  <div id="page-design-index" ref="pageDesignIndex">
-    <div class="top-nav">
-      <div class="top-nav-wrap">
+  <el-dialog id="page-design-index" ref="pageDesignIndex" v-model="modelValue" title="在线PSD解析" top="5vh" width="90%" style="height: 90vh" @close="close">
+    <div class="top-nav border-b-[1px] border-gray-200 border-solid">
+      <div class="top-nav-wrap justify-between">
         <div class="top-left">
-          <div class="name" style="font-size: 15px">在线PSD解析</div>
+          <!-- <div class="name" style="font-size: 15px">在线PSD解析</div> -->
         </div>
-        <div style="flex: 1"><el-button plain type="primary" @click="jump2word">说明文档及PSD规范</el-button></div>
-        <el-button v-show="isDone" @click="clear">清空模板</el-button>
-        <div class="v-tips">
-          <HeaderOptions :isDone="isDone" @change="optionsChange" />
+        <div class="flex">
+          <!-- <div style="flex: 1"><el-button plain type="primary" @click="jump2word">说明文档及PSD规范</el-button></div> -->
+          <el-button v-show="isDone" @click="clear">清空模板</el-button>
+          <div class="v-tips">
+            <HeaderOptions :isDone="isDone" @change="optionsChange" />
+          </div>
         </div>
       </div>
     </div>
@@ -38,7 +40,7 @@
     <Moveable />
     <!-- 遮罩百分比进度条 -->
     <ProgressLoading :percent="downloadPercent" :text="downloadText" :cancelText="cancelText" :msg="downloadMsg" @cancel="cancel" @done="downloadPercent = 0" />
-  </div>
+  </el-dialog>
 </template>
 
 <script lang="ts">
@@ -54,7 +56,7 @@ import useLoading from '@/common/methods/loading'
 import uploader from '@/components/common/Uploader/index.vue'
 import designBoard from '@/components/modules/layout/designBoard.vue'
 import zoomControl from '@/components/modules/layout/zoomControl.vue'
-import HeaderOptions from './components/UploadTemplate.vue'
+import HeaderOptions from './UploadTemplate.vue'
 import ProgressLoading from '@/components/common/ProgressLoading/index.vue'
 // import MyWorker from '@/utils/plugins/webWorker'
 import { processPSD2Page } from '@/utils/plugins/psd'
@@ -62,7 +64,9 @@ import { processPSD2Page } from '@/utils/plugins/psd'
 export default defineComponent({
   components: { RightClickMenu, Moveable, uploader, designBoard, zoomControl, HeaderOptions, ProgressLoading },
   mixins: [shortcuts],
-  setup() {
+  props: ['modelValue'],
+  emits: ['update:modelValue'],
+  setup(props, { emit }) {
     const state = reactive({
       isDone: true,
       downloadPercent: 0, // 下载进度
@@ -91,6 +95,10 @@ export default defineComponent({
       await loadPSD(file)
       loading.close()
       state.isDone = true
+      store.dispatch('updatePageData', {
+        key: 'opacity',
+        value: 1,
+      })
     }
     async function loadPSD(file: any) {
       // const { compositeBuffer, psdFile } = await myWorker.start(file)
@@ -134,6 +142,10 @@ export default defineComponent({
       window.open(`${window.location.protocol + '//' + window.location.host}/home?id=${route.query.id}`)
     }
 
+    const close = () => {
+      emit('update:modelValue', false)
+    }
+
     return {
       ...toRefs(state),
       loadJS,
@@ -141,6 +153,7 @@ export default defineComponent({
       clear,
       cancel,
       optionsChange,
+      close,
     }
   },
   computed: {
@@ -179,10 +192,10 @@ export default defineComponent({
 <style lang="less" scoped>
 @import url('@/assets/styles/design.less');
 .uploader {
-  position: absolute;
-  z-index: 999;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // z-index: 999;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
   top: 50%;
   &__box {
     color: #666666;

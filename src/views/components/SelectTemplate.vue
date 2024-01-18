@@ -1,6 +1,12 @@
 <template>
-  <el-dialog v-model="visible" title="编辑图片" top="5vh" width="90%" style="height: 90vh">
+  <el-dialog :model-value="templateVisible" top="5vh" width="90%" style="height: 90vh" @close="handleClose">
+    <template #title>
+      <div>
+        编辑{{ noMenu ? '图片' : '模板' }} - 【<a class="text-blue-500 cursor-pointer" @click="toggleMode(noMenu ? 2 : 1)">{{ noMenu ? '进入' : '退出' }}模板编辑</a>】
+      </div>
+    </template>
     <div id="page-design-index" ref="pageDesignIndex" class="page-design-bg-color">
+      <HeaderOptions ref="options" v-model="isContinue" :noMenu="noMenu" @change="optionsChange" />
       <div v-show="false" :style="style" class="top-nav">
         <div class="top-nav-wrap">
           <div class="top-left">
@@ -16,19 +22,18 @@
         </div>
       </div>
       <div class="page-design-index-wrap">
-        <widget-panel :noMenu="true"></widget-panel>
+        <widget-panel :noMenu="noMenu"></widget-panel>
         <design-board class="page-design-wrap" pageDesignCanvasId="page-design-canvas">
           <!-- 用于挡住画布溢出部分，因为使用overflow有bug -->
           <div class="shelter" :style="{ width: Math.floor((dPage.width * dZoom) / 100) + 'px', height: Math.floor((dPage.height * dZoom) / 100) + 'px' }"></div>
           <!-- 提供一个背景图层 -->
           <div class="shelter-bg transparent-bg" :style="{ width: Math.floor((dPage.width * dZoom) / 100) + 'px', height: Math.floor((dPage.height * dZoom) / 100) + 'px' }"></div>
         </design-board>
-        <style-panel></style-panel>
+        <style-panel :noMenu="noMenu"></style-panel>
       </div>
+
       <!-- 抠图 -->
       <image-cutout></image-cutout>
-
-      <HeaderOptions ref="options" v-model="isContinue" :noMenu="true" @change="optionsChange" />
       <!-- 标尺 -->
       <line-guides :show="showLineGuides" />
       <!-- 缩放控制 -->
@@ -45,7 +50,7 @@
 
 <script lang="ts">
 import _config from '@/config'
-import { defineComponent, reactive, toRefs, watch } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 import RightClickMenu from '@/components/business/right-click-menu/RcMenu.vue'
 import Moveable from '@/components/business/moveable/Moveable.vue'
@@ -77,11 +82,6 @@ export default defineComponent({
     imageCutout,
   },
   mixins: [shortcuts],
-  props: {
-    visible: {
-      type: Boolean,
-    },
-  },
   setup(props) {
     !_config.isDev && window.addEventListener('beforeunload', beforeUnload)
 
@@ -96,6 +96,7 @@ export default defineComponent({
       APP_NAME: _config.APP_NAME,
       showLineGuides: false,
     })
+
     // const draw = () => {
     //   state.openDraw = true
     // }
@@ -125,9 +126,15 @@ export default defineComponent({
     redoable() {
       return !(this.dHistoryParams.index === this.dHistoryParams.length - 1)
     },
+    templateVisible() {
+      return this.$store.state.templateVisible
+    },
+    noMenu() {
+      return this.$store.state.templateMode === 1
+    },
   },
   watch: {
-    visible(n) {
+    templateVisible(n) {
       if (n) {
         this.initGroupJson(JSON.stringify(wGroup.setting))
         window.addEventListener('scroll', this.fixTopBarScroll)
@@ -171,6 +178,12 @@ export default defineComponent({
   // },
   methods: {
     ...mapActions(['selectWidget', 'initGroupJson', 'handleHistory']),
+    handleClose() {
+      this.$store.commit('setState', { key: 'templateVisible', value: false })
+    },
+    toggleMode(mode: number) {
+      this.$store.commit('setState', { key: 'templateMode', value: mode })
+    },
     changeLineGuides() {
       this.showLineGuides = !this.showLineGuides
     },

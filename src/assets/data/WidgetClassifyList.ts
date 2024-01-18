@@ -37,16 +37,16 @@ export default [
     show: false,
     component: 'bg-img-list-wrap',
   },
-  {
-    name: '工具',
-    icon: 'icon-zujian01',
-    show: false,
-    component: 'tools-list-wrap',
-  },
-  {
-    name: '我的',
-    icon: 'icon-shangchuan',
-    show: false,
-    component: 'user-wrap',
-  },
+  // {
+  //   name: '工具',
+  //   icon: 'icon-zujian01',
+  //   show: false,
+  //   component: 'tools-list-wrap',
+  // },
+  // {
+  //   name: '我的',
+  //   icon: 'icon-shangchuan',
+  //   show: false,
+  //   component: 'user-wrap',
+  // },
 ]
