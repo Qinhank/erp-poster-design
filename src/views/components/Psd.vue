@@ -45,7 +45,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, getCurrentInstance, ComponentInternalInstance, onMounted, nextTick } from 'vue'
-import { useRoute } from 'vue-router'
+// import { useRoute } from 'vue-router'
 import { mapActions, mapGetters, useStore } from 'vuex'
 import RightClickMenu from '@/components/business/right-click-menu/RcMenu.vue'
 import Moveable from '@/components/business/moveable/Moveable.vue'
@@ -75,7 +75,7 @@ export default defineComponent({
       cancelText: '',
     })
     const store = useStore()
-    const route = useRoute()
+    // const route = useRoute()
     const { proxy }: any = getCurrentInstance() as ComponentInternalInstance
     let loading: any = null
     // const myWorker = new MyWorker('loadPSD')
@@ -139,7 +139,7 @@ export default defineComponent({
     }
     const cancel = () => {
       state.downloadPercent = 100
-      window.open(`${window.location.protocol + '//' + window.location.host}/home?id=${route.query.id}`)
+      // window.open(`${window.location.protocol + '//' + window.location.host}/home?id=${route.query.id}`)
     }
 
     const close = () => {

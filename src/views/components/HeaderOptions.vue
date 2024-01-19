@@ -7,7 +7,7 @@
 -->
 <template>
   <div class="w-full flex items-center" style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc">
-    <div class="top-title p-0 font-bold text-[18px]">
+    <div class="top-title text-left p-0 font-bold text-[18px]">
       <el-input v-if="tempid && !noMenu" v-model="title" placeholder="未命名的设计" class="input-wrap" />
     </div>
     <div class="top-icon-wrap">
@@ -32,13 +32,13 @@
     </div>
     <!-- 生成图片组件 -->
     <SaveImage ref="canvasImage" />
-    <Psd v-model="psdVisible" />
+    <!-- <Psd v-model="psdVisible" /> -->
   </div>
 </template>
 
 <script lang="ts">
 import api from '@/api'
-import { defineComponent, reactive, toRefs, getCurrentInstance, ComponentInternalInstance, computed, watch } from 'vue'
+import { defineComponent, reactive, toRefs, getCurrentInstance, ComponentInternalInstance, computed, watch, onMounted } from 'vue'
 import { mapGetters, mapActions, useStore } from 'vuex'
 // import { useRoute, useRouter } from 'vue-router'
 // import _dl from '@/common/methods/download'
@@ -49,11 +49,11 @@ import { useFontStore } from '@/common/methods/fonts'
 import _config from '@/config'
 // import useConfirm from '@/common/methods/confirm'
 import html2canvas from 'html2canvas'
-import Psd from './Psd.vue'
+// import Psd from './Psd.vue'
 // import wGroup from '@/components/modules/widgets/wGroup/wGroup.vue'
 
 export default defineComponent({
-  components: { SaveImage, Psd },
+  components: { SaveImage },
   props: ['modelValue', 'noMenu'],
   emits: ['change', 'update:modelValue'],
   setup(props, context) {
@@ -69,6 +69,10 @@ export default defineComponent({
     })
 
     const tempid = computed(() => store.state.templateId)
+
+    onMounted(() => {
+      console.log(store)
+    })
 
     watch(
       () => tempid.value,
@@ -232,37 +236,38 @@ export default defineComponent({
   methods: {
     ...mapActions(['pushHistory', 'addGroup']),
     async load(id: any, tempId: any, type: any, cb: Function) {
-      if (this.$route.name !== 'Draw') {
-        await useFontStore.init() // 初始化加载字体
-      }
-      const apiName = tempId && !id ? 'getTempDetail' : 'getWorks'
-      if (!id && !tempId) {
-        cb()
-        return
-      }
-      const { data: content, title, state, width, height } = await api.home[apiName]({ id: id || tempId, type })
-      if (content) {
-        const data = JSON.parse(content)
-        this.stateBollean = !!state
-        this.title = title
-        this.$store.commit('setShowMoveable', false) // 清理掉上一次的选择框
-        // this.$store.commit('setDWidgets', [])
-        if (type == 1) {
-          // 加载文字组合组件
-          this.dPage.width = width
-          this.dPage.height = height
-          this.addGroup(data)
-        } else {
-          const AcImg = this.$store.state?.imgs
-          if (AcImg && AcImg.length) {
-            data.page.backgroundImage = AcImg[0]
-          }
-          this.$store.commit('setDPage', data.page)
-          id ? this.$store.commit('setDWidgets', data.widgets) : this.$store.dispatch('setTemplate', data.widgets)
-        }
-        cb()
-        this.pushHistory('请求加载load')
-      }
+      // if (this.$route.name !== 'Draw') {
+      await useFontStore.init() // 初始化加载字体
+      // }
+      // console.log(9999999, tempId)
+      // const apiName = tempId && !id ? 'getTempDetail' : 'getWorks'
+      // if (!id && !tempId) {
+      //   cb()
+      //   return
+      // }
+      // const { data: content, title, state, width, height } = await api.home[apiName]({ id: id || tempId, type })
+      // if (content) {
+      //   const data = JSON.parse(content)
+      //   this.stateBollean = !!state
+      //   this.title = title
+      //   this.$store.commit('setShowMoveable', false) // 清理掉上一次的选择框
+      //   // this.$store.commit('setDWidgets', [])
+      //   if (type == 1) {
+      //     // 加载文字组合组件
+      //     this.dPage.width = width
+      //     this.dPage.height = height
+      //     this.addGroup(data)
+      //   } else {
+      //     const AcImg = this.$store.state?.imgs
+      //     if (AcImg && AcImg.length) {
+      //       data.page.backgroundImage = AcImg[0]
+      //     }
+      //     this.$store.commit('setDPage', data.page)
+      //     id ? this.$store.commit('setDWidgets', data.widgets) : this.$store.dispatch('setTemplate', data.widgets)
+      //   }
+      //   cb()
+      //   this.pushHistory('请求加载load')
+      // }
     },
     draw() {
       return new Promise((resolve) => {

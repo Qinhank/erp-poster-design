@@ -15,7 +15,7 @@
     <ul ref="listRef" v-infinite-scroll="load" class="infinite-list" :infinite-scroll-distance="150" style="overflow: auto">
       <img-water-fall :listData="list" @select="selectItem" />
       <div v-show="loading" class="loading"><i class="el-icon-loading"></i> 拼命加载中</div>
-      <div v-show="loadDone" class="loading">全部加载完毕</div>
+      <!-- <div v-show="loadDone" class="loading">全部加载完毕</div> -->
     </ul>
   </div>
 </template>
@@ -24,14 +24,15 @@
 import { defineComponent, reactive, toRefs, ref, watch, computed, getCurrentInstance } from 'vue'
 import api from '@/api'
 import { mapActions, mapGetters, useStore } from 'vuex'
-import { useRoute } from 'vue-router'
+// import { useRoute } from 'vue-router'
 // import chooseType from './components/chooseType.vue'
 // import editModel from './components/editModel.vue'
 import searchHeader from './components/searchHeader.vue'
+import imgWaterFall from './components/imgWaterFall.vue'
 // import useConfirm from '@/common/methods/confirm'
 
 export default defineComponent({
-  components: { searchHeader },
+  components: { searchHeader, imgWaterFall },
   props: {
     isModal: {
       type: Boolean,
@@ -40,7 +41,7 @@ export default defineComponent({
   setup(props: any) {
     const instance = getCurrentInstance()
     const listRef = ref(null)
-    const route = useRoute()
+    // const route = useRoute()
     const store = useStore()
     const state: any = reactive({
       loading: false,
@@ -50,9 +51,9 @@ export default defineComponent({
       searchKeyword: '',
     })
     const pageOptions: any = { page: 0, per_page: 20, cate: 0 }
-    const { cate, edit } = route.query
-    cate && (pageOptions.cate = cate)
-    edit && store.commit('managerEdit', true)
+    // const { cate, edit } = route.query
+    // cate && (pageOptions.cate = cate)
+    // edit && store.commit('managerEdit', true)
 
     const templateDate = computed(() => store.state.templateDate)
     const templateId = computed(() => store.state.templateId)
@@ -102,7 +103,7 @@ export default defineComponent({
 
     watch(
       () => templateDate.value,
-      () => {
+      (n) => {
         load(true)
       },
     )
@@ -125,7 +126,6 @@ export default defineComponent({
             page.backgroundImage = AcImg[0]
           }
 
-          // console.log(widgets)
           store.commit('setDPage', page)
           instance?.proxy?.setTemplate(widgets)
           setTimeout(() => {

@@ -147,12 +147,13 @@ export default {
   async mounted() {
     await this.$nextTick()
     window.addEventListener('click', this.close)
-    if (this.$route.path === '/draw') {
-      this.activezoomIndex = 3
-      this.hideControl = true
-    } else {
-      this.activezoomIndex = this.zoomList.length - 1
-    }
+    // if (this.$route.path === '/draw') {
+    //   this.activezoomIndex = 3
+    //   this.hideControl = true
+    // } else {
+    //   this.activezoomIndex = this.zoomList.length - 1
+    // }
+    this.activezoomIndex = this.zoomList.length - 1
     // 添加滚轮监听
     addMouseWheel('page-design', (isDown) => {
       this.mousewheelZoom(isDown)

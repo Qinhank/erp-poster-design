@@ -167,7 +167,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .value-select-list {
   min-width: 10px !important;
   padding: 5px !important;

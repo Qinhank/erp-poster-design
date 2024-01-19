@@ -130,7 +130,7 @@ export default {
 //   overflow: hidden;
 // }
 </style>
-<style lang="less">
+<style lang="less" scoped>
 // .QRCodeVue3 {
 //   &_img {
 //     width: 100%;

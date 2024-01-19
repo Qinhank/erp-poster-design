@@ -61,7 +61,7 @@ import numberInput from '../../settings/numberInput.vue'
 import numberSlider from '../../settings/numberSlider.vue'
 import colorSelect from '../../settings/colorSelect.vue'
 import iconItemSelect from '../../settings/iconItemSelect.vue'
-import textInputArea from '../../settings/textInputArea.vue'
+// import textInputArea from '../../settings/textInputArea.vue'
 import valueSelect from '../../settings/valueSelect.vue'
 import effectWrap from '../../settings/EffectSelect/TextWrap.vue'
 import { useFontStore } from '@/common/methods/fonts'
@@ -70,7 +70,7 @@ import usePageFontsFilter from './pageFontsFilter.ts'
 
 export default {
   name: NAME,
-  components: { numberInput, colorSelect, iconItemSelect, textInputArea, textArea, valueSelect, effectWrap, numberSlider },
+  components: { numberInput, colorSelect, iconItemSelect, textArea, valueSelect, effectWrap, numberSlider },
   data() {
     return {
       activeNames: [],
@@ -93,7 +93,8 @@ export default {
       return this.$store.state.templateMode === 2
     },
     isDraw() {
-      return this.$route.name === 'Draw'
+      return true
+      // return this.$route.name === 'Draw'
     },
   },
   watch: {
@@ -173,6 +174,7 @@ export default {
         } else if (key !== 'setting' && key !== 'record' && this.innerElement[key] !== this.dActiveElement[key]) {
           // console.log('???', key)
           // const pushHistory = !['textEffects', 'transformData', 'fontClass'].includes(key)
+          // console.log(key, this.innerElement[key])
           this.updateWidgetData({
             uuid: this.dActiveElement.uuid,
             key,

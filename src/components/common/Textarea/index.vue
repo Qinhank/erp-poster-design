@@ -1,6 +1,6 @@
 <template>
   <div ref="wTextarea" class="w-textarea">
-    <div :id="contentId" ref="wTextareaContent" class="w-textarea_input" @click="inputClick($event)" @focus="isLocked = true" @blur="isLocked = false" @keydown.delete="handleDelete($event)" @input="handleInput($event.target)"></div>
+    <div :id="contentId" ref="wTextareaContent" class="w-textarea_input text-left" @click="inputClick($event)" @focus="isLocked = true" @blur="isLocked = false" @keydown.delete="handleDelete($event)" @input="handleInput($event.target)"></div>
     <div v-if="vars.length > 0 || maxlength" class="w-textarea_tools">
       <button v-for="item in vars" :key="item.key" class="w-textarea_tools__item" @click="addTag(item)">{{ item.title }}</button>
       <!-- <span v-if="maxlength" :class="['w-textarea_tools__text', count.num < 0 ? '__danger' : '']">{{ count.text }}</span> -->
@@ -210,8 +210,8 @@ export default {
 }
 </script>
 
-<style lang="less">
-// 给标签默认样式，不可scoped
+<style lang="less" scoped>
+// 给标签默认样式，不可
 .w-textarea {
   wise {
     color: #26a2ff;

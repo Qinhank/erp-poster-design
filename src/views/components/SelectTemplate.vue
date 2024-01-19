@@ -1,12 +1,12 @@
 <template>
-  <el-dialog :model-value="templateVisible" top="5vh" width="90%" style="height: 90vh" @close="handleClose">
-    <template #title>
-      <div>
+  <el-dialog v-model="templateVisible" top="5vh" width="90%" style="height: 90vh" @close="handleClose">
+    <template #header>
+      <div class="text-left">
         编辑{{ noMenu ? '图片' : '模板' }} - 【<a class="text-blue-500 cursor-pointer" @click="toggleMode(noMenu ? 2 : 1)">{{ noMenu ? '进入' : '退出' }}模板编辑</a>】
       </div>
     </template>
     <div id="page-design-index" ref="pageDesignIndex" class="page-design-bg-color">
-      <HeaderOptions ref="options" v-model="isContinue" :noMenu="noMenu" @change="optionsChange" />
+      <header-options ref="options" v-model="isContinue" :noMenu="noMenu" @change="optionsChange" />
       <div v-show="false" :style="style" class="top-nav">
         <div class="top-nav-wrap">
           <div class="top-left">
@@ -15,9 +15,9 @@
               <div :class="['operation-item', { disable: !undoable }]" @click="undoable ? handleHistory('undo') : ''"><i class="iconfont icon-undo" /></div>
               <div :class="['operation-item', { disable: !redoable }]" @click="redoable ? handleHistory('redo') : ''"><i class="iconfont icon-redo" /></div>
             </div>
-            <el-tooltip effect="dark" content="标尺" placement="bottom">
+            <!-- <el-tooltip effect="dark" content="标尺" placement="bottom">
               <i style="font-size: 20px" class="icon sd-biaochi extra-operation" @click="changeLineGuides" />
-            </el-tooltip>
+            </el-tooltip> -->
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@
 
 <script lang="ts">
 import _config from '@/config'
-import { defineComponent, reactive, toRefs } from 'vue'
+import { defineComponent, reactive, toRefs, onMounted } from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 import RightClickMenu from '@/components/business/right-click-menu/RcMenu.vue'
 import Moveable from '@/components/business/moveable/Moveable.vue'
@@ -61,8 +61,11 @@ import imageCutout from '@/components/business/image-cutout'
 
 import shortcuts from '@/mixins/shortcuts'
 import wGroup from '@/components/modules/widgets/wGroup/wGroup.vue'
-import HeaderOptions from './HeaderOptions.vue'
+import headerOptions from './HeaderOptions.vue'
 import ProgressLoading from '@/components/common/ProgressLoading/index.vue'
+import widgetPanel from '@/components/modules/panel/widgetPanel.vue'
+import stylePanel from '@/components/modules/panel/stylePanel.vue'
+import { ElDialog } from 'element-plus'
 
 const beforeUnload = function (e: any) {
   const confirmationMessage = '系统不会自动保存您未修改的内容'
@@ -74,12 +77,15 @@ export default defineComponent({
   components: {
     RightClickMenu,
     Moveable,
-    HeaderOptions,
+    headerOptions,
     ProgressLoading,
     designBoard,
     zoomControl,
     lineGuides,
     imageCutout,
+    widgetPanel,
+    stylePanel,
+    ElDialog,
   },
   mixins: [shortcuts],
   setup(props) {
@@ -95,6 +101,13 @@ export default defineComponent({
       isContinue: true,
       APP_NAME: _config.APP_NAME,
       showLineGuides: false,
+      visible: false,
+    })
+
+    onMounted(() => {
+      setTimeout(() => {
+        state.visible = true
+      }, 3000)
     })
 
     // const draw = () => {
@@ -129,6 +142,9 @@ export default defineComponent({
     templateVisible() {
       return this.$store.state.templateVisible
     },
+    templateId() {
+      return this.$store.state.templateId
+    },
     noMenu() {
       return this.$store.state.templateMode === 1
     },
@@ -149,6 +165,13 @@ export default defineComponent({
         document.removeEventListener('keyup', this.handleKeyup, false)
         document.oncontextmenu = null
       }
+    },
+    templateId(n) {
+      // ;(this.$refs as any)?.zoomControl.screenChange()
+      // this?.$nextTick?.()
+      // this.selectWidget({
+      //   uuid: '-1',
+      // })
     },
     // $route() {
     //   if (this.$props.visible) {
@@ -191,29 +214,27 @@ export default defineComponent({
       this.downloadPercent = 0
       this.isContinue = false
     },
-    loadData() {
+    async loadData() {
       // 初始化加载页面
-      if (this.$props.visible) {
-        const { id, tempid, tempType } = this.$route.query
-        setTimeout(() => {
-          this?.$refs?.options?.load?.(id, tempid, tempType, async () => {
-            ;(this.$refs as any).zoomControl.screenChange()
-            await this.$nextTick()
-            // 初始化激活的控件为page
-            this.selectWidget({
-              uuid: '-1',
-            })
+      // const { id, tempid, tempType } = this.$route.query
+      setTimeout(() => {
+        this?.$refs?.options?.load?.(null, null, null, async () => {
+          ;(this.$refs as any).zoomControl.screenChange()
+          await this.$nextTick()
+          // 初始化激活的控件为page
+          this.selectWidget({
+            uuid: '-1',
           })
-          // ;(this.$refs as any)?.options?.load?.(id, tempid, tempType, async () => {
-          //   ;(this.$refs as any).zoomControl.screenChange()
-          //   await this.$nextTick()
-          //   // 初始化激活的控件为page
-          //   this.selectWidget({
-          //     uuid: '-1',
-          //   })
-          // })
-        }, 50)
-      }
+        })
+        // ;(this.$refs as any)?.options?.load?.(id, tempid, tempType, async () => {
+        //   ;(this.$refs as any).zoomControl.screenChange()
+        //   await this.$nextTick()
+        //   // 初始化激活的控件为page
+        //   this.selectWidget({
+        //     uuid: '-1',
+        //   })
+        // })
+      }, 50)
     },
     zoomSub() {
       ;(this.$refs as any).zoomControl.sub()

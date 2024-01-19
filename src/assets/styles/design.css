@@ -5,6 +5,7 @@
   min-height: 500px;
   position: absolute;
   width: 100%;
+  left: 0;
 }
 #page-design-index .top-nav {
   height: 54px;

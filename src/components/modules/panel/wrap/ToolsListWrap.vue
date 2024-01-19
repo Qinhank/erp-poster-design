@@ -43,10 +43,10 @@ export default {
 
   mounted() {
     // this.getDataList()
-    setTimeout(() => {
-      const { koutu } = this.$route.query
-      koutu && this.openImageCutout()
-    }, 300)
+    // setTimeout(() => {
+    //   const { koutu } = this.$route.query
+    //   koutu && this.openImageCutout()
+    // }, 300)
   },
   methods: {
     ...mapActions(['addWidget']),

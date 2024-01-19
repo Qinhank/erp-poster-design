@@ -8,10 +8,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import viteCompression from 'vite-plugin-compression'
+// import viteCompression from 'vite-plugin-compression'
 import ElementPlus from 'unplugin-element-plus/vite'
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
+// import AutoImport from 'unplugin-auto-import/vite'
+// import Components from 'unplugin-vue-components/vite'
 
 const resolve = (...data: string[]) => path.resolve(__dirname, ...data)
 
@@ -50,13 +52,13 @@ export default defineConfig({
         },
       },
     },
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    // minify: 'terser',
+    // terserOptions: {
+    //   compress: {
+    //     drop_console: true,
+    //     drop_debugger: true,
+    //   },
+    // },
   },
   resolve: {
     alias: {

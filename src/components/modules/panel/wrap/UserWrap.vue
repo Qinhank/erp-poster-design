@@ -33,7 +33,7 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs, watch, nextTick, ref, onMounted } from 'vue'
 import { ElTabPane, ElTabs } from 'element-plus'
-import { useRouter } from 'vue-router'
+// import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import uploader from '@/components/common/Uploader'
 import api from '@/api'
@@ -45,7 +45,7 @@ export default defineComponent({
   components: { uploader, ElTabPane, ElTabs },
   props: ['active'],
   setup(props) {
-    const router = useRouter()
+    // const router = useRouter()
     const store = useStore()
     const state: any = reactive({
       prePath: 'user',
@@ -150,23 +150,24 @@ export default defineComponent({
       if (isPass) {
         await api.material.deleteMyWorks({ id: item.id })
         setTimeout(() => {
-          router.push({ path: '/home', query: {  }, replace: true })
+          // router.push({ path: '/home', query: {  }, replace: true })
           loadDesign(true)
-        }, 300);
+        }, 300)
       }
     }
     state.editOptions = {
       photo: [
-      {
-        name: '删除',
-        fn: deleteImg,
-      },
-    ],works: [
-      {
-        name: '删除',
-        fn: deleteWorks,
-      },
-    ]
+        {
+          name: '删除',
+          fn: deleteImg,
+        },
+      ],
+      works: [
+        {
+          name: '删除',
+          fn: deleteWorks,
+        },
+      ],
     }
     const dragStart = (index: number) => {
       const item = state.imgList[index]
@@ -191,7 +192,7 @@ export default defineComponent({
     }
 
     const openPSD = () => {
-      window.open(router.resolve('/psd').href, '_blank')
+      // window.open(router.resolve('/psd').href, '_blank')
     }
 
     return {

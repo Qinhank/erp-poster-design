@@ -41,7 +41,7 @@
           <el-button style="width: 100%; margin-top: 0.7rem" size="small" @click="finish('backgroundColor', '')">删除颜色</el-button>
         </div>
         <div v-if="mode === '图片' && innerElement.backgroundImage" class="flex flex-col justify-center items-center">
-          <bg-img-select :img="innerElement.backgroundImage" />
+          <!-- <bg-img-select :img="innerElement.backgroundImage" /> -->
           <el-button style="width: 100%; margin-top: 0.7rem" size="small" @click="deleteBg">删除</el-button>
         </div>
         <!-- <uploader v-show="mode === '图片' && !innerElement.backgroundImage" style="width: 100%; margin-top: 0.7rem" @done="uploadImgDone">

@@ -20,13 +20,20 @@
 <script>
 // 样式设置面板
 const NAME = 'style-panel'
+import { defineComponent } from 'vue'
 import { mapGetters, mapActions } from 'vuex'
 import alignIconList from '@/assets/data/AlignListData'
+import layerList from './components/layerList.vue'
 import iconItemSelect from '../settings/iconItemSelect.vue'
+import wGroupStyle from '../widgets/wGroup/wGroupStyle.vue'
+import wImageStyle from '../widgets/wImage/wImageStyle.vue'
+import wQrcodeStyle from '../widgets/wQrcode/wQrcodeStyle.vue'
+import wSvgStyle from '../widgets/wSvg/wSvgStyle.vue'
+import wTextStyle from '../widgets/wText/wTextStyle.vue'
 
-export default {
+export default defineComponent({
   name: NAME,
-  components: { iconItemSelect },
+  components: { iconItemSelect, layerList, wGroupStyle, wImageStyle, wQrcodeStyle, wSvgStyle, wTextStyle },
   props: ['noMenu'],
   data() {
     return {
@@ -69,7 +76,7 @@ export default {
       this.$store.commit('setShowMoveable', false)
     },
   },
-}
+})
 </script>
 
 <style lang="less" scoped>

@@ -66,6 +66,11 @@ import setWidgetData from '@/common/methods/DesignFeatures/setWidgetData'
 import PointImg from '@/utils/plugins/pointImg'
 import getComponentsData from '@/common/methods/DesignFeatures/setComponents'
 import { debounce } from 'throttle-debounce'
+import wGroup from '../widgets/wGroup/wGroup.vue'
+import wImage from '../widgets/wImage/wImage.vue'
+import wQrcode from '../widgets/wQrcode/wQrcode.vue'
+import wSvg from '../widgets/wSvg/wSvg.vue'
+import wText from '../widgets/wText/wText.vue'
 
 // 页面设计组件
 const NAME = 'page-design'
@@ -74,7 +79,7 @@ import { move, moveInit } from '@/mixins/move'
 
 export default defineComponent({
   name: NAME,
-  // components: {lineGuides},
+  components: { wGroup, wImage, wQrcode, wSvg, wText },
   mixins: [moveInit],
   props: ['pageDesignCanvasId'],
   data() {
@@ -191,7 +196,6 @@ export default defineComponent({
       } else if (type === 'bg') {
         console.log('背景图片放置')
       } else if (type !== 'group') {
-        console.log(setting)
         this.addWidget(setting) // 正常加入面板
       }
       // 清除临时数据
@@ -252,7 +256,6 @@ export default defineComponent({
       }
     },
     getlayers() {
-      console.log(this.dWidgets.filter((item) => item.parent === this.dPage.uuid))
       return this.dWidgets.filter((item) => item.parent === this.dPage.uuid)
     },
     getChilds(uuid) {

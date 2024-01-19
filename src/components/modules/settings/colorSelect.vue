@@ -64,23 +64,24 @@ export default defineComponent({
       console.log('取色: ', e)
     }
 
-    watch(
-      () => state.innerColor,
-      (value) => {
-        activeChange(value)
-        if (first) {
-          first = false
-          return
-        }
-        // addHistory(value)
-      },
-    )
-    watch(
-      () => props.modelValue,
-      (val) => {
-        val !== state.innerColor && (state.innerColor = val)
-      },
-    )
+    // watch(
+    //   () => state.innerColor,
+    //   (value) => {
+    //     console.log('color', value)
+    //     activeChange(value)
+    //     if (first) {
+    //       first = false
+    //       return
+    //     }
+    //     // addHistory(value)
+    //   },
+    // )
+    // watch(
+    //   () => props.modelValue,
+    //   (val) => {
+    //     val !== state.innerColor && (state.innerColor = val)
+    //   },
+    // )
 
     const updateValue = (value: any) => {
       emit('update:modelValue', value)

@@ -102,12 +102,14 @@ export default {
       loading: false,
       editable: false,
       loadFontDone: false,
+      editFont: false,
     }
   },
   computed: {
     ...mapGetters(['dActiveElement']),
     isDraw() {
-      return this.$route.name === 'Draw' && fontWithDraw
+      return false
+      // return this.editFont && fontWithDraw
     },
   },
   watch: {
@@ -119,7 +121,6 @@ export default {
         }
         let font = nval.fontClass
         const isDone = font.value === this.loadFontDone
-
         if (font.url && !isDone) {
           if (font.id && this.isDraw) {
             this.loading = false
@@ -160,6 +161,9 @@ export default {
   methods: {
     ...mapActions(['updateWidgetData', 'pushHistory']),
     getGradientOrImg,
+    renderText(text) {
+      return text.replace(/<wise id="[^"]+">([^<]+)<\/wise>/g, '\$1')
+    },
     updateRecord() {
       if (this.dActiveElement.uuid === this.params.uuid) {
         let record = this.dActiveElement.record
@@ -204,6 +208,7 @@ export default {
     dblclickText(e) {
       // this.$store.commit('setShowMoveable', false)
       this.editable = true
+      this.editFont = true
       const el = this.$refs.editWrap || this.$refs.widget
       setTimeout(() => {
         el.focus()

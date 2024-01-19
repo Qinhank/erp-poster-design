@@ -103,7 +103,7 @@ import { defineComponent, toRefs, reactive, watch, onMounted, nextTick, computed
 import colorSelect from '../colorSelect.vue'
 import { ElInputNumber, ElCheckbox } from 'element-plus'
 import numberInput from '../numberInput.vue'
-import draggable from 'vuedraggable'
+import draggable from 'vuedraggable/src/vuedraggable'
 import api from '@/api'
 import getGradientOrImg from '../../widgets/wText/getGradientOrImg'
 let froze_font_effect_list: any = []

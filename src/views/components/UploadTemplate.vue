@@ -15,7 +15,7 @@
 import api from '@/api'
 import { defineComponent, reactive, toRefs, getCurrentInstance, ComponentInternalInstance } from 'vue'
 import { mapGetters, useStore } from 'vuex'
-import { useRoute, useRouter } from 'vue-router'
+// import { useRoute, useRouter } from 'vue-router'
 import useNotification from '@/common/methods/notification'
 import SaveImage from '@/components/business/save-download/CreateCover.vue'
 import { useFontStore } from '@/common/methods/fonts'
@@ -29,7 +29,7 @@ export default defineComponent({
   setup(props, context) {
     const { proxy }: any = getCurrentInstance() as ComponentInternalInstance
     // const route = useRoute()
-    const router = useRouter()
+    // const router = useRouter()
     const store = useStore()
     const state: any = reactive({
       stateBollean: false,
@@ -117,4 +117,4 @@ export default defineComponent({
 })
 </script>
 
-<!-- <style lang="less" scoped></style> -->
+<!-- <style lang="less" ></style> -->

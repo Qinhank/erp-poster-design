@@ -29,7 +29,7 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs, watch } from 'vue'
 import { ElDropdown, ElDropdownItem, ElDropdownMenu } from 'element-plus'
-import { useRoute } from 'vue-router'
+// import { useRoute } from 'vue-router'
 import api from '@/api'
 
 export default defineComponent({
@@ -37,7 +37,7 @@ export default defineComponent({
   props: ['type', 'modelValue'],
   emits: ['update:modelValue'],
   setup(props, context) {
-    const route = useRoute()
+    // const route = useRoute()
     const state: any = reactive({
       searchValue: '',
       materialCates: [],
@@ -48,9 +48,9 @@ export default defineComponent({
       api.home.getCategories({ type: 1 }).then((list: any) => {
         list.unshift({ id: 0, name: '全部' })
         state.materialCates = list
-        const { cate } = route.query
-        cate && (state.currentIndex = cate)
-        cate && action('change', state.materialCates[Number(cate)], Number(cate))
+        // const { cate } = route.query
+        // cate && (state.currentIndex = cate)
+        // cate && action('change', state.materialCates[Number(cate)], Number(cate))
       })
     }
 

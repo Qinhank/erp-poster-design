@@ -449,13 +449,11 @@ export default defineComponent({
         //     const frame = this.frames[i];
         //     // Set origin if transform-origin use %.
         //     ev.setOrigin(["%", "%"]);
-
         //     // If cssSize and offsetSize are different, set cssSize.
         //     const style = window.getComputedStyle(ev.target);
         //     const cssWidth = parseFloat(style.width);
         //     const cssHeight = parseFloat(style.height);
         //     ev.set([cssWidth, cssHeight]);
-
         //     // If a drag event has already occurred, there is no dragStart.
         //     ev.dragStart && ev.dragStart.set(frame.translate);
         // });
@@ -493,6 +491,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import url('./style/index.less');
 </style>

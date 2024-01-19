@@ -68,6 +68,7 @@ export default defineComponent({
     const pageOptions = { type: 1, page: 0, per_page: 20 }
 
     onMounted(async () => {
+      console.log(state.types)
       if (state.types.length <= 0) {
         const types = await api.material.getKinds({ type: 3 })
         state.types = types

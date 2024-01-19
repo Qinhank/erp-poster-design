@@ -19,6 +19,10 @@ const onSelectImg = () => {
   store.commit('setImg', imgs.value)
   store.commit('setState', { key: 'templateVisible', value: true })
   store.commit('setState', { key: 'templateMode', value: 1 })
+  store.commit('setState', { key: 'templateDate', value: Date.now() })
+  // setTimeout(() => {
+  //   store.commit('setState', { key: 'templateDate', value: Date.now() })
+  // }, 50)
 }
 
 const editImgDone = (base64) => {

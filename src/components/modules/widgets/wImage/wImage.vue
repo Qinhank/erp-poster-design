@@ -30,7 +30,7 @@
 const NAME = 'w-image'
 
 import { mapGetters, mapActions } from 'vuex'
-import { getMatrix } from '@/common/methods/handleTransform'
+// import { getMatrix } from '@/common/methods/handleTransform'
 import PointImg from '@/utils/plugins/pointImg'
 
 export default {
@@ -81,7 +81,7 @@ export default {
       return this.params.mask && this.dDropOverUuid === this.params.uuid
     },
     isDraw() {
-      return this.$route.name === 'Draw'
+      // return this.$route.name === 'Draw'
     },
   },
   watch: {

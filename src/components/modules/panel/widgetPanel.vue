@@ -10,9 +10,7 @@
       <!-- <a href="https://github.com/palxiao/poster-design" target="_blank" class="github"><img src="https://fe-doc.palxp.cn/images/github.svg" alt="Github" title="Github" /> 源码</a> -->
     </div>
     <div v-show="active" class="widget-wrap">
-      <keep-alive>
-        <component :is="widgetClassifyList[activeWidgetClassify].component" :isModal="noMenu" />
-      </keep-alive>
+      <component :is="widgetClassifyList[activeWidgetClassify].component" :isModal="noMenu" />
     </div>
     <!-- <div v-show="active" class="side-wrap"><div class="pack__up" @click="active = false">&lt;</div></div> -->
     <!-- <div v-show="active" class="side-wrap">
@@ -29,10 +27,28 @@ const NAME = 'widget-panel'
 import widgetClassifyListData from '@/assets/data/WidgetClassifyList.ts'
 import { reactive, toRefs, onMounted, watch, nextTick, getCurrentInstance, ComponentInternalInstance } from 'vue'
 import { mapActions } from 'vuex'
-import { useRoute } from 'vue-router'
+import BgImgListWrap from './wrap/BgImgListWrap.vue'
+import CompListWrap from './wrap/CompListWrap.vue'
+import GraphListWrap from './wrap/GraphListWrap.vue'
+import PhotoListWrap from './wrap/PhotoListWrap.vue'
+import TempListWrap from './wrap/TempListWrap.vue'
+import TextListWrap from './wrap/TextListWrap.vue'
+import ToolsListWrap from './wrap/ToolsListWrap.vue'
+import UserWrap from './wrap/UserWrap.vue'
+// import { useRoute } from 'vue-router'
 
 export default {
   name: NAME,
+  components: {
+    BgImgListWrap,
+    CompListWrap,
+    GraphListWrap,
+    PhotoListWrap,
+    TempListWrap,
+    TextListWrap,
+    ToolsListWrap,
+    UserWrap,
+  },
   props: {
     noMenu: {
       type: Boolean,
@@ -40,7 +56,7 @@ export default {
   },
   setup(props: any) {
     // const store = useStore()
-    const route = useRoute()
+    // const route = useRoute()
     const state = reactive({
       widgetClassifyList: widgetClassifyListData,
       activeWidgetClassify: 0,
@@ -56,8 +72,8 @@ export default {
       // if (props.noMenu) {
       //   state.active = false
       // }
-      const { koutu } = route.query
-      koutu && (state.activeWidgetClassify = 5)
+      // const { koutu } = route.query
+      // koutu && (state.activeWidgetClassify = 5)
     })
 
     watch(

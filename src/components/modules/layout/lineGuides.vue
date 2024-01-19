@@ -112,7 +112,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 // :deep(.shortLineSize) {
 //   height: 1px !important;
 // }

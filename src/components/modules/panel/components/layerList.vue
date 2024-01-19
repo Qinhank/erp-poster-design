@@ -41,7 +41,7 @@
 <script lang="ts">
 import { defineComponent, computed, reactive, ref, toRefs } from 'vue'
 import { useStore } from 'vuex'
-import draggable from 'vuedraggable'
+import draggable from 'vuedraggable/src/vuedraggable'
 
 export default defineComponent({
   components: { draggable },

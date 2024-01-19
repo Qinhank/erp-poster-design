@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 #appindex {
   min-width: 1180px;
   .viewWrap {

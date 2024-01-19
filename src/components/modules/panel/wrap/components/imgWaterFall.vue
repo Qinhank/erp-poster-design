@@ -23,15 +23,17 @@
 <script>
 const NAME = 'img-water-fall'
 import { defineComponent, toRefs, reactive, watch } from 'vue'
+import editModel from './editModel.vue'
 
 export default defineComponent({
   name: NAME,
+  components: { editModel },
   props: {
     listData: {
       type: Array,
       required: true,
     },
-    edit: {}
+    edit: {},
   },
   emits: ['select', 'load'],
   setup(props, { emit }) {
