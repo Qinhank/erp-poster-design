@@ -1,5 +1,5 @@
 <template>
-  <el-dialog v-model="templateVisible" top="5vh" width="90%" style="height: 90vh" @close="handleClose">
+  <el-dialog :model-value="templateVisible" top="5vh" width="90%" style="height: 90vh" @close="handleClose">
     <template #header>
       <div class="text-left">
         编辑{{ noMenu ? '图片' : '模板' }} - 【<a class="text-blue-500 cursor-pointer" @click="toggleMode(noMenu ? 2 : 1)">{{ noMenu ? '进入' : '退出' }}模板编辑</a>】
@@ -32,6 +32,7 @@
         <style-panel :noMenu="noMenu"></style-panel>
       </div>
 
+      <edit-img :visible="editImgVisible" @done="editImgDone" />
       <!-- 抠图 -->
       <image-cutout></image-cutout>
       <!-- 标尺 -->
@@ -66,6 +67,7 @@ import ProgressLoading from '@/components/common/ProgressLoading/index.vue'
 import widgetPanel from '@/components/modules/panel/widgetPanel.vue'
 import stylePanel from '@/components/modules/panel/stylePanel.vue'
 import { ElDialog } from 'element-plus'
+import EditImg from './EditImg.vue'
 
 const beforeUnload = function (e: any) {
   const confirmationMessage = '系统不会自动保存您未修改的内容'
@@ -86,8 +88,10 @@ export default defineComponent({
     widgetPanel,
     stylePanel,
     ElDialog,
+    EditImg,
   },
   mixins: [shortcuts],
+  emits: ['update:modelValue', 'close'],
   setup(props) {
     !_config.isDev && window.addEventListener('beforeunload', beforeUnload)
 
@@ -148,6 +152,15 @@ export default defineComponent({
     noMenu() {
       return this.$store.state.templateMode === 1
     },
+    editImgVisible() {
+      return this.$store.state.editImgVisible
+    },
+    imgs() {
+      return this.$store.state.imgs
+    },
+    imgIndex() {
+      return this.$store.state.imgIndex
+    },
   },
   watch: {
     templateVisible(n) {
@@ -201,8 +214,16 @@ export default defineComponent({
   // },
   methods: {
     ...mapActions(['selectWidget', 'initGroupJson', 'handleHistory']),
+    editImgDone: (base64) => {
+      const _imgs = [...this.imgs.value]
+      const _index = this.imgIndex.value
+      _imgs.value[_index] = base64
+      this.$store.commit('setState', { key: 'editImgVisible', value: false })
+      this.$store.commit('setState', { key: 'imgs', value: _imgs })
+    },
     handleClose() {
-      this.$store.commit('setState', { key: 'templateVisible', value: false })
+      this.$emit('close')
+      // this.$store.commit('setState', { key: 'templateVisible', value: false })
     },
     toggleMode(mode: number) {
       this.$store.commit('setState', { key: 'templateMode', value: mode })

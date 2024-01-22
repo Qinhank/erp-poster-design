@@ -1,36 +1,54 @@
 <template>
-  <div class="flex" @click="onSelectImg">
-    <img v-for="(item, index) in imgs" :key="index" :src="item" alt="" style="width: 200px" />
-  </div>
-  <select-template />
-  <EditImg :visible="editImgVisible" @done="editImgDone" />
+  <select-template @close="closeModal" />
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { onMounted, defineProps, watch, computed, defineEmits } from 'vue'
 import store from '@/store'
 import SelectTemplate from './components/SelectTemplate.vue'
-import EditImg from './components/EditImg.vue'
 
-const imgs = ref(['https://cdn.erp.jinweitec.com/erpsys/FqDRsgZqneFWmC_e7Y78qJ1_s1j-?imageMogr2/format/webp/interlace/0/quality/50', 'https://cdn.erp.jinweitec.com/erpsys/o_1bjf6ul918ubhah1ag21nq2m5c.jpg'])
-const editImgVisible = ref(false)
+const props = defineProps(['companyId', 'data', 'config', 'modelValue'])
+const emits = defineEmits('close', 'update:modelValue')
 
-const onSelectImg = () => {
-  store.commit('setImg', imgs.value)
-  store.commit('setState', { key: 'templateVisible', value: true })
-  store.commit('setState', { key: 'templateMode', value: 1 })
-  store.commit('setState', { key: 'templateDate', value: Date.now() })
-  // setTimeout(() => {
-  //   store.commit('setState', { key: 'templateDate', value: Date.now() })
-  // }, 50)
+const data = computed(() => props.data)
+const isShow = computed(() => props.modelValue)
+
+watch(
+  () => data.value,
+  (n) => {
+    store.commit('setImg', n)
+  },
+)
+
+watch(
+  () => isShow.value,
+  (n) => {
+    if (n) {
+      store.commit('setState', { key: 'templateVisible', value: true })
+      store.commit('setState', { key: 'templateMode', value: 1 })
+      store.commit('setState', { key: 'templateDate', value: Date.now() })
+    }
+  },
+)
+
+const closeModal = () => {
+  emits('update:modelValue', false)
+  store.commit('setState', { key: 'templateVisible', value: false })
 }
 
-const editImgDone = (base64) => {
-  imgs.value[0] = base64
-  editImgVisible.value = false
-}
-
-onMounted(() => {})
+onMounted(() => {
+  if (props.companyId) {
+    localStorage.setItem('CompanyId', props.companyId)
+  }
+  if (props.config) {
+    for (const key in props.config) {
+      if (Object.prototype.hasOwnProperty.call(props.config, key)) {
+        const val = props.config[key]
+        localStorage.setItem(key, val)
+      }
+    }
+  }
+})
 </script>
 
 <style>

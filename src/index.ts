@@ -10,16 +10,16 @@ import '@/assets/styles/index.less'
 // import registerModule from '@/components/modules/index'
 
 const MyPlugin = {
-  install(app: any, { store }: any) {
-    let vue = app
-    if (typeof window !== 'undefined' && window?.Vue) {
-      // window.Vue.use(install)
-      vue = window?.Vue
-    }
-    if (!store) {
-      console.error('Please provide a Vuex store.')
-      return
-    }
+  install(app: any) {
+    const vue = app
+    // if (typeof window !== 'undefined' && window?.Vue) {
+    //   // window.Vue.use(install)
+    //   vue = window?.Vue
+    // }
+    // if (!store) {
+    //   console.error('Please provide a Vuex store.')
+    //   return
+    // }
 
     // elementConfig.components.forEach((component) => {
     //   vue.component(component.name, component)

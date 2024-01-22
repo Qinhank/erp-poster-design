@@ -10,7 +10,7 @@ import store from '@/store'
 import app_config from '@/config'
 
 axios.defaults.timeout = 30000
-axios.defaults.headers.authorization = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTAwMDEsImV4cCI6MTc4ODU3NDc1MDU4NX0.L_t6DFD48Dm6rUPfgIgOWJkz18En1m_-hhMHcpbxliY';
+axios.defaults.headers.authorization = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTAwMDEsImV4cCI6MTc4ODU3NDc1MDU4NX0.L_t6DFD48Dm6rUPfgIgOWJkz18En1m_-hhMHcpbxliY'
 // const version = app_config.VERSION;
 const baseUrl = app_config.API_URL
 
@@ -83,10 +83,10 @@ const fetch = (url: string, params: Type.Object, type: string | undefined = 'get
   }
 
   const token = localStorage.getItem('xp_token')
-  const headerObject: Type.Object = { }
+  const headerObject: Type.Object = {}
   token && (headerObject.authorization = token)
-  headerObject.CompanyId = 'hg8fa286ab8f434d8f'
-  
+  headerObject.CompanyId = localStorage.getItem('CompanyId') || 'hg8fa286ab8f434d8f'
+
   if (type === 'get') {
     return axios.get(url, {
       headers: Object.assign(headerObject, exheaders),

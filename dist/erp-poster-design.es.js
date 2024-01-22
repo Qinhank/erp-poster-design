@@ -1080,7 +1080,7 @@ var erpStore = createStore({
   }
 });
 const version$3 = "1.0.0";
-const prefix$3 = { "adb": "C:\\platform-tools", "ALLUSERSPROFILE": "C:\\ProgramData", "AMDRMSDKPATH": "C:\\Program Files\\AMD\\RyzenMasterSDK\\", "APPDATA": "C:\\Users\\1\\AppData\\Roaming", "asl.log": "Destination=file", "CommonProgramFiles": "C:\\Program Files\\Common Files", "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files", "CommonProgramW6432": "C:\\Program Files\\Common Files", "COMPUTERNAME": "DESKTOP-JLHGILQ", "ComSpec": "C:\\Windows\\system32\\cmd.exe", "CONDA_PROMPT_MODIFIER": "False", "CUDA_PATH": "D:\\NVIDIA GPU Computing Toolkit", "CUDA_PATH_V12_3": "D:\\NVIDIA GPU Computing Toolkit", "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData", "HOMEDRIVE": "C:", "HOMEPATH": "\\Users\\1", "INIT_CWD": "E:\\jwkj\\erp-poster-design", "LOCALAPPDATA": "C:\\Users\\1\\AppData\\Local", "LOGONSERVER": "\\\\DESKTOP-JLHGILQ", "NODE": "C:\\Program Files\\nodejs\\node.exe", "NODE_ENV": "production", "npm_config_argv": '{"remain":[],"cooked":["run","v-build"],"original":["v-build"]}', "npm_config_bin_links": "true", "npm_config_ignore_optional": "", "npm_config_ignore_scripts": "", "npm_config_init_license": "MIT", "npm_config_init_version": "1.0.0", "npm_config_registry": "https://registry.yarnpkg.com", "npm_config_save_prefix": "^", "npm_config_strict_ssl": "true", "npm_config_user_agent": "yarn/1.22.21 npm/? node/v20.9.0 win32 x64", "npm_config_version_commit_hooks": "true", "npm_config_version_git_message": "v%s", "npm_config_version_git_sign": "", "npm_config_version_git_tag": "true", "npm_config_version_tag_prefix": "v", "npm_execpath": "C:\\Users\\1\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\yarn\\bin\\yarn.js", "npm_lifecycle_event": "v-build", "npm_lifecycle_script": "cross-env NODE_ENV=production && vite build", "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe", "npm_package_author_name": "ShawnPhang", "npm_package_browserslist_0": "> 1%", "npm_package_browserslist_1": "last 2 versions", "npm_package_browserslist_2": "not dead", "npm_package_dependencies_axios": "^0.21.1", "npm_package_dependencies_canvg": "^4.0.1", "npm_package_dependencies_core_js": "^3.6.5", "npm_package_dependencies_dayjs": "^1.10.7", "npm_package_dependencies_element_plus": "^2.3.7", "npm_package_dependencies_fontfaceobserver": "^2.1.0", "npm_package_dependencies_html2canvas": "^1.4.1", "npm_package_dependencies_moveable": "^0.26.0", "npm_package_dependencies_moveable_helper": "^0.4.0", "npm_package_dependencies_nanoid": "^3.1.23", "npm_package_dependencies_normalize_css": "^8.0.1", "npm_package_dependencies_qr_code_styling": "^1.6.0-rc.1", "npm_package_dependencies_selecto": "^1.13.0", "npm_package_dependencies_throttle_debounce": "^3.0.1", "npm_package_dependencies_tui_image_editor": "^3.15.3", "npm_package_dependencies_vue": "^3.0.0", "npm_package_dependencies_vuedraggable": "^4.1.0", "npm_package_dependencies_vuex": "^4.0.0-0", "npm_package_dependencies_vue_router": "^4.0.0-0", "npm_package_dependencies__palxp_color_picker": "^1.5.2", "npm_package_dependencies__palxp_image_extraction": "^1.2.4", "npm_package_dependencies__scena_guides": "^0.18.1", "npm_package_dependencies__webtoon_psd": "^0.4.0", "npm_package_description": "\u4E00\u6B3E\u6F02\u4EAE\u4E14\u529F\u80FD\u5F3A\u5927\u7684\u5728\u7EBF\u6D77\u62A5\u56FE\u7247\u8BBE\u8BA1\u5668\uFF0C\u4EFF\u7A3F\u5B9A\u8BBE\u8BA1\u3002", "npm_package_devDependencies_autoprefixer": "^10.4.16", "npm_package_devDependencies_babel_eslint": "^10.1.0", "npm_package_devDependencies_cross_env": "^7.0.3", "npm_package_devDependencies_esbuild_loader": "^2.13.1", "npm_package_devDependencies_eslint": "^7.29.0", "npm_package_devDependencies_eslint_config_alloy": "~4.1.0", "npm_package_devDependencies_eslint_plugin_vue": "^7.12.1", "npm_package_devDependencies_less": "^4.1.1", "npm_package_devDependencies_postcss": "^8.4.33", "npm_package_devDependencies_tailwindcss": "^3.4.1", "npm_package_devDependencies_typescript": "~4.1.5", "npm_package_devDependencies_unplugin_element_plus": "^0.7.1", "npm_package_devDependencies_vite": "^2.4.1", "npm_package_devDependencies_vite_plugin_compression": "^0.3.0", "npm_package_devDependencies_vue_cli_plugin_norm": "~1.2.2", "npm_package_devDependencies_vue_eslint_parser": "^7.6.0", "npm_package_devDependencies_vue_tsc": "^0.2.0", "npm_package_devDependencies__typescript_eslint_eslint_plugin": "^4.28.3", "npm_package_devDependencies__typescript_eslint_parser": "^4.28.3", "npm_package_devDependencies__types_node": "^16.3.1", "npm_package_devDependencies__types_throttle_debounce": "^2.1.0", "npm_package_devDependencies__vitejs_plugin_vue": "^1.2.4", "npm_package_devDependencies__vue_cli_plugin_babel": "~4.5.0", "npm_package_devDependencies__vue_cli_plugin_router": "~4.5.0", "npm_package_devDependencies__vue_cli_plugin_typescript": "~4.5.0", "npm_package_devDependencies__vue_cli_plugin_vuex": "~4.5.0", "npm_package_devDependencies__vue_cli_service": "~4.5.0", "npm_package_devDependencies__vue_compiler_sfc": "^3.1.4", "npm_package_devDependencies__vue_eslint_config_typescript": "^7.0.0", "npm_package_license": "MIT", "npm_package_name": "xunpai-design", "npm_package_private": "true", "npm_package_readmeFilename": "README.md", "npm_package_scripts_build": "node script/set config.json && npm run v-build && sh script/reverse.sh", "npm_package_scripts_dev": "cross-env NODE_ENV=development vite", "npm_package_scripts_prepared": "npm i && cd screenshot && npm i", "npm_package_scripts_publish": "sh script/publish.sh", "npm_package_scripts_publish_fast": "git add . && git commit -m 'build: auto publish' && sh script/publish.sh", "npm_package_scripts_serve": "npm run dev", "npm_package_scripts_short": "cd screenshot && npm run dev", "npm_package_scripts_v_build": "cross-env NODE_ENV=production && vite build", "npm_package_scripts_v_build_hard": "cross-env NODE_ENV=production vue-tsc --noEmit && vite build", "npm_package_version": "1.0.0", "NUMBER_OF_PROCESSORS": "12", "NVM_HOME": "C:\\Users\\1\\AppData\\Roaming\\nvm", "NVM_SYMLINK": "C:\\Program Files\\nodejs", "OneDrive": "C:\\Users\\1\\OneDrive", "OS": "Windows_NT", "Path": "C:\\Users\\1\\AppData\\Local\\Temp\\yarn--1705652588843-0.9597868396784279;E:\\jwkj\\erp-poster-design\\node_modules\\.bin;C:\\Users\\1\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Users\\1\\AppData\\Local\\Yarn\\bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Users\\1\\AppData\\Local\\oh-my-posh;D:\\NVIDIA GPU Computing Toolkit\\bin;D:\\NVIDIA GPU Computing Toolkit\\libnvvp;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Users\\1\\AppData\\Roaming\\nvm;C:\\Program Files\\nodejs;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Docker\\Docker\\resources\\bin;%adb%;D:\\\u5FAE\u4FE1web\u5F00\u53D1\u8005\u5DE5\u5177\\dll;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2023.3.1\\;C:\\Users\\1\\AppData\\Local\\pnpm;C:\\Users\\1\\.cargo\\bin;C:\\Users\\1\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Microsoft VS Code\\bin;C:\\Users\\1\\AppData\\Roaming\\nvm;C:\\Program Files\\nodejs;C:\\Users\\1\\AppData\\Local\\Programs\\oh-my-posh\\bin;C:\\Users\\1\\AppData\\Roaming\\Python\\Scripts;C:\\Users\\1\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\Roaming\\pypoetry\\venv\\Scripts\\poetry;", "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL", "PNPM_HOME": "C:\\Users\\1\\AppData\\Local\\pnpm", "POSH_AZURE_ENABLED": "False", "POSH_CURSOR_COLUMN": "1", "POSH_CURSOR_LINE": "30", "POSH_GIT_ENABLED": "False", "POSH_PATH": "C:\\Users\\1\\AppData\\Local\\oh-my-posh", "POSH_PID": "9344", "POSH_SHELL_VERSION": "5.1.22621.2506", "POSH_THEME": "C:\\Users\\1\\AppData\\Local\\oh-my-posh\\themes\\spaceship.omp.json", "POSH_THEMES_PATH": "C:\\Users\\1\\AppData\\Local\\oh-my-posh\\themes", "POWERLINE_COMMAND": "oh-my-posh", "PROCESSOR_ARCHITECTURE": "AMD64", "PROCESSOR_IDENTIFIER": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD", "PROCESSOR_LEVEL": "25", "PROCESSOR_REVISION": "6102", "ProgramData": "C:\\ProgramData", "ProgramFiles": "C:\\Program Files", "ProgramFiles(x86)": "C:\\Program Files (x86)", "ProgramW6432": "C:\\Program Files", "PROMPT": "$P$G", "PSModulePath": "C:\\Users\\1\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules", "PUBLIC": "C:\\Users\\Public", "SESSIONNAME": "Console", "SystemDrive": "C:", "SystemRoot": "C:\\Windows", "TEMP": "C:\\Users\\1\\AppData\\Local\\Temp", "TMP": "C:\\Users\\1\\AppData\\Local\\Temp", "USERDOMAIN": "DESKTOP-JLHGILQ", "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-JLHGILQ", "USERNAME": "hankqin", "USERPROFILE": "C:\\Users\\1", "windir": "C:\\Windows", "WSLENV": "WT_SESSION:WT_PROFILE_ID:", "WT_PROFILE_ID": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}", "WT_SESSION": "f26ae492-63ca-457d-8f1e-7d10d9a1e425", "YARN_WRAP_OUTPUT": "false" };
+const prefix$3 = { "adb": "C:\\platform-tools", "ALLUSERSPROFILE": "C:\\ProgramData", "AMDRMSDKPATH": "C:\\Program Files\\AMD\\RyzenMasterSDK\\", "APPDATA": "C:\\Users\\1\\AppData\\Roaming", "asl.log": "Destination=file", "CommonProgramFiles": "C:\\Program Files\\Common Files", "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files", "CommonProgramW6432": "C:\\Program Files\\Common Files", "COMPUTERNAME": "DESKTOP-JLHGILQ", "ComSpec": "C:\\Windows\\system32\\cmd.exe", "CONDA_PROMPT_MODIFIER": "False", "CUDA_PATH": "D:\\NVIDIA GPU Computing Toolkit", "CUDA_PATH_V12_3": "D:\\NVIDIA GPU Computing Toolkit", "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData", "HOMEDRIVE": "C:", "HOMEPATH": "\\Users\\1", "INIT_CWD": "E:\\jwkj\\erp-poster-design", "LOCALAPPDATA": "C:\\Users\\1\\AppData\\Local", "LOGONSERVER": "\\\\DESKTOP-JLHGILQ", "NODE": "C:\\Program Files\\nodejs\\node.exe", "NODE_ENV": "production", "npm_config_argv": '{"remain":[],"cooked":["run","v-build"],"original":["v-build"]}', "npm_config_bin_links": "true", "npm_config_ignore_optional": "", "npm_config_ignore_scripts": "", "npm_config_init_license": "MIT", "npm_config_init_version": "1.0.0", "npm_config_registry": "https://registry.yarnpkg.com", "npm_config_save_prefix": "^", "npm_config_strict_ssl": "true", "npm_config_user_agent": "yarn/1.22.21 npm/? node/v20.9.0 win32 x64", "npm_config_version_commit_hooks": "true", "npm_config_version_git_message": "v%s", "npm_config_version_git_sign": "", "npm_config_version_git_tag": "true", "npm_config_version_tag_prefix": "v", "npm_execpath": "C:\\Users\\1\\AppData\\Roaming\\nvm\\v20.9.0\\node_modules\\yarn\\bin\\yarn.js", "npm_lifecycle_event": "v-build", "npm_lifecycle_script": "cross-env NODE_ENV=production && vite build", "npm_node_execpath": "C:\\Program Files\\nodejs\\node.exe", "npm_package_author_name": "ShawnPhang", "npm_package_browserslist_0": "> 1%", "npm_package_browserslist_1": "last 2 versions", "npm_package_browserslist_2": "not dead", "npm_package_dependencies_axios": "^0.21.1", "npm_package_dependencies_canvg": "^4.0.1", "npm_package_dependencies_core_js": "^3.6.5", "npm_package_dependencies_dayjs": "^1.10.7", "npm_package_dependencies_element_plus": "^2.3.7", "npm_package_dependencies_fontfaceobserver": "^2.1.0", "npm_package_dependencies_html2canvas": "^1.4.1", "npm_package_dependencies_moveable": "^0.26.0", "npm_package_dependencies_moveable_helper": "^0.4.0", "npm_package_dependencies_nanoid": "^3.1.23", "npm_package_dependencies_normalize_css": "^8.0.1", "npm_package_dependencies_qr_code_styling": "^1.6.0-rc.1", "npm_package_dependencies_selecto": "^1.13.0", "npm_package_dependencies_throttle_debounce": "^3.0.1", "npm_package_dependencies_tui_image_editor": "^3.15.3", "npm_package_dependencies_vue": "^3.0.0", "npm_package_dependencies_vuedraggable": "^4.1.0", "npm_package_dependencies_vuex": "^4.0.0-0", "npm_package_dependencies_vue_router": "^4.0.0-0", "npm_package_dependencies__palxp_color_picker": "^1.5.2", "npm_package_dependencies__palxp_image_extraction": "^1.2.4", "npm_package_dependencies__scena_guides": "^0.18.1", "npm_package_dependencies__webtoon_psd": "^0.4.0", "npm_package_description": "\u4E00\u6B3E\u6F02\u4EAE\u4E14\u529F\u80FD\u5F3A\u5927\u7684\u5728\u7EBF\u6D77\u62A5\u56FE\u7247\u8BBE\u8BA1\u5668\uFF0C\u4EFF\u7A3F\u5B9A\u8BBE\u8BA1\u3002", "npm_package_devDependencies_autoprefixer": "^10.4.16", "npm_package_devDependencies_babel_eslint": "^10.1.0", "npm_package_devDependencies_cross_env": "^7.0.3", "npm_package_devDependencies_esbuild_loader": "^2.13.1", "npm_package_devDependencies_eslint": "^7.29.0", "npm_package_devDependencies_eslint_config_alloy": "~4.1.0", "npm_package_devDependencies_eslint_plugin_vue": "^7.12.1", "npm_package_devDependencies_less": "^4.1.1", "npm_package_devDependencies_postcss": "^8.4.33", "npm_package_devDependencies_tailwindcss": "^3.4.1", "npm_package_devDependencies_typescript": "~4.1.5", "npm_package_devDependencies_unplugin_element_plus": "^0.7.1", "npm_package_devDependencies_vite": "^2.4.1", "npm_package_devDependencies_vite_plugin_compression": "^0.3.0", "npm_package_devDependencies_vue_cli_plugin_norm": "~1.2.2", "npm_package_devDependencies_vue_eslint_parser": "^7.6.0", "npm_package_devDependencies_vue_tsc": "^0.2.0", "npm_package_devDependencies__typescript_eslint_eslint_plugin": "^4.28.3", "npm_package_devDependencies__typescript_eslint_parser": "^4.28.3", "npm_package_devDependencies__types_node": "^16.3.1", "npm_package_devDependencies__types_throttle_debounce": "^2.1.0", "npm_package_devDependencies__vitejs_plugin_vue": "^1.2.4", "npm_package_devDependencies__vue_cli_plugin_babel": "~4.5.0", "npm_package_devDependencies__vue_cli_plugin_router": "~4.5.0", "npm_package_devDependencies__vue_cli_plugin_typescript": "~4.5.0", "npm_package_devDependencies__vue_cli_plugin_vuex": "~4.5.0", "npm_package_devDependencies__vue_cli_service": "~4.5.0", "npm_package_devDependencies__vue_compiler_sfc": "^3.1.4", "npm_package_devDependencies__vue_eslint_config_typescript": "^7.0.0", "npm_package_license": "MIT", "npm_package_name": "xunpai-design", "npm_package_private": "true", "npm_package_readmeFilename": "README.md", "npm_package_scripts_build": "node script/set config.json && npm run v-build && sh script/reverse.sh", "npm_package_scripts_dev": "cross-env NODE_ENV=development vite", "npm_package_scripts_prepared": "npm i && cd screenshot && npm i", "npm_package_scripts_publish": "sh script/publish.sh", "npm_package_scripts_publish_fast": "git add . && git commit -m 'build: auto publish' && sh script/publish.sh", "npm_package_scripts_serve": "npm run dev", "npm_package_scripts_short": "cd screenshot && npm run dev", "npm_package_scripts_v_build": "cross-env NODE_ENV=production && vite build", "npm_package_scripts_v_build_hard": "cross-env NODE_ENV=production vue-tsc --noEmit && vite build", "npm_package_version": "1.0.0", "NUMBER_OF_PROCESSORS": "12", "NVM_HOME": "C:\\Users\\1\\AppData\\Roaming\\nvm", "NVM_SYMLINK": "C:\\Program Files\\nodejs", "OneDrive": "C:\\Users\\1\\OneDrive", "OS": "Windows_NT", "Path": "C:\\Users\\1\\AppData\\Local\\Temp\\yarn--1705891388029-0.03220336153924719;E:\\jwkj\\erp-poster-design\\node_modules\\.bin;C:\\Users\\1\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;C:\\Users\\1\\AppData\\Local\\Yarn\\bin;C:\\Program Files\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\lib\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Users\\1\\AppData\\Local\\oh-my-posh;D:\\NVIDIA GPU Computing Toolkit\\bin;D:\\NVIDIA GPU Computing Toolkit\\libnvvp;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Users\\1\\AppData\\Roaming\\nvm;C:\\Program Files\\nodejs;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Docker\\Docker\\resources\\bin;%adb%;D:\\\u5FAE\u4FE1web\u5F00\u53D1\u8005\u5DE5\u5177\\dll;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2023.3.1\\;C:\\Users\\1\\AppData\\Local\\pnpm;C:\\Users\\1\\.cargo\\bin;C:\\Users\\1\\AppData\\Local\\Microsoft\\WindowsApps;D:\\Microsoft VS Code\\bin;C:\\Users\\1\\AppData\\Roaming\\nvm;C:\\Program Files\\nodejs;C:\\Users\\1\\AppData\\Local\\Programs\\oh-my-posh\\bin;C:\\Users\\1\\AppData\\Roaming\\Python\\Scripts;C:\\Users\\1\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\Roaming\\pypoetry\\venv\\Scripts\\poetry;", "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL", "PNPM_HOME": "C:\\Users\\1\\AppData\\Local\\pnpm", "POSH_AZURE_ENABLED": "False", "POSH_CURSOR_COLUMN": "1", "POSH_CURSOR_LINE": "30", "POSH_GIT_ENABLED": "False", "POSH_PATH": "C:\\Users\\1\\AppData\\Local\\oh-my-posh", "POSH_PID": "9344", "POSH_SHELL_VERSION": "5.1.22621.2506", "POSH_THEME": "C:\\Users\\1\\AppData\\Local\\oh-my-posh\\themes\\spaceship.omp.json", "POSH_THEMES_PATH": "C:\\Users\\1\\AppData\\Local\\oh-my-posh\\themes", "POWERLINE_COMMAND": "oh-my-posh", "PROCESSOR_ARCHITECTURE": "AMD64", "PROCESSOR_IDENTIFIER": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD", "PROCESSOR_LEVEL": "25", "PROCESSOR_REVISION": "6102", "ProgramData": "C:\\ProgramData", "ProgramFiles": "C:\\Program Files", "ProgramFiles(x86)": "C:\\Program Files (x86)", "ProgramW6432": "C:\\Program Files", "PROMPT": "$P$G", "PSModulePath": "C:\\Users\\1\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules", "PUBLIC": "C:\\Users\\Public", "SESSIONNAME": "Console", "SystemDrive": "C:", "SystemRoot": "C:\\Windows", "TEMP": "C:\\Users\\1\\AppData\\Local\\Temp", "TMP": "C:\\Users\\1\\AppData\\Local\\Temp", "USERDOMAIN": "DESKTOP-JLHGILQ", "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-JLHGILQ", "USERNAME": "hankqin", "USERPROFILE": "C:\\Users\\1", "windir": "C:\\Windows", "WSLENV": "WT_SESSION:WT_PROFILE_ID:", "WT_PROFILE_ID": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}", "WT_SESSION": "f26ae492-63ca-457d-8f1e-7d10d9a1e425", "YARN_WRAP_OUTPUT": "false" };
 const isDev = prefix$3.NODE_ENV === "development";
 var _config = {
   isDev,
@@ -1088,7 +1088,7 @@ var _config = {
   VERSION: version$3,
   APP_NAME: "\u9CB8\u82C7ERP",
   COPYRIGHT: "ShawnPhang - Palxp.cn",
-  API_URL: "https://api.erp.dev.jinweitec.com/admin",
+  API_URL: localStorage.getItem("API_URL") || "",
   SCREEN_URL: "#{SCREEN_URL}",
   IMG_URL: "https://store.palxp.com/",
   ICONFONT_URL: "//at.alicdn.com/t/font_2717063_ypy8vprc3b.css?display=swap",
@@ -1278,7 +1278,7 @@ const _sfc_main$W = defineComponent({
     }
   }
 });
-const _hoisted_1$T = ["onClick"];
+const _hoisted_1$S = ["onClick"];
 function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
   return withDirectives((openBlock(), createElementBlock("div", {
     id: "menu-bg",
@@ -1295,7 +1295,7 @@ function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
           key: index2,
           class: normalizeClass({ "menu-item": true, "disable-menu": _ctx.dCopyElement.length === 0 && item.type === "paste" }),
           onClick: withModifiers(($event) => _ctx.selectMenu(item.type), ["stop"])
-        }, toDisplayString(item.text), 11, _hoisted_1$T);
+        }, toDisplayString(item.text), 11, _hoisted_1$S);
       }), 128))
     ], 4)
   ], 512)), [
@@ -19622,12 +19622,12 @@ const _sfc_main$V = defineComponent({
     ...mapActions(["updateWidgetData", "updateWidgetMultiple", "pushHistory"])
   }
 });
-const _hoisted_1$S = {
+const _hoisted_1$R = {
   id: "empty",
   class: "moveable__remove-item zk-moveable-style"
 };
 function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$S);
+  return openBlock(), createElementBlock("div", _hoisted_1$R);
 }
 var Moveable = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$R], ["__scopeId", "data-v-7db0b7b3"]]);
 const getImage = (imgItem) => {
@@ -20845,7 +20845,7 @@ const fetch$1 = (url, params, type = "get", exheaders = {}, extra = {}) => {
   const token = localStorage.getItem("xp_token");
   const headerObject = {};
   token && (headerObject.authorization = token);
-  headerObject.CompanyId = "hg8fa286ab8f434d8f";
+  headerObject.CompanyId = localStorage.getItem("CompanyId") || "hg8fa286ab8f434d8f";
   if (type === "get") {
     return axios.get(url, {
       headers: Object.assign(headerObject, exheaders),
@@ -21145,7 +21145,7 @@ const _sfc_main$U = {
     }
   }
 };
-const _hoisted_1$R = ["id"];
+const _hoisted_1$Q = ["id"];
 const _hoisted_2$F = ["innerHTML"];
 const _hoisted_3$B = ["contenteditable", "innerHTML"];
 function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
@@ -21204,7 +21204,7 @@ function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
       onBlur: _cache[1] || (_cache[1] = ($event) => $options.writeDone($event)),
       innerHTML: $props.params.text
     }, null, 44, _hoisted_3$B)
-  ], 46, _hoisted_1$R)), [
+  ], 46, _hoisted_1$Q)), [
     [_directive_loading, $data.loading]
   ]);
 }
@@ -21454,7 +21454,7 @@ const _sfc_main$T = {
     }
   }
 };
-const _hoisted_1$Q = ["id"];
+const _hoisted_1$P = ["id"];
 const _hoisted_2$E = ["src"];
 const _hoisted_3$A = ["src"];
 const _hoisted_4$v = {
@@ -21510,7 +21510,7 @@ function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
         class: "drop__btn"
       }, "\u62D6\u5165", 4)
     ])) : createCommentVNode("", true)
-  ], 14, _hoisted_1$Q);
+  ], 14, _hoisted_1$P);
 }
 var wImage = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$P], ["__scopeId", "data-v-5736d8e5"]]);
 var __glob_0_27 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -21756,7 +21756,7 @@ const _sfc_main$S = {
     }
   }
 };
-const _hoisted_1$P = ["id"];
+const _hoisted_1$O = ["id"];
 function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     id: $props.params.uuid,
@@ -21770,7 +21770,7 @@ function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
       height: $props.params.height + "px",
       opacity: $props.params.opacity
     })
-  }, null, 12, _hoisted_1$P);
+  }, null, 12, _hoisted_1$O);
 }
 var wSvg = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$O], ["__scopeId", "data-v-29e26ff8"]]);
 var __glob_0_31 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -23714,12 +23714,12 @@ const _sfc_main$Q = defineComponent({
     };
   }
 });
-const _hoisted_1$O = {
+const _hoisted_1$N = {
   ref: "qrCodeDom",
   class: "qrcode__wrap"
 };
 function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$O, null, 512);
+  return openBlock(), createElementBlock("div", _hoisted_1$N, null, 512);
 }
 var index$4 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$M]]);
 var wQrcode_vue_vue_type_style_index_0_scoped_true_lang = "";
@@ -23815,7 +23815,7 @@ const _sfc_main$P = {
     }
   }
 };
-const _hoisted_1$N = ["id"];
+const _hoisted_1$M = ["id"];
 function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_QRCode = resolveComponent("QRCode");
   return openBlock(), createElementBlock("div", {
@@ -23838,7 +23838,7 @@ function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
       image: $props.params.url,
       value: $props.params.value
     }), null, 16, ["width", "height", "image", "value"])
-  ], 14, _hoisted_1$N);
+  ], 14, _hoisted_1$M);
 }
 var wQrcode = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$L], ["__scopeId", "data-v-8eaf4d56"]]);
 var __glob_0_29 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -24029,7 +24029,7 @@ const _sfc_main$O = defineComponent({
     }
   }
 });
-const _hoisted_1$M = ["id", "data-type", "data-uuid"];
+const _hoisted_1$L = ["id", "data-type", "data-uuid"];
 function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
   var _a2, _b, _c, _d, _e, _f, _g;
   return openBlock(), createElementBlock("div", {
@@ -24096,7 +24096,7 @@ function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
             _: 2
           }, 1032, ["id", "class", "data-title", "params", "parent", "data-type", "data-uuid"]);
         }), 128))
-      ], 44, _hoisted_1$M)
+      ], 44, _hoisted_1$L)
     ], 4)
   ], 4);
 }
@@ -24372,7 +24372,7 @@ const _sfc_main$N = {
   }
 };
 const _withScopeId$n = (n) => (pushScopeId("data-v-b25ad5c0"), n = n(), popScopeId(), n);
-const _hoisted_1$L = { id: "zoom-control" };
+const _hoisted_1$K = { id: "zoom-control" };
 const _hoisted_2$D = { class: "zoom-selecter" };
 const _hoisted_3$z = ["onClick"];
 const _hoisted_4$u = {
@@ -24392,7 +24392,7 @@ const _hoisted_9$7 = [
   _hoisted_8$b
 ];
 function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$L, [
+  return openBlock(), createElementBlock("div", _hoisted_1$K, [
     withDirectives(createElementVNode("ul", _hoisted_2$D, [
       (openBlock(true), createElementBlock(Fragment, null, renderList($data.zoomList, (item, index2) => {
         return openBlock(), createElementBlock("li", {
@@ -25846,7 +25846,7 @@ const _sfc_main$L = defineComponent({
   }
 });
 const _withScopeId$m = (n) => (pushScopeId("data-v-11fbf335"), n = n(), popScopeId(), n);
-const _hoisted_1$K = /* @__PURE__ */ _withScopeId$m(() => /* @__PURE__ */ createElementVNode("i", { class: "el-icon-upload el-icon--right" }, null, -1));
+const _hoisted_1$J = /* @__PURE__ */ _withScopeId$m(() => /* @__PURE__ */ createElementVNode("i", { class: "el-icon-upload el-icon--right" }, null, -1));
 function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_el_button = resolveComponent("el-button");
   const _component_el_upload = resolveComponent("el-upload");
@@ -25862,7 +25862,7 @@ function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
         createVNode(_component_el_button, { size: "small" }, {
           default: withCtx(() => [
             createTextVNode("\u4E0A\u4F20\u56FE\u7247"),
-            _hoisted_1$K
+            _hoisted_1$J
           ]),
           _: 1
         })
@@ -27995,7 +27995,7 @@ const _sfc_main$K = defineComponent({
   }
 });
 const _withScopeId$l = (n) => (pushScopeId("data-v-0e02acde"), n = n(), popScopeId(), n);
-const _hoisted_1$J = {
+const _hoisted_1$I = {
   key: 0,
   class: "options-container"
 };
@@ -28029,7 +28029,7 @@ const _hoisted_22 = ["src"];
 const _hoisted_23 = ["href", "download"];
 function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock(Fragment, null, [
-    _ctx.hasHeader ? (openBlock(), createElementBlock("div", _hoisted_1$J, [
+    _ctx.hasHeader ? (openBlock(), createElementBlock("div", _hoisted_1$I, [
       renderSlot(_ctx.$slots, "default", {}, () => [
         createElementVNode("div", _hoisted_2$C, [
           createElementVNode("div", _hoisted_3$y, [
@@ -28189,10 +28189,10 @@ const _sfc_main$J = {
     }
   }
 };
-const _hoisted_1$I = { id: "number-slider" };
+const _hoisted_1$H = { id: "number-slider" };
 function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_el_slider = resolveComponent("el-slider");
-  return openBlock(), createElementBlock("div", _hoisted_1$I, [
+  return openBlock(), createElementBlock("div", _hoisted_1$H, [
     createElementVNode("span", {
       style: normalizeStyle({ width: $props.labelWidth }),
       class: "label"
@@ -28264,7 +28264,7 @@ const _sfc_main$I = defineComponent({
   }
 });
 const _withScopeId$k = (n) => (pushScopeId("data-v-3127cd30"), n = n(), popScopeId(), n);
-const _hoisted_1$H = { class: "tool-wrap" };
+const _hoisted_1$G = { class: "tool-wrap" };
 const _hoisted_2$B = /* @__PURE__ */ _withScopeId$k(() => /* @__PURE__ */ createElementVNode("b", null, "\u4FEE\u8865\u753B\u7B14", -1));
 const _hoisted_3$x = /* @__PURE__ */ _withScopeId$k(() => /* @__PURE__ */ createElementVNode("i", { class: "icon sd-xiubu" }, null, -1));
 const _hoisted_4$s = /* @__PURE__ */ _withScopeId$k(() => /* @__PURE__ */ createElementVNode("b", null, "\u64E6\u9664\u753B\u7B14", -1));
@@ -28285,7 +28285,7 @@ function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
       onClose: _cache[4] || (_cache[4] = ($event) => _ctx.showMatting = false)
     }, {
       header: withCtx(() => [
-        createElementVNode("div", _hoisted_1$H, [
+        createElementVNode("div", _hoisted_1$G, [
           createVNode(_component_el_button, {
             type: "primary",
             plain: "",
@@ -28460,7 +28460,7 @@ const _sfc_main$H = defineComponent({
     };
   }
 });
-const _hoisted_1$G = { class: "content" };
+const _hoisted_1$F = { class: "content" };
 const _hoisted_2$A = ["src"];
 const _hoisted_3$w = ["src"];
 const _hoisted_4$r = { class: "dialog-footer" };
@@ -28519,7 +28519,7 @@ function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
       ])
     ]),
     default: withCtx(() => [
-      createElementVNode("div", _hoisted_1$G, [
+      createElementVNode("div", _hoisted_1$F, [
         withDirectives((openBlock(), createElementBlock("div", {
           style: normalizeStyle({ width: _ctx.offsetWidth ? _ctx.offsetWidth + "px" : "100%" }),
           class: "scan-effect transparent-bg"
@@ -36247,9 +36247,9 @@ const _sfc_main$G = defineComponent({
     ...mapActions(["selectWidget", "updateZoom"])
   }
 });
-const _hoisted_1$F = { id: "cover-wrap" };
+const _hoisted_1$E = { id: "cover-wrap" };
 function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$F);
+  return openBlock(), createElementBlock("div", _hoisted_1$E);
 }
 var SaveImage = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$C], ["__scopeId", "data-v-33130a74"]]);
 const nowVersion = "2";
@@ -36370,7 +36370,7 @@ const _sfc_main$F = defineComponent({
     }
   }
 });
-const _hoisted_1$E = {
+const _hoisted_1$D = {
   class: "w-full flex items-center",
   style: { "border-bottom": "1px solid #ccc", "border-top": "1px solid #ccc" }
 };
@@ -36380,7 +36380,7 @@ function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_el_input = resolveComponent("el-input");
   const _component_el_button = resolveComponent("el-button");
   const _component_SaveImage = resolveComponent("SaveImage");
-  return openBlock(), createElementBlock("div", _hoisted_1$E, [
+  return openBlock(), createElementBlock("div", _hoisted_1$D, [
     createElementVNode("div", _hoisted_2$z, [
       _ctx.tempid && !_ctx.noMenu ? (openBlock(), createBlock(_component_el_input, {
         key: 0,
@@ -36472,7 +36472,7 @@ const _sfc_main$E = defineComponent({
     return { cancel };
   }
 });
-const _hoisted_1$D = {
+const _hoisted_1$C = {
   key: 0,
   class: "mask"
 };
@@ -36481,7 +36481,7 @@ const _hoisted_3$u = { class: "text" };
 const _hoisted_4$q = { class: "text info" };
 function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_el_progress = resolveComponent("el-progress");
-  return _ctx.percent ? (openBlock(), createElementBlock("div", _hoisted_1$D, [
+  return _ctx.percent ? (openBlock(), createElementBlock("div", _hoisted_1$C, [
     createElementVNode("div", _hoisted_2$y, [
       createElementVNode("div", _hoisted_3$u, toDisplayString(_ctx.text), 1),
       createVNode(_component_el_progress, {
@@ -36613,7 +36613,7 @@ const _sfc_main$D = defineComponent({
   }
 });
 const _withScopeId$j = (n) => (pushScopeId("data-v-bb049eb8"), n = n(), popScopeId(), n);
-const _hoisted_1$C = { class: "wrap" };
+const _hoisted_1$B = { class: "wrap" };
 const _hoisted_2$x = { class: "color__box" };
 const _hoisted_3$t = ["onClick"];
 const _hoisted_4$p = {
@@ -36630,7 +36630,7 @@ function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_el_image = resolveComponent("el-image");
   const _component_imageTip = resolveComponent("imageTip");
   const _directive_infinite_scroll = resolveDirective("infinite-scroll");
-  return openBlock(), createElementBlock("div", _hoisted_1$C, [
+  return openBlock(), createElementBlock("div", _hoisted_1$B, [
     createElementVNode("div", _hoisted_2$x, [
       (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.colors, (c) => {
         return openBlock(), createElementBlock("div", {
@@ -36921,7 +36921,7 @@ const _sfc_main$C = defineComponent({
   }
 });
 const _withScopeId$i = (n) => (pushScopeId("data-v-8dfd48b2"), n = n(), popScopeId(), n);
-const _hoisted_1$B = { class: "wrap" };
+const _hoisted_1$A = { class: "wrap" };
 const _hoisted_2$w = { class: "list-wrap" };
 const _hoisted_3$s = ["onMousedown", "onClick", "onDragstart"];
 const _hoisted_4$o = {
@@ -36939,7 +36939,7 @@ function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_classHeader = resolveComponent("classHeader");
   const _component_el_space = resolveComponent("el-space");
   const _directive_infinite_scroll = resolveDirective("infinite-scroll");
-  return openBlock(), createElementBlock("div", _hoisted_1$B, [
+  return openBlock(), createElementBlock("div", _hoisted_1$A, [
     withDirectives(createVNode(_component_classHeader, {
       types: _ctx.types,
       onSelect: _ctx.selectTypes
@@ -37168,7 +37168,7 @@ const _sfc_main$B = defineComponent({
   }
 });
 const _withScopeId$h = (n) => (pushScopeId("data-v-3a0152a9"), n = n(), popScopeId(), n);
-const _hoisted_1$A = { class: "wrap" };
+const _hoisted_1$z = { class: "wrap" };
 const _hoisted_2$v = /* @__PURE__ */ _withScopeId$h(() => /* @__PURE__ */ createElementVNode("div", { style: { "height": "0.5rem" } }, null, -1));
 const _hoisted_3$r = { class: "list-wrap" };
 const _hoisted_4$n = ["onMousedown", "onClick", "onDragstart"];
@@ -37187,7 +37187,7 @@ function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_classHeader = resolveComponent("classHeader");
   const _component_el_space = resolveComponent("el-space");
   const _directive_infinite_scroll = resolveDirective("infinite-scroll");
-  return openBlock(), createElementBlock("div", _hoisted_1$A, [
+  return openBlock(), createElementBlock("div", _hoisted_1$z, [
     createVNode(_component_search_header, {
       modelValue: _ctx.searchKeyword,
       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.searchKeyword = $event),
@@ -37371,7 +37371,7 @@ const _sfc_main$A = {
   }
 };
 const _withScopeId$g = (n) => (pushScopeId("data-v-75d052a4"), n = n(), popScopeId(), n);
-const _hoisted_1$z = { class: "wrap" };
+const _hoisted_1$y = { class: "wrap" };
 const _hoisted_2$u = /* @__PURE__ */ _withScopeId$g(() => /* @__PURE__ */ createElementVNode("div", { style: { "height": "0.5rem" } }, null, -1));
 const _hoisted_3$q = { key: 0 };
 const _hoisted_4$m = /* @__PURE__ */ _withScopeId$g(() => /* @__PURE__ */ createElementVNode("br", null, null, -1));
@@ -37382,7 +37382,7 @@ function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_search_header = resolveComponent("search-header");
   const _component_photo_list = resolveComponent("photo-list");
   const _component_classHeader = resolveComponent("classHeader");
-  return openBlock(), createElementBlock("div", _hoisted_1$z, [
+  return openBlock(), createElementBlock("div", _hoisted_1$y, [
     createVNode(_component_search_header, {
       type: "none",
       onChange: $setup.searchChange
@@ -37476,12 +37476,12 @@ const _sfc_main$z = defineComponent({
   }
 });
 const _withScopeId$f = (n) => (pushScopeId("data-v-6f8d40de"), n = n(), popScopeId(), n);
-const _hoisted_1$y = { class: "search__wrap" };
+const _hoisted_1$x = { class: "search__wrap" };
 const _hoisted_2$t = /* @__PURE__ */ _withScopeId$f(() => /* @__PURE__ */ createElementVNode("i", { class: "iconfont icon-search" }, null, -1));
 function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_el_button = resolveComponent("el-button");
   const _component_el_input = resolveComponent("el-input");
-  return openBlock(), createElementBlock("div", _hoisted_1$y, [
+  return openBlock(), createElementBlock("div", _hoisted_1$x, [
     createVNode(_component_el_input, {
       modelValue: _ctx.searchValue,
       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.searchValue = $event),
@@ -37548,13 +37548,13 @@ const _sfc_main$y = defineComponent({
   }
 });
 const _withScopeId$e = (n) => (pushScopeId("data-v-9746184a"), n = n(), popScopeId(), n);
-const _hoisted_1$x = { class: "wrap" };
+const _hoisted_1$w = { class: "wrap" };
 const _hoisted_2$s = /* @__PURE__ */ _withScopeId$e(() => /* @__PURE__ */ createElementVNode("i", { class: "iconfont icon-more" }, null, -1));
 function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_el_dropdown_item = resolveComponent("el-dropdown-item");
   const _component_el_dropdown_menu = resolveComponent("el-dropdown-menu");
   const _component_el_dropdown = resolveComponent("el-dropdown");
-  return openBlock(), createElementBlock("div", _hoisted_1$x, [
+  return openBlock(), createElementBlock("div", _hoisted_1$w, [
     renderSlot(_ctx.$slots, "default", {}, void 0, true),
     createElementVNode("div", {
       class: "showMask",
@@ -37660,7 +37660,7 @@ const _sfc_main$x = defineComponent({
     };
   }
 });
-const _hoisted_1$w = ["onClick"];
+const _hoisted_1$v = ["onClick"];
 const _hoisted_2$r = {
   key: 0,
   class: "list__mask"
@@ -37710,7 +37710,7 @@ function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
           loading: "lazy",
           onError: ($event) => _ctx.loadError(item)
         }, null, 8, ["src", "onError"]))
-      ], 12, _hoisted_1$w);
+      ], 12, _hoisted_1$v);
     }), 128))
   ], 4);
 }
@@ -37825,7 +37825,7 @@ const _sfc_main$w = defineComponent({
   }
 });
 const _withScopeId$d = (n) => (pushScopeId("data-v-141b759b"), n = n(), popScopeId(), n);
-const _hoisted_1$v = { class: "wrap" };
+const _hoisted_1$u = { class: "wrap" };
 const _hoisted_2$q = {
   ref: "listRef",
   class: "infinite-list",
@@ -37838,7 +37838,7 @@ function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_search_header = resolveComponent("search-header");
   const _component_img_water_fall = resolveComponent("img-water-fall");
   const _directive_infinite_scroll = resolveDirective("infinite-scroll");
-  return openBlock(), createElementBlock("div", _hoisted_1$v, [
+  return openBlock(), createElementBlock("div", _hoisted_1$u, [
     createVNode(_component_search_header, {
       modelValue: _ctx.searchKeyword,
       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.searchKeyword = $event),
@@ -37908,7 +37908,7 @@ const _sfc_main$v = {
     ...mapActions(["addWidget"])
   }
 };
-const _hoisted_1$u = {
+const _hoisted_1$t = {
   id: "text-list-wrap",
   style: { "margin-top": "0.5rem" }
 };
@@ -37917,7 +37917,7 @@ const _hoisted_3$n = ["onClick", "onDragstart"];
 const _hoisted_4$k = { class: "other-text-wrap" };
 function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_comp_list_wrap = resolveComponent("comp-list-wrap");
-  return openBlock(), createElementBlock("div", _hoisted_1$u, [
+  return openBlock(), createElementBlock("div", _hoisted_1$t, [
     createElementVNode("ul", _hoisted_2$p, [
       (openBlock(true), createElementBlock(Fragment, null, renderList($data.basicTextList, (item, index2) => {
         return openBlock(), createElementBlock("div", {
@@ -37981,7 +37981,7 @@ const _sfc_main$u = {
   }
 };
 const _withScopeId$c = (n) => (pushScopeId("data-v-401c999e"), n = n(), popScopeId(), n);
-const _hoisted_1$t = { class: "wrap" };
+const _hoisted_1$s = { class: "wrap" };
 const _hoisted_2$o = /* @__PURE__ */ _withScopeId$c(() => /* @__PURE__ */ createElementVNode("div", { class: "header" }, "\u7EC4\u4EF6", -1));
 const _hoisted_3$m = /* @__PURE__ */ _withScopeId$c(() => /* @__PURE__ */ createElementVNode("i", { class: "icon sd-w-qrcode" }, null, -1));
 const _hoisted_4$j = /* @__PURE__ */ _withScopeId$c(() => /* @__PURE__ */ createElementVNode("div", { class: "text" }, [
@@ -38005,7 +38005,7 @@ const _hoisted_9$5 = [
 ];
 function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_imageCutout = resolveComponent("imageCutout");
-  return openBlock(), createElementBlock("div", _hoisted_1$t, [
+  return openBlock(), createElementBlock("div", _hoisted_1$s, [
     _hoisted_2$o,
     createElementVNode("div", {
       class: "item",
@@ -38181,7 +38181,7 @@ const _sfc_main$t = defineComponent({
   }
 });
 const _withScopeId$b = (n) => (pushScopeId("data-v-2589a4d1"), n = n(), popScopeId(), n);
-const _hoisted_1$s = { class: "wrap" };
+const _hoisted_1$r = { class: "wrap" };
 const _hoisted_2$n = /* @__PURE__ */ _withScopeId$b(() => /* @__PURE__ */ createElementVNode("i", { class: "iconfont icon-upload" }, null, -1));
 const _hoisted_3$l = { style: { "margin": "1rem", "height": "100vh" } };
 const _hoisted_4$i = { class: "wrap" };
@@ -38200,7 +38200,7 @@ function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_photo_list = resolveComponent("photo-list");
   const _component_img_water_fall = resolveComponent("img-water-fall");
   const _directive_infinite_scroll = resolveDirective("infinite-scroll");
-  return openBlock(), createElementBlock("div", _hoisted_1$s, [
+  return openBlock(), createElementBlock("div", _hoisted_1$r, [
     createVNode(_component_el_tabs, {
       modelValue: _ctx.tabActiveName,
       "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.tabActiveName = $event),
@@ -38339,13 +38339,13 @@ const _sfc_main$s = {
     ...mapActions(["updateScreen"])
   }
 };
-const _hoisted_1$r = { id: "widget-panel" };
+const _hoisted_1$q = { id: "widget-panel" };
 const _hoisted_2$m = { class: "widget-classify" };
 const _hoisted_3$k = { class: "classify-wrap" };
 const _hoisted_4$h = ["onClick"];
 const _hoisted_5$f = { class: "widget-wrap" };
 function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$r, [
+  return openBlock(), createElementBlock("div", _hoisted_1$q, [
     withDirectives(createElementVNode("div", _hoisted_2$m, [
       createElementVNode("ul", _hoisted_3$k, [
         (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.widgetClassifyList, (item, index2) => {
@@ -41190,7 +41190,7 @@ const _sfc_main$r = defineComponent({
     }
   }
 });
-const _hoisted_1$q = { class: "widget-list" };
+const _hoisted_1$p = { class: "widget-list" };
 const _hoisted_2$l = ["onClick", "onMouseover"];
 const _hoisted_3$j = { class: "second-layer" };
 const _hoisted_4$g = ["src"];
@@ -41199,7 +41199,7 @@ const _hoisted_6$a = ["data-type", "data-uuid"];
 const _hoisted_7$7 = ["onClick"];
 function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_draggable = resolveComponent("draggable");
-  return openBlock(), createElementBlock("ul", _hoisted_1$q, [
+  return openBlock(), createElementBlock("ul", _hoisted_1$p, [
     createVNode(_component_draggable, mergeProps({
       modelValue: _ctx.widgets,
       "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => _ctx.widgets = $event),
@@ -41283,7 +41283,7 @@ const _sfc_main$q = {
     }
   }
 };
-const _hoisted_1$p = { class: "icon-item-select" };
+const _hoisted_1$o = { class: "icon-item-select" };
 const _hoisted_2$k = {
   key: 0,
   class: "label"
@@ -41292,7 +41292,7 @@ const _hoisted_3$i = { class: "list btn__bar flex" };
 const _hoisted_4$f = ["onClick"];
 function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_el_tooltip = resolveComponent("el-tooltip");
-  return openBlock(), createElementBlock("div", _hoisted_1$p, [
+  return openBlock(), createElementBlock("div", _hoisted_1$o, [
     $props.label ? (openBlock(), createElementBlock("span", _hoisted_2$k, toDisplayString($props.label), 1)) : createCommentVNode("", true),
     createElementVNode("ul", _hoisted_3$i, [
       (openBlock(true), createElementBlock(Fragment, null, renderList($props.data, (item, index2) => {
@@ -41439,7 +41439,7 @@ const _sfc_main$p = {
     }
   }
 };
-const _hoisted_1$o = { key: 0 };
+const _hoisted_1$n = { key: 0 };
 const _hoisted_2$j = { class: "prepend" };
 const _hoisted_3$h = ["value", "readonly"];
 const _hoisted_4$e = {
@@ -41449,7 +41449,7 @@ const _hoisted_4$e = {
 const _hoisted_5$d = ["value", "readonly"];
 const _hoisted_6$9 = { style: { "color": "rgba(0, 0, 0, 0.45)" } };
 function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
-  return $props.type === "simple" ? (openBlock(), createElementBlock("div", _hoisted_1$o, [
+  return $props.type === "simple" ? (openBlock(), createElementBlock("div", _hoisted_1$n, [
     createElementVNode("span", _hoisted_2$j, toDisplayString($props.prepend), 1),
     createElementVNode("input", {
       class: normalizeClass({ "small-input": true, disable: !$props.editable }),
@@ -41586,7 +41586,7 @@ const _sfc_main$o = {
   }
 };
 const _withScopeId$a = (n) => (pushScopeId("data-v-c85f74f2"), n = n(), popScopeId(), n);
-const _hoisted_1$n = { id: "w-group-style" };
+const _hoisted_1$m = { id: "w-group-style" };
 const _hoisted_2$i = { class: "line-layout" };
 const _hoisted_3$g = /* @__PURE__ */ _withScopeId$a(() => /* @__PURE__ */ createElementVNode("br", null, null, -1));
 function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
@@ -41596,7 +41596,7 @@ function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_number_slider = resolveComponent("number-slider");
   const _component_icon_item_select = resolveComponent("icon-item-select");
   const _component_el_collapse = resolveComponent("el-collapse");
-  return openBlock(), createElementBlock("div", _hoisted_1$n, [
+  return openBlock(), createElementBlock("div", _hoisted_1$m, [
     createVNode(_component_el_collapse, {
       modelValue: $data.activeNames,
       "onUpdate:modelValue": _cache[11] || (_cache[11] = ($event) => $data.activeNames = $event)
@@ -41767,7 +41767,7 @@ const _sfc_main$n = defineComponent({
     };
   }
 });
-const _hoisted_1$m = { class: "pic__box" };
+const _hoisted_1$l = { class: "pic__box" };
 const _hoisted_2$h = { class: "pic__box" };
 function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_photo_list = resolveComponent("photo-list");
@@ -41790,7 +41790,7 @@ function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
         default: withCtx(() => [
           createVNode(_component_el_tab_pane, { label: "\u6211\u7684\u7D20\u6750" }, {
             default: withCtx(() => [
-              createElementVNode("div", _hoisted_1$m, [
+              createElementVNode("div", _hoisted_1$l, [
                 createVNode(_component_photo_list, {
                   isDone: _ctx.isDone,
                   listData: _ctx.imgList,
@@ -42002,7 +42002,7 @@ const _sfc_main$m = {
   }
 };
 const _withScopeId$9 = (n) => (pushScopeId("data-v-df3e1d04"), n = n(), popScopeId(), n);
-const _hoisted_1$l = { id: "w-image-style" };
+const _hoisted_1$k = { id: "w-image-style" };
 const _hoisted_2$g = { class: "line-layout" };
 const _hoisted_3$f = { class: "options" };
 const _hoisted_4$d = /* @__PURE__ */ _withScopeId$9(() => /* @__PURE__ */ createElementVNode("i", { class: "icon sd-caijian" }, null, -1));
@@ -42020,7 +42020,7 @@ function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_inner_tool_bar = resolveComponent("inner-tool-bar");
   const _component_picBox = resolveComponent("picBox");
   const _component_imageCutout = resolveComponent("imageCutout");
-  return openBlock(), createElementBlock("div", _hoisted_1$l, [
+  return openBlock(), createElementBlock("div", _hoisted_1$k, [
     createVNode(_component_el_collapse, {
       modelValue: $data.activeNames,
       "onUpdate:modelValue": _cache[18] || (_cache[18] = ($event) => $data.activeNames = $event)
@@ -42274,14 +42274,14 @@ const _sfc_main$l = {
     }
   }
 };
-const _hoisted_1$k = { id: "text-input-area" };
+const _hoisted_1$j = { id: "text-input-area" };
 const _hoisted_2$f = {
   key: 0,
   class: "input-label"
 };
 const _hoisted_3$e = ["maxlength", "value", "readonly"];
 function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$k, [
+  return openBlock(), createElementBlock("div", _hoisted_1$j, [
     $props.label ? (openBlock(), createElementBlock("p", _hoisted_2$f, toDisplayString($props.label), 1)) : createCommentVNode("", true),
     createElementVNode("div", {
       class: normalizeClass({ "input-wrap": true, active: $data.inputBorder })
@@ -42700,7 +42700,7 @@ const _sfc_main$k = defineComponent({
     };
   }
 });
-const _hoisted_1$j = {
+const _hoisted_1$i = {
   key: 0,
   class: "input-label"
 };
@@ -42712,7 +42712,7 @@ function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     class: "color__select",
     style: normalizeStyle({ width: _ctx.width })
   }, [
-    _ctx.label ? (openBlock(), createElementBlock("p", _hoisted_1$j, toDisplayString(_ctx.label), 1)) : createCommentVNode("", true),
+    _ctx.label ? (openBlock(), createElementBlock("p", _hoisted_1$i, toDisplayString(_ctx.label), 1)) : createCommentVNode("", true),
     createElementVNode("div", _hoisted_2$e, [
       createVNode(_component_el_popover, {
         placement: "left-end",
@@ -42888,7 +42888,7 @@ const _sfc_main$j = {
   }
 };
 const _withScopeId$8 = (n) => (pushScopeId("data-v-1fb0f52c"), n = n(), popScopeId(), n);
-const _hoisted_1$i = { id: "w-image-style" };
+const _hoisted_1$h = { id: "w-image-style" };
 const _hoisted_2$d = { class: "line-layout" };
 const _hoisted_3$d = {
   style: { "flex-wrap": "nowrap" },
@@ -42917,7 +42917,7 @@ function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_uploader = resolveComponent("uploader");
   const _component_icon_item_select = resolveComponent("icon-item-select");
   const _component_el_collapse = resolveComponent("el-collapse");
-  return openBlock(), createElementBlock("div", _hoisted_1$i, [
+  return openBlock(), createElementBlock("div", _hoisted_1$h, [
     createVNode(_component_el_collapse, {
       modelValue: $data.activeNames,
       "onUpdate:modelValue": _cache[21] || (_cache[21] = ($event) => $data.activeNames = $event)
@@ -43199,7 +43199,7 @@ const _sfc_main$i = {
   }
 };
 const _withScopeId$7 = (n) => (pushScopeId("data-v-a6306dae"), n = n(), popScopeId(), n);
-const _hoisted_1$h = { id: "w-image-style" };
+const _hoisted_1$g = { id: "w-image-style" };
 const _hoisted_2$c = { class: "line-layout" };
 const _hoisted_3$c = /* @__PURE__ */ _withScopeId$7(() => /* @__PURE__ */ createElementVNode("br", null, null, -1));
 const _hoisted_4$b = { class: "slide-wrap" };
@@ -43212,7 +43212,7 @@ function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_number_slider = resolveComponent("number-slider");
   const _component_icon_item_select = resolveComponent("icon-item-select");
   const _component_el_collapse = resolveComponent("el-collapse");
-  return openBlock(), createElementBlock("div", _hoisted_1$h, [
+  return openBlock(), createElementBlock("div", _hoisted_1$g, [
     createVNode(_component_el_collapse, {
       modelValue: $data.activeNames,
       "onUpdate:modelValue": _cache[11] || (_cache[11] = ($event) => $data.activeNames = $event)
@@ -43518,7 +43518,7 @@ const _sfc_main$h = {
   }
 };
 const _withScopeId$6 = (n) => (pushScopeId("data-v-23aae044"), n = n(), popScopeId(), n);
-const _hoisted_1$g = {
+const _hoisted_1$f = {
   key: 0,
   class: "input-label"
 };
@@ -43549,7 +43549,7 @@ function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     class: "value-select",
     style: normalizeStyle({ width: $props.inputWidth })
   }, [
-    $props.label ? (openBlock(), createElementBlock("p", _hoisted_1$g, toDisplayString($props.label), 1)) : createCommentVNode("", true),
+    $props.label ? (openBlock(), createElementBlock("p", _hoisted_1$f, toDisplayString($props.label), 1)) : createCommentVNode("", true),
     createVNode(_component_el_popover, {
       placement: "bottom-end",
       trigger: "click",
@@ -43768,7 +43768,7 @@ const _sfc_main$g = defineComponent({
   methods: {}
 });
 const _withScopeId$5 = (n) => (pushScopeId("data-v-746de162"), n = n(), popScopeId(), n);
-const _hoisted_1$f = { class: "card-header" };
+const _hoisted_1$e = { class: "card-header" };
 const _hoisted_2$a = /* @__PURE__ */ _withScopeId$5(() => /* @__PURE__ */ createElementVNode("span", { class: "title" }, "\u6587\u5B57\u7279\u6548", -1));
 const _hoisted_3$a = { class: "select__box" };
 const _hoisted_4$9 = ["onClick"];
@@ -43818,7 +43818,7 @@ function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     "body-style": { padding: "20px" }
   }, {
     header: withCtx(() => [
-      createElementVNode("div", _hoisted_1$f, [
+      createElementVNode("div", _hoisted_1$e, [
         createElementVNode("div", {
           style: normalizeStyle({
             position: "relative",
@@ -44231,7 +44231,7 @@ const _sfc_main$f = {
     }
   }
 };
-const _hoisted_1$e = {
+const _hoisted_1$d = {
   ref: "wTextarea",
   class: "w-textarea"
 };
@@ -44243,7 +44243,7 @@ const _hoisted_3$9 = {
 const _hoisted_4$8 = ["onClick"];
 const _hoisted_5$7 = { class: "w-textarea_dialog" };
 function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$e, [
+  return openBlock(), createElementBlock("div", _hoisted_1$d, [
     createElementVNode("div", {
       id: $data.contentId,
       ref: "wTextareaContent",
@@ -44462,7 +44462,7 @@ const _sfc_main$e = {
     }
   }
 };
-const _hoisted_1$d = { id: "w-text-style" };
+const _hoisted_1$c = { id: "w-text-style" };
 const _hoisted_2$8 = { class: "line-layout" };
 const _hoisted_3$8 = { class: "line-layout style-item" };
 const _hoisted_4$7 = { class: "style-item slide-wrap" };
@@ -44486,7 +44486,7 @@ function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_effect_wrap = resolveComponent("effect-wrap");
   const _component_text_area = resolveComponent("text-area");
   const _component_el_collapse = resolveComponent("el-collapse");
-  return openBlock(), createElementBlock("div", _hoisted_1$d, [
+  return openBlock(), createElementBlock("div", _hoisted_1$c, [
     createVNode(_component_el_collapse, {
       modelValue: $data.activeNames,
       "onUpdate:modelValue": _cache[20] || (_cache[20] = ($event) => $data.activeNames = $event)
@@ -44674,7 +44674,7 @@ const _sfc_main$d = defineComponent({
     }
   }
 });
-const _hoisted_1$c = { id: "style-panel" };
+const _hoisted_1$b = { id: "style-panel" };
 const _hoisted_2$7 = { class: "style-tab" };
 const _hoisted_3$7 = { class: "style-wrap" };
 const _hoisted_4$6 = { style: { "padding": "2rem 0" } };
@@ -44683,7 +44683,7 @@ function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_el_button = resolveComponent("el-button");
   const _component_icon_item_select = resolveComponent("icon-item-select");
   const _component_layer_list = resolveComponent("layer-list");
-  return openBlock(), createElementBlock("div", _hoisted_1$c, [
+  return openBlock(), createElementBlock("div", _hoisted_1$b, [
     createElementVNode("div", _hoisted_2$7, [
       createElementVNode("span", {
         class: normalizeClass(["tab", { "active-tab": _ctx.activeTab === 0 }]),
@@ -44740,261 +44740,6 @@ var __glob_0_4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProp
   "default": stylePanel
 }, Symbol.toStringTag, { value: "Module" }));
 var elDialog = "";
-var SelectTemplate_vue_vue_type_style_index_0_scoped_true_lang = "";
-const beforeUnload = function(e2) {
-  const confirmationMessage = "\u7CFB\u7EDF\u4E0D\u4F1A\u81EA\u52A8\u4FDD\u5B58\u60A8\u672A\u4FEE\u6539\u7684\u5185\u5BB9";
-  (e2 || window.event).returnValue = confirmationMessage;
-  return confirmationMessage;
-};
-const _sfc_main$c = defineComponent({
-  components: {
-    RightClickMenu,
-    Moveable,
-    headerOptions,
-    ProgressLoading,
-    designBoard,
-    zoomControl,
-    lineGuides,
-    imageCutout: index$3,
-    widgetPanel,
-    stylePanel,
-    ElDialog
-  },
-  mixins: [shortcuts],
-  setup(props2) {
-    !_config.isDev && window.addEventListener("beforeunload", beforeUnload);
-    const state = reactive$1({
-      style: {
-        left: "0px"
-      },
-      downloadPercent: 0,
-      downloadText: "",
-      isContinue: true,
-      APP_NAME: _config.APP_NAME,
-      showLineGuides: false,
-      visible: false
-    });
-    onMounted(() => {
-      setTimeout(() => {
-        state.visible = true;
-      }, 3e3);
-    });
-    function jump2home() {
-      window.open("https://xp.palxp.cn/");
-    }
-    return {
-      ...toRefs(state),
-      jump2home
-    };
-  },
-  computed: {
-    ...mapGetters(["dActiveElement", "dHistoryParams", "dCopyElement", "dPage", "dZoom"]),
-    undoable() {
-      return !(this.dHistoryParams.index === -1 || this.dHistoryParams === 0 && this.dHistoryParams.length === this.dHistoryParams.maxLength);
-    },
-    redoable() {
-      return !(this.dHistoryParams.index === this.dHistoryParams.length - 1);
-    },
-    templateVisible() {
-      return this.$store.state.templateVisible;
-    },
-    templateId() {
-      return this.$store.state.templateId;
-    },
-    noMenu() {
-      return this.$store.state.templateMode === 1;
-    }
-  },
-  watch: {
-    templateVisible(n) {
-      if (n) {
-        this.initGroupJson(JSON.stringify(wGroup.setting));
-        window.addEventListener("scroll", this.fixTopBarScroll);
-        document.addEventListener("keydown", this.handleKeydowm, false);
-        document.addEventListener("keyup", this.handleKeyup, false);
-        this.loadData();
-      } else {
-        window.removeEventListener("scroll", this.fixTopBarScroll);
-        document.removeEventListener("keydown", this.handleKeydowm, false);
-        document.removeEventListener("keyup", this.handleKeyup, false);
-        document.oncontextmenu = null;
-      }
-    },
-    templateId(n) {
-    }
-  },
-  mounted() {
-  },
-  methods: {
-    ...mapActions(["selectWidget", "initGroupJson", "handleHistory"]),
-    handleClose() {
-      this.$store.commit("setState", { key: "templateVisible", value: false });
-    },
-    toggleMode(mode) {
-      this.$store.commit("setState", { key: "templateMode", value: mode });
-    },
-    changeLineGuides() {
-      this.showLineGuides = !this.showLineGuides;
-    },
-    downloadCancel() {
-      this.downloadPercent = 0;
-      this.isContinue = false;
-    },
-    async loadData() {
-      setTimeout(() => {
-        var _a2, _b, _c;
-        (_c = (_b = (_a2 = this == null ? void 0 : this.$refs) == null ? void 0 : _a2.options) == null ? void 0 : _b.load) == null ? void 0 : _c.call(_b, null, null, null, async () => {
-          this.$refs.zoomControl.screenChange();
-          await this.$nextTick();
-          this.selectWidget({
-            uuid: "-1"
-          });
-        });
-      }, 50);
-    },
-    zoomSub() {
-      this.$refs.zoomControl.sub();
-    },
-    zoomAdd() {
-      this.$refs.zoomControl.add();
-    },
-    save() {
-      this.$refs.options.save();
-    },
-    fixTopBarScroll() {
-      const scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
-      this.style.left = `-${scrollLeft}px`;
-    },
-    clickListener(e2) {
-      console.log("click listener", e2);
-    },
-    optionsChange({ downloadPercent, downloadText }) {
-      this.downloadPercent = downloadPercent;
-      this.downloadText = downloadText;
-    }
-  }
-});
-const _withScopeId$4 = (n) => (pushScopeId("data-v-95d19f92"), n = n(), popScopeId(), n);
-const _hoisted_1$b = { class: "text-left" };
-const _hoisted_2$6 = {
-  id: "page-design-index",
-  ref: "pageDesignIndex",
-  class: "page-design-bg-color"
-};
-const _hoisted_3$6 = { class: "top-nav-wrap" };
-const _hoisted_4$5 = { class: "top-left" };
-const _hoisted_5$4 = { class: "operation" };
-const _hoisted_6$2 = /* @__PURE__ */ _withScopeId$4(() => /* @__PURE__ */ createElementVNode("i", { class: "iconfont icon-undo" }, null, -1));
-const _hoisted_7$1 = [
-  _hoisted_6$2
-];
-const _hoisted_8$1 = /* @__PURE__ */ _withScopeId$4(() => /* @__PURE__ */ createElementVNode("i", { class: "iconfont icon-redo" }, null, -1));
-const _hoisted_9$1 = [
-  _hoisted_8$1
-];
-const _hoisted_10$1 = { class: "page-design-index-wrap" };
-function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
-  const _component_header_options = resolveComponent("header-options");
-  const _component_widget_panel = resolveComponent("widget-panel");
-  const _component_design_board = resolveComponent("design-board");
-  const _component_style_panel = resolveComponent("style-panel");
-  const _component_image_cutout = resolveComponent("image-cutout");
-  const _component_line_guides = resolveComponent("line-guides");
-  const _component_zoom_control = resolveComponent("zoom-control");
-  const _component_right_click_menu = resolveComponent("right-click-menu");
-  const _component_Moveable = resolveComponent("Moveable");
-  const _component_ProgressLoading = resolveComponent("ProgressLoading");
-  const _component_el_dialog = resolveComponent("el-dialog");
-  return openBlock(), createBlock(_component_el_dialog, {
-    modelValue: _ctx.templateVisible,
-    "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => _ctx.templateVisible = $event),
-    top: "5vh",
-    width: "90%",
-    style: { "height": "90vh" },
-    onClose: _ctx.handleClose
-  }, {
-    header: withCtx(() => [
-      createElementVNode("div", _hoisted_1$b, [
-        createTextVNode(" \u7F16\u8F91" + toDisplayString(_ctx.noMenu ? "\u56FE\u7247" : "\u6A21\u677F") + " - \u3010", 1),
-        createElementVNode("a", {
-          class: "text-blue-500 cursor-pointer",
-          onClick: _cache[0] || (_cache[0] = ($event) => _ctx.toggleMode(_ctx.noMenu ? 2 : 1))
-        }, toDisplayString(_ctx.noMenu ? "\u8FDB\u5165" : "\u9000\u51FA") + "\u6A21\u677F\u7F16\u8F91", 1),
-        createTextVNode("\u3011 ")
-      ])
-    ]),
-    default: withCtx(() => [
-      createElementVNode("div", _hoisted_2$6, [
-        createVNode(_component_header_options, {
-          ref: "options",
-          modelValue: _ctx.isContinue,
-          "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => _ctx.isContinue = $event),
-          noMenu: _ctx.noMenu,
-          onChange: _ctx.optionsChange
-        }, null, 8, ["modelValue", "noMenu", "onChange"]),
-        withDirectives(createElementVNode("div", {
-          style: normalizeStyle(_ctx.style),
-          class: "top-nav"
-        }, [
-          createElementVNode("div", _hoisted_3$6, [
-            createElementVNode("div", _hoisted_4$5, [
-              createElementVNode("div", {
-                class: "name",
-                onClick: _cache[2] || (_cache[2] = (...args) => _ctx.jump2home && _ctx.jump2home(...args))
-              }, toDisplayString(_ctx.APP_NAME), 1),
-              createElementVNode("div", _hoisted_5$4, [
-                createElementVNode("div", {
-                  class: normalizeClass(["operation-item", { disable: !_ctx.undoable }]),
-                  onClick: _cache[3] || (_cache[3] = ($event) => _ctx.undoable ? _ctx.handleHistory("undo") : "")
-                }, _hoisted_7$1, 2),
-                createElementVNode("div", {
-                  class: normalizeClass(["operation-item", { disable: !_ctx.redoable }]),
-                  onClick: _cache[4] || (_cache[4] = ($event) => _ctx.redoable ? _ctx.handleHistory("redo") : "")
-                }, _hoisted_9$1, 2)
-              ])
-            ])
-          ])
-        ], 4), [
-          [vShow, false]
-        ]),
-        createElementVNode("div", _hoisted_10$1, [
-          createVNode(_component_widget_panel, { noMenu: _ctx.noMenu }, null, 8, ["noMenu"]),
-          createVNode(_component_design_board, {
-            class: "page-design-wrap",
-            pageDesignCanvasId: "page-design-canvas"
-          }, {
-            default: withCtx(() => [
-              createElementVNode("div", {
-                class: "shelter",
-                style: normalizeStyle({ width: Math.floor(_ctx.dPage.width * _ctx.dZoom / 100) + "px", height: Math.floor(_ctx.dPage.height * _ctx.dZoom / 100) + "px" })
-              }, null, 4),
-              createElementVNode("div", {
-                class: "shelter-bg transparent-bg",
-                style: normalizeStyle({ width: Math.floor(_ctx.dPage.width * _ctx.dZoom / 100) + "px", height: Math.floor(_ctx.dPage.height * _ctx.dZoom / 100) + "px" })
-              }, null, 4)
-            ]),
-            _: 1
-          }),
-          createVNode(_component_style_panel, { noMenu: _ctx.noMenu }, null, 8, ["noMenu"])
-        ]),
-        createVNode(_component_image_cutout),
-        createVNode(_component_line_guides, { show: _ctx.showLineGuides }, null, 8, ["show"]),
-        createVNode(_component_zoom_control, { ref: "zoomControl" }, null, 512),
-        createVNode(_component_right_click_menu),
-        createVNode(_component_Moveable),
-        createVNode(_component_ProgressLoading, {
-          percent: _ctx.downloadPercent,
-          text: _ctx.downloadText,
-          cancelText: "\u53D6\u6D88",
-          onCancel: _ctx.downloadCancel,
-          onDone: _cache[5] || (_cache[5] = ($event) => _ctx.downloadPercent = 0)
-        }, null, 8, ["percent", "text", "onCancel"])
-      ], 512)
-    ]),
-    _: 1
-  }, 8, ["modelValue", "onClose"]);
-}
-var SelectTemplate = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$8], ["__scopeId", "data-v-95d19f92"]]);
 var tuiImageEditor$1 = "";
 var tuiColorPicker$1 = "";
 var tuiImageEditor = { exports: {} };
@@ -82091,7 +81836,7 @@ var locale_zh = {
 };
 var EditImg_vue_vue_type_style_index_0_lang = "";
 const _hoisted_1$a = /* @__PURE__ */ createElementVNode("div", { id: "tui-image-editor" }, null, -1);
-const _sfc_main$b = defineComponent({
+const _sfc_main$c = defineComponent({
   __name: "EditImg",
   setup(__props) {
     const instance = ref$1(null);
@@ -82161,46 +81906,327 @@ const _sfc_main$b = defineComponent({
     };
   }
 });
+var SelectTemplate_vue_vue_type_style_index_0_scoped_true_lang = "";
+const beforeUnload = function(e2) {
+  const confirmationMessage = "\u7CFB\u7EDF\u4E0D\u4F1A\u81EA\u52A8\u4FDD\u5B58\u60A8\u672A\u4FEE\u6539\u7684\u5185\u5BB9";
+  (e2 || window.event).returnValue = confirmationMessage;
+  return confirmationMessage;
+};
+const _sfc_main$b = defineComponent({
+  components: {
+    RightClickMenu,
+    Moveable,
+    headerOptions,
+    ProgressLoading,
+    designBoard,
+    zoomControl,
+    lineGuides,
+    imageCutout: index$3,
+    widgetPanel,
+    stylePanel,
+    ElDialog,
+    EditImg: _sfc_main$c
+  },
+  mixins: [shortcuts],
+  emits: ["update:modelValue", "close"],
+  setup(props2) {
+    !_config.isDev && window.addEventListener("beforeunload", beforeUnload);
+    const state = reactive$1({
+      style: {
+        left: "0px"
+      },
+      downloadPercent: 0,
+      downloadText: "",
+      isContinue: true,
+      APP_NAME: _config.APP_NAME,
+      showLineGuides: false,
+      visible: false
+    });
+    onMounted(() => {
+      setTimeout(() => {
+        state.visible = true;
+      }, 3e3);
+    });
+    function jump2home() {
+      window.open("https://xp.palxp.cn/");
+    }
+    return {
+      ...toRefs(state),
+      jump2home
+    };
+  },
+  computed: {
+    ...mapGetters(["dActiveElement", "dHistoryParams", "dCopyElement", "dPage", "dZoom"]),
+    undoable() {
+      return !(this.dHistoryParams.index === -1 || this.dHistoryParams === 0 && this.dHistoryParams.length === this.dHistoryParams.maxLength);
+    },
+    redoable() {
+      return !(this.dHistoryParams.index === this.dHistoryParams.length - 1);
+    },
+    templateVisible() {
+      return this.$store.state.templateVisible;
+    },
+    templateId() {
+      return this.$store.state.templateId;
+    },
+    noMenu() {
+      return this.$store.state.templateMode === 1;
+    },
+    editImgVisible() {
+      return this.$store.state.editImgVisible;
+    },
+    imgs() {
+      return this.$store.state.imgs;
+    },
+    imgIndex() {
+      return this.$store.state.imgIndex;
+    }
+  },
+  watch: {
+    templateVisible(n) {
+      if (n) {
+        this.initGroupJson(JSON.stringify(wGroup.setting));
+        window.addEventListener("scroll", this.fixTopBarScroll);
+        document.addEventListener("keydown", this.handleKeydowm, false);
+        document.addEventListener("keyup", this.handleKeyup, false);
+        this.loadData();
+      } else {
+        window.removeEventListener("scroll", this.fixTopBarScroll);
+        document.removeEventListener("keydown", this.handleKeydowm, false);
+        document.removeEventListener("keyup", this.handleKeyup, false);
+        document.oncontextmenu = null;
+      }
+    },
+    templateId(n) {
+    }
+  },
+  mounted() {
+  },
+  methods: {
+    ...mapActions(["selectWidget", "initGroupJson", "handleHistory"]),
+    editImgDone: (base642) => {
+      const _imgs = [...(void 0).imgs.value];
+      const _index = (void 0).imgIndex.value;
+      _imgs.value[_index] = base642;
+      (void 0).$store.commit("setState", { key: "editImgVisible", value: false });
+      (void 0).$store.commit("setState", { key: "imgs", value: _imgs });
+    },
+    handleClose() {
+      this.$emit("close");
+    },
+    toggleMode(mode) {
+      this.$store.commit("setState", { key: "templateMode", value: mode });
+    },
+    changeLineGuides() {
+      this.showLineGuides = !this.showLineGuides;
+    },
+    downloadCancel() {
+      this.downloadPercent = 0;
+      this.isContinue = false;
+    },
+    async loadData() {
+      setTimeout(() => {
+        var _a2, _b, _c;
+        (_c = (_b = (_a2 = this == null ? void 0 : this.$refs) == null ? void 0 : _a2.options) == null ? void 0 : _b.load) == null ? void 0 : _c.call(_b, null, null, null, async () => {
+          this.$refs.zoomControl.screenChange();
+          await this.$nextTick();
+          this.selectWidget({
+            uuid: "-1"
+          });
+        });
+      }, 50);
+    },
+    zoomSub() {
+      this.$refs.zoomControl.sub();
+    },
+    zoomAdd() {
+      this.$refs.zoomControl.add();
+    },
+    save() {
+      this.$refs.options.save();
+    },
+    fixTopBarScroll() {
+      const scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+      this.style.left = `-${scrollLeft}px`;
+    },
+    clickListener(e2) {
+      console.log("click listener", e2);
+    },
+    optionsChange({ downloadPercent, downloadText }) {
+      this.downloadPercent = downloadPercent;
+      this.downloadText = downloadText;
+    }
+  }
+});
+const _withScopeId$4 = (n) => (pushScopeId("data-v-379b29eb"), n = n(), popScopeId(), n);
+const _hoisted_1$9 = { class: "text-left" };
+const _hoisted_2$6 = {
+  id: "page-design-index",
+  ref: "pageDesignIndex",
+  class: "page-design-bg-color"
+};
+const _hoisted_3$6 = { class: "top-nav-wrap" };
+const _hoisted_4$5 = { class: "top-left" };
+const _hoisted_5$4 = { class: "operation" };
+const _hoisted_6$2 = /* @__PURE__ */ _withScopeId$4(() => /* @__PURE__ */ createElementVNode("i", { class: "iconfont icon-undo" }, null, -1));
+const _hoisted_7$1 = [
+  _hoisted_6$2
+];
+const _hoisted_8$1 = /* @__PURE__ */ _withScopeId$4(() => /* @__PURE__ */ createElementVNode("i", { class: "iconfont icon-redo" }, null, -1));
+const _hoisted_9$1 = [
+  _hoisted_8$1
+];
+const _hoisted_10$1 = { class: "page-design-index-wrap" };
+function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_header_options = resolveComponent("header-options");
+  const _component_widget_panel = resolveComponent("widget-panel");
+  const _component_design_board = resolveComponent("design-board");
+  const _component_style_panel = resolveComponent("style-panel");
+  const _component_edit_img = resolveComponent("edit-img");
+  const _component_image_cutout = resolveComponent("image-cutout");
+  const _component_line_guides = resolveComponent("line-guides");
+  const _component_zoom_control = resolveComponent("zoom-control");
+  const _component_right_click_menu = resolveComponent("right-click-menu");
+  const _component_Moveable = resolveComponent("Moveable");
+  const _component_ProgressLoading = resolveComponent("ProgressLoading");
+  const _component_el_dialog = resolveComponent("el-dialog");
+  return openBlock(), createBlock(_component_el_dialog, {
+    "model-value": _ctx.templateVisible,
+    top: "5vh",
+    width: "90%",
+    style: { "height": "90vh" },
+    onClose: _ctx.handleClose
+  }, {
+    header: withCtx(() => [
+      createElementVNode("div", _hoisted_1$9, [
+        createTextVNode(" \u7F16\u8F91" + toDisplayString(_ctx.noMenu ? "\u56FE\u7247" : "\u6A21\u677F") + " - \u3010", 1),
+        createElementVNode("a", {
+          class: "text-blue-500 cursor-pointer",
+          onClick: _cache[0] || (_cache[0] = ($event) => _ctx.toggleMode(_ctx.noMenu ? 2 : 1))
+        }, toDisplayString(_ctx.noMenu ? "\u8FDB\u5165" : "\u9000\u51FA") + "\u6A21\u677F\u7F16\u8F91", 1),
+        createTextVNode("\u3011 ")
+      ])
+    ]),
+    default: withCtx(() => [
+      createElementVNode("div", _hoisted_2$6, [
+        createVNode(_component_header_options, {
+          ref: "options",
+          modelValue: _ctx.isContinue,
+          "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => _ctx.isContinue = $event),
+          noMenu: _ctx.noMenu,
+          onChange: _ctx.optionsChange
+        }, null, 8, ["modelValue", "noMenu", "onChange"]),
+        withDirectives(createElementVNode("div", {
+          style: normalizeStyle(_ctx.style),
+          class: "top-nav"
+        }, [
+          createElementVNode("div", _hoisted_3$6, [
+            createElementVNode("div", _hoisted_4$5, [
+              createElementVNode("div", {
+                class: "name",
+                onClick: _cache[2] || (_cache[2] = (...args) => _ctx.jump2home && _ctx.jump2home(...args))
+              }, toDisplayString(_ctx.APP_NAME), 1),
+              createElementVNode("div", _hoisted_5$4, [
+                createElementVNode("div", {
+                  class: normalizeClass(["operation-item", { disable: !_ctx.undoable }]),
+                  onClick: _cache[3] || (_cache[3] = ($event) => _ctx.undoable ? _ctx.handleHistory("undo") : "")
+                }, _hoisted_7$1, 2),
+                createElementVNode("div", {
+                  class: normalizeClass(["operation-item", { disable: !_ctx.redoable }]),
+                  onClick: _cache[4] || (_cache[4] = ($event) => _ctx.redoable ? _ctx.handleHistory("redo") : "")
+                }, _hoisted_9$1, 2)
+              ])
+            ])
+          ])
+        ], 4), [
+          [vShow, false]
+        ]),
+        createElementVNode("div", _hoisted_10$1, [
+          createVNode(_component_widget_panel, { noMenu: _ctx.noMenu }, null, 8, ["noMenu"]),
+          createVNode(_component_design_board, {
+            class: "page-design-wrap",
+            pageDesignCanvasId: "page-design-canvas"
+          }, {
+            default: withCtx(() => [
+              createElementVNode("div", {
+                class: "shelter",
+                style: normalizeStyle({ width: Math.floor(_ctx.dPage.width * _ctx.dZoom / 100) + "px", height: Math.floor(_ctx.dPage.height * _ctx.dZoom / 100) + "px" })
+              }, null, 4),
+              createElementVNode("div", {
+                class: "shelter-bg transparent-bg",
+                style: normalizeStyle({ width: Math.floor(_ctx.dPage.width * _ctx.dZoom / 100) + "px", height: Math.floor(_ctx.dPage.height * _ctx.dZoom / 100) + "px" })
+              }, null, 4)
+            ]),
+            _: 1
+          }),
+          createVNode(_component_style_panel, { noMenu: _ctx.noMenu }, null, 8, ["noMenu"])
+        ]),
+        createVNode(_component_edit_img, {
+          visible: _ctx.editImgVisible,
+          onDone: _ctx.editImgDone
+        }, null, 8, ["visible", "onDone"]),
+        createVNode(_component_image_cutout),
+        createVNode(_component_line_guides, { show: _ctx.showLineGuides }, null, 8, ["show"]),
+        createVNode(_component_zoom_control, { ref: "zoomControl" }, null, 512),
+        createVNode(_component_right_click_menu),
+        createVNode(_component_Moveable),
+        createVNode(_component_ProgressLoading, {
+          percent: _ctx.downloadPercent,
+          text: _ctx.downloadText,
+          cancelText: "\u53D6\u6D88",
+          onCancel: _ctx.downloadCancel,
+          onDone: _cache[5] || (_cache[5] = ($event) => _ctx.downloadPercent = 0)
+        }, null, 8, ["percent", "text", "onCancel"])
+      ], 512)
+    ]),
+    _: 1
+  }, 8, ["model-value", "onClose"]);
+}
+var SelectTemplate = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$8], ["__scopeId", "data-v-379b29eb"]]);
 var Home_vue_vue_type_style_index_0_lang = "";
-const _hoisted_1$9 = ["src"];
 const _sfc_main$a = defineComponent({
   __name: "Home",
-  setup(__props) {
-    const imgs = ref$1(["https://cdn.erp.jinweitec.com/erpsys/FqDRsgZqneFWmC_e7Y78qJ1_s1j-?imageMogr2/format/webp/interlace/0/quality/50", "https://cdn.erp.jinweitec.com/erpsys/o_1bjf6ul918ubhah1ag21nq2m5c.jpg"]);
-    const editImgVisible = ref$1(false);
-    const onSelectImg = () => {
-      erpStore.commit("setImg", imgs.value);
-      erpStore.commit("setState", { key: "templateVisible", value: true });
-      erpStore.commit("setState", { key: "templateMode", value: 1 });
-      erpStore.commit("setState", { key: "templateDate", value: Date.now() });
-    };
-    const editImgDone = (base642) => {
-      imgs.value[0] = base642;
-      editImgVisible.value = false;
+  props: ["companyId", "data", "config", "modelValue"],
+  emits: "close",
+  setup(__props, { emit: emits2 }) {
+    const props2 = __props;
+    const data = computed$1(() => props2.data);
+    const isShow = computed$1(() => props2.modelValue);
+    watch(
+      () => data.value,
+      (n) => {
+        erpStore.commit("setImg", n);
+      }
+    );
+    watch(
+      () => isShow.value,
+      (n) => {
+        if (n) {
+          erpStore.commit("setState", { key: "templateVisible", value: true });
+          erpStore.commit("setState", { key: "templateMode", value: 1 });
+          erpStore.commit("setState", { key: "templateDate", value: Date.now() });
+        }
+      }
+    );
+    const closeModal = () => {
+      emits2("update:modelValue", false);
+      erpStore.commit("setState", { key: "templateVisible", value: false });
     };
     onMounted(() => {
+      if (props2.companyId) {
+        localStorage.setItem("CompanyId", props2.companyId);
+      }
+      if (props2.config) {
+        for (const key in props2.config) {
+          if (Object.prototype.hasOwnProperty.call(props2.config, key)) {
+            const val = props2.config[key];
+            localStorage.setItem(key, val);
+          }
+        }
+      }
     });
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock(Fragment, null, [
-        createElementVNode("div", {
-          class: "flex",
-          onClick: onSelectImg
-        }, [
-          (openBlock(true), createElementBlock(Fragment, null, renderList(imgs.value, (item, index2) => {
-            return openBlock(), createElementBlock("img", {
-              key: index2,
-              src: item,
-              alt: "",
-              style: { "width": "200px" }
-            }, null, 8, _hoisted_1$9);
-          }), 128))
-        ]),
-        createVNode(SelectTemplate),
-        createVNode(_sfc_main$b, {
-          visible: editImgVisible.value,
-          onDone: editImgDone
-        }, null, 8, ["visible"])
-      ], 64);
+      return openBlock(), createBlock(SelectTemplate, { onClose: closeModal });
     };
   }
 });
@@ -83413,15 +83439,8 @@ var normalize = "";
 var global$1 = "";
 var index = "";
 const MyPlugin = {
-  install(app, { store }) {
-    let vue = app;
-    if (typeof window !== "undefined" && (window == null ? void 0 : window.Vue)) {
-      vue = window == null ? void 0 : window.Vue;
-    }
-    if (!store) {
-      console.error("Please provide a Vuex store.");
-      return;
-    }
+  install(app) {
+    const vue = app;
     vue.use(erpStore);
     vue.use(utils);
     vue.component("ErpPosterDesign", _sfc_main$a);
