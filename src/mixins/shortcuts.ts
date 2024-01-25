@@ -6,6 +6,7 @@
  * @LastEditTime: 2023-09-19 17:29:06
  */
 import store from '@/store'
+
 const _this: any = {}
 _this.dHistoryParams = store.getters.dHistoryParams
 // _this.dActiveElement = store.getters.dActiveElement
@@ -37,6 +38,7 @@ let hadDown = false
 const shortcuts = {
   methods: {
     handleKeydowm(e: any) {
+      const store = this.$store
       const nodeName = e.target.nodeName
       if (ignoreNode.indexOf(nodeName) !== -1 || (nodeName === 'DIV' && e.target.contentEditable === 'true')) {
         return
@@ -56,14 +58,14 @@ const shortcuts = {
       //   hadDown = false
       // }
       if (shift || ctrl) {
-        this.$store.dispatch('updateAltDown', true)
+        store.dispatch('updateAltDown', true)
         clearInterval(this.checkCtrl)
         this.checkCtrl = setInterval(() => {
           // TODO: 防止组合键导致页面失焦无法操作
           if (!document.hasFocus()) {
             clearInterval(this.checkCtrl)
             hadDown = false
-            this.$store.dispatch('updateAltDown', false)
+            store.dispatch('updateAltDown', false)
           }
         }, 500)
       }
@@ -112,13 +114,14 @@ const shortcuts = {
       // e.stopPropagation()
       // e.preventDefault()
       const f = withShift ? 10 : 1
-      keyCodeOptions(e, { f })
+      keyCodeOptions(e, { f, store })
     },
-    handleKeyup(e) {
+    handleKeyup(e: any) {
+      const store = this.$store
       clearInterval(this.checkCtrl)
       hadDown = false
       if (e.key === 'Alt' || e.key === 'Shift' || e.key === 'Control' || e.key === 'Meta') {
-        this.$store.dispatch('updateAltDown', false)
+        store.dispatch('updateAltDown', false)
       }
     },
     dealCtrl(e: any) {

@@ -4,7 +4,6 @@
   font-display: swap;
 }
 body {
-  --el-color-primary: #2254f4;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: #333333;

@@ -90,7 +90,7 @@ export default {
   computed: {
     ...mapGetters(['dActiveElement', 'dMoving']),
     isModel() {
-      return this.$store.state.templateMode === 2
+      return this.$store.state.epd.templateMode === 2
     },
     isDraw() {
       return true
@@ -138,7 +138,7 @@ export default {
         const item = { id, oid, value, url, alias, preview }
         lang === 'zh' ? fontLists['中文'].unshift(item) : fontLists['英文'].unshift(item)
       }
-      fontLists['当前页面'] = usePageFontsFilter()
+      fontLists['当前页面'] = usePageFontsFilter(this.$store)
       this.fontClassList = fontLists
       // }
       // const isDev = process.env.NODE_ENV === 'development'

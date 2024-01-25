@@ -89,10 +89,10 @@ export default {
   computed: {
     ...mapGetters(['dActiveElement']),
     imgs() {
-      return this.$store.state?.imgs
+      return this.$store.state?.epd.imgs
     },
     imgIndex() {
-      return this.$store.state?.imgIndex
+      return this.$store.state?.epd.imgIndex
     },
   },
   watch: {

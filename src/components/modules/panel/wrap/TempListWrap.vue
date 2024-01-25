@@ -55,8 +55,8 @@ export default defineComponent({
     // cate && (pageOptions.cate = cate)
     // edit && store.commit('managerEdit', true)
 
-    const templateDate = computed(() => store.state.templateDate)
-    const templateId = computed(() => store.state.templateId)
+    const templateDate = computed(() => store.state.epd.templateDate)
+    const templateId = computed(() => store.state.epd.templateId)
 
     // onMounted(async () => {
     //   console.log(props)
@@ -104,6 +104,7 @@ export default defineComponent({
     watch(
       () => templateDate.value,
       (n) => {
+        console.log('n', n)
         load(true)
       },
     )
@@ -121,12 +122,13 @@ export default defineComponent({
           // if (AcImg) {
           //   page.backgroundImage = AcImg
           // }
-          const AcImg = store.state?.imgs
+          const AcImg = store.state?.epd.imgs
           if (AcImg && AcImg.length) {
             page.backgroundImage = AcImg[0]
           }
 
           store.commit('setDPage', page)
+          store.commit('setState', { key: 'templateTitle', value: res.title })
           instance?.proxy?.setTemplate(widgets)
           setTimeout(() => {
             store.commit('zoomScreenChange')

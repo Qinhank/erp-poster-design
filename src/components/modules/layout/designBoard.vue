@@ -143,14 +143,14 @@ export default defineComponent({
         return
       }
       // 处理数据
-      setting = await setWidgetData(type, item, setting)
+      setting = await setWidgetData(type, item, setting, this.$store)
       // 绝对坐标
       const lostX = e.x - document.getElementById('page-design-canvas').getBoundingClientRect().left
       const lostY = e.y - document.getElementById('page-design-canvas').getBoundingClientRect().top
       // 放置组合
       if (type === 'group') {
         let parent = {}
-        item = await getComponentsData(item)
+        item = await getComponentsData(item, this.$store)
         item.forEach((element) => {
           if (element.type === 'w-group') {
             parent.width = element.width
@@ -246,7 +246,7 @@ export default defineComponent({
         }
 
         if (uuid !== '-1') {
-          this.initmovement && this.initmovement(e) // 参见 mixins
+          this.initmovement && this.initmovement(e, this.$store) // 参见 mixins
         }
       } else {
         // 取消选中元素

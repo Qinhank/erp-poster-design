@@ -70,9 +70,9 @@ export default defineComponent({
     let fileName: string = 'unknow'
     let isRuning: boolean = false
 
-    const show = computed(() => store.state.imageCutoutVisible)
-    const rawImage = computed(() => store.state.imageCutoutRaw)
-    const cutImage = computed(() => store.state.imageCutoutResult)
+    const show = computed(() => store.state.epd.imageCutoutVisible)
+    const rawImage = computed(() => store.state.epd.imageCutoutRaw)
+    const cutImage = computed(() => store.state.epd.imageCutoutResult)
 
     // const selectFile = async (file: File) => {
     //   if (file.size > 1024 * 1024 * 2) {
@@ -145,8 +145,8 @@ export default defineComponent({
     }
 
     const reset = () => {
-      const _imgs = [...store.state.imgs]
-      const index = store.state.imgIndex
+      const _imgs = [...store.state.epd.imgs]
+      const index = store.state.epd.imgIndex
       _imgs[index] = rawImage.value
       store.commit('setImg', _imgs)
       handleClose()
@@ -165,8 +165,8 @@ export default defineComponent({
       // await api.material.addMyPhoto({ width, height, url })
       // emit('done', url)
       // state.show = false
-      const _imgs = [...store.state.imgs]
-      const index = store.state.imgIndex
+      const _imgs = [...store.state.epd.imgs]
+      const index = store.state.epd.imgIndex
       _imgs[index] = cutImage.value
       store.commit('setImg', _imgs)
       handleClose()
@@ -175,8 +175,8 @@ export default defineComponent({
     const edit = () => {
       state.matting.open(rawImage.value, cutImage.value, (base64: any) => {
         // state.cutImage = base64
-        const _imgs = [...store.state.imgs]
-        const index = store.state.imgIndex
+        const _imgs = [...store.state.epd.imgs]
+        const index = store.state.epd.imgIndex
         _imgs[index] = base64
         store.commit('setImageCutoutResult', base64)
         store.commit('setImg', _imgs)

@@ -1,12 +1,12 @@
 <template>
-  <el-dialog :model-value="templateVisible" top="5vh" width="90%" style="height: 90vh" @close="handleClose">
+  <el-dialog :destroy-on-close="true" :model-value="templateVisible" top="5vh" width="90%" style="height: 90vh" @close="handleClose">
     <template #header>
       <div class="text-left">
         编辑{{ noMenu ? '图片' : '模板' }} - 【<a class="text-blue-500 cursor-pointer" @click="toggleMode(noMenu ? 2 : 1)">{{ noMenu ? '进入' : '退出' }}模板编辑</a>】
       </div>
     </template>
     <div id="page-design-index" ref="pageDesignIndex" class="page-design-bg-color">
-      <header-options ref="options" v-model="isContinue" :noMenu="noMenu" @change="optionsChange" />
+      <header-options ref="options" v-model="isContinue" :noMenu="noMenu" @change="optionsChange" @save="saveAs" />
       <div v-show="false" :style="style" class="top-nav">
         <div class="top-nav-wrap">
           <div class="top-left">
@@ -91,7 +91,7 @@ export default defineComponent({
     EditImg,
   },
   mixins: [shortcuts],
-  emits: ['update:modelValue', 'close'],
+  emits: ['update:modelValue', 'close', 'save'],
   setup(props) {
     !_config.isDev && window.addEventListener('beforeunload', beforeUnload)
 
@@ -144,22 +144,22 @@ export default defineComponent({
       return !(this.dHistoryParams.index === this.dHistoryParams.length - 1)
     },
     templateVisible() {
-      return this.$store.state.templateVisible
+      return this.$store.state.epd.templateVisible
     },
     templateId() {
-      return this.$store.state.templateId
+      return this.$store.state.epd.templateId
     },
     noMenu() {
-      return this.$store.state.templateMode === 1
+      return this.$store.state.epd.templateMode === 1
     },
     editImgVisible() {
-      return this.$store.state.editImgVisible
+      return this.$store.state.epd.editImgVisible
     },
     imgs() {
-      return this.$store.state.imgs
+      return this.$store.state.epd.imgs
     },
     imgIndex() {
-      return this.$store.state.imgIndex
+      return this.$store.state.epd.imgIndex
     },
   },
   watch: {
@@ -214,6 +214,9 @@ export default defineComponent({
   // },
   methods: {
     ...mapActions(['selectWidget', 'initGroupJson', 'handleHistory']),
+    saveAs(data: any) {
+      this.$emit('save', data)
+    },
     editImgDone: (base64) => {
       const _imgs = [...this.imgs.value]
       const _index = this.imgIndex.value

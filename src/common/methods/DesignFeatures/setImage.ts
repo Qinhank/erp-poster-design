@@ -5,11 +5,14 @@
  * @LastEditors: ShawnPhang <site: book.palxp.com>
  * @LastEditTime: 2023-07-10 17:37:27
  */
-import store from '@/store'
+// import store from '@/store'
 import { getImage } from '../getImgDetail'
-export default async function setItem2Data(item: any) {
+export default async function setItem2Data(item: any, store: any) {
   const cloneItem = JSON.parse(JSON.stringify(item))
-  const { width: screenWidth, height: screenHeight } = store.getters.dPage
+  console.log(store?.getters?.dPage)
+  const screenHeight = store?.getters?.dPage?.height
+  const screenWidth = store?.getters?.dPage?.width
+  // const { width: screenWidth, height: screenHeight } = store?.getters?.dPage
   let { width: imgWidth, height: imgHeight } = item
   if (!imgWidth || !imgHeight) {
     const actual: any = await getImage(item.url)

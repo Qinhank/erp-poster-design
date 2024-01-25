@@ -5,10 +5,12 @@
  * @LastEditors: ShawnPhang <https://m.palxp.cn>
  * @LastEditTime: 2023-10-09 09:49:54
  */
-import store from '@/store'
+// import store from '@/store'
+import { useStore } from 'vuex'
 import handlePaste from './handlePaste'
 
 export default function dealWithCtrl(e: any, _this: any) {
+  const store = useStore()
   switch (e.keyCode) {
     case 71: // g
       e.preventDefault()
@@ -43,6 +45,7 @@ export default function dealWithCtrl(e: any, _this: any) {
  */
 function checkGroupChild(pid: number | string, key: any) {
   let itHas = false
+  const store = useStore()
   const childs = store.getters.dWidgets.filter((x: any) => x.parent === pid) || []
   childs.forEach((element: any) => {
     element[key] && (itHas = true)
@@ -53,6 +56,7 @@ function checkGroupChild(pid: number | string, key: any) {
  * 复制
  */
 function copy() {
+  const store = useStore()
   if (store.getters.dActiveElement.uuid === '-1') {
     return
   } else if (store.getters.dActiveElement.isContainer && checkGroupChild(store.getters.dActiveElement.uuid, 'editable')) {
@@ -65,6 +69,7 @@ function copy() {
  */
 function paste() {
   handlePaste()
+  const store = useStore()
   if (store.getters.dCopyElement.length === 0) {
     return
   } else if (store.getters.dActiveElement.isContainer && checkGroupChild(store.getters.dActiveElement.uuid, 'editable')) {
@@ -76,6 +81,7 @@ function paste() {
  * 撤销
  */
 function undo(shiftKey: any) {
+  const store = useStore()
   if (shiftKey) {
     if (!(store.getters.dHistoryParams.index === store.getters.dHistoryParams.length - 1)) {
       // this.handleHistory('redo')

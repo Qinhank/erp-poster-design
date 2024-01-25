@@ -11,7 +11,7 @@ import setImageData from '@/common/methods/DesignFeatures/setImage'
 import wText from '@/components/modules/widgets/wText/wText.vue'
 import wImage from '@/components/modules/widgets/wImage/wImage.vue'
 import wSvg from '@/components/modules/widgets/wSvg/wSvg.vue'
-export default async function(type: string, item: any, data: any) {
+export default async function (type: string, item: any, data: any, store: any) {
   let setting = data
   if (type === 'text') {
     !item.fontFamily && !item.color ? (setting = JSON.parse(JSON.stringify(wText.setting))) : (setting = item)
@@ -22,7 +22,7 @@ export default async function(type: string, item: any, data: any) {
   }
   if (type === 'image' || type === 'mask') {
     setting = JSON.parse(JSON.stringify(wImage.setting))
-    const img = await setImageData(item.value)
+    const img = await setImageData(item.value, store)
     setting.width = img.width
     setting.height = img.height // parseInt(100 / item.value.ratio, 10)
     setting.imgUrl = item.value.url
@@ -32,7 +32,7 @@ export default async function(type: string, item: any, data: any) {
   }
   if (type === 'svg') {
     setting = JSON.parse(JSON.stringify(wSvg.setting))
-    const img = await setImageData(item.value)
+    const img = await setImageData(item.value, store)
     setting.width = img.width
     setting.height = img.height // parseInt(100 / item.value.ratio, 10)
     setting.svgUrl = item.value.url

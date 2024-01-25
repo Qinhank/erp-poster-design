@@ -9,7 +9,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 // import viteCompression from 'vite-plugin-compression'
-import ElementPlus from 'unplugin-element-plus/vite'
+// import ElementPlus from 'unplugin-element-plus/vite'
 import tailwindcss from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 // import AutoImport from 'unplugin-auto-import/vite'
@@ -29,9 +29,9 @@ export default defineConfig({
     //   algorithm: 'gzip',
     //   ext: '.gz',
     // }),
-    ElementPlus({
-      // options
-    }),
+    // ElementPlus({
+    //   // options
+    // }),
   ],
   build: {
     lib: {

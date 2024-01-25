@@ -160,7 +160,7 @@ export default defineComponent({
       }
       this.$store.commit('setShowMoveable', false) // 清理掉上一次的选择
       let setting = item.type === 'svg' ? JSON.parse(JSON.stringify(wSvg.setting)) : JSON.parse(JSON.stringify(wImage.setting))
-      const img: any = await setImageData(item)
+      const img: any = await setImageData(item, this.$store)
 
       setting.width = img.width
       setting.height = img.height // parseInt(100 / item.value.ratio, 10)
@@ -185,7 +185,7 @@ export default defineComponent({
     async dragStart(e: any, item: any) {
       startPoint = { x: e.x, y: e.y }
       const { width, height, thumb, url } = item
-      const img = await setImageData({ width, height, url: thumb || url })
+      const img = await setImageData({ width, height, url: thumb || url }, this.$store)
       dragHelper.start(e, img.canvasWidth)
       this.$store.commit('selectItem', { data: { value: item }, type: item.type })
     },

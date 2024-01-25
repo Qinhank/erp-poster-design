@@ -5,9 +5,12 @@
  * @LastEditors: ShawnPhang <https://m.palxp.cn>
  * @LastEditTime: 2023-10-14 20:29:26
  */
-import store from '@/store'
+// import store from '@/store'
 import { toRaw } from 'vue'
-export default () => {
+// import { useStore } from 'vuex'
+// const store = window.store || {}
+
+export default (store: any) => {
   const collector = new Set()
   const fonts: any = {}
   const { dWidgets: widgets } = store.getters

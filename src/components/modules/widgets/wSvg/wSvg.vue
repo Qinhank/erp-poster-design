@@ -178,7 +178,7 @@ export default {
             // svg2.node.setAttribute('height', 'inherit')
             _this.svgElements = []
             const colorsObj = _this.color2obj()
-
+            console.log('colorsObj', colorsObj)
             deepElement(items)
 
             function deepElement(els) {
@@ -200,13 +200,22 @@ export default {
             function elementFactory(element) {
               const attrsColor = {}
               try {
-                element.attributes.forEach((attr) => {
+                for (let i = 0; i < element.attributes.length; i++) {
+                  const attr = element.attributes[i]
                   if (colorsObj[attr.value]) {
                     // console.log(attr.name, colorsObj[attr.value])
                     attr.value = colorsObj[attr.value]
                     attrsColor[attr.name] = _this.params.colors.findIndex((x) => x == attr.value)
                   }
-                })
+                }
+                // element.attributes.forEach((attr) => {
+                //   console.log('attr', attr)
+                //   if (colorsObj[attr.value]) {
+                //     // console.log(attr.name, colorsObj[attr.value])
+                //     attr.value = colorsObj[attr.value]
+                //     attrsColor[attr.name] = _this.params.colors.findIndex((x) => x == attr.value)
+                //   }
+                // })
               } catch (e) {}
               if (JSON.stringify(attrsColor) !== '{}') {
                 _this.svgElements.push({

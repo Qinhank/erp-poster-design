@@ -11,14 +11,16 @@ import 'tui-color-picker/dist/tui-color-picker.css'
 import ImageEditor from 'tui-image-editor'
 import locale_zh from '@/utils/tui_zh'
 import { ref, watch, defineProps, computed, defineEmits } from 'vue'
-import store from '@/store'
+import { useStore } from 'vuex'
+// import store from '@/store'
 
 const instance = ref(null)
+const store = useStore()
 // const props = defineProps(['visible'])
 // const emit = defineEmits(['done', 'update:visible'])
-const visible = computed(() => store.state.editImgVisible)
-const index = computed(() => store.state.imgIndex)
-const imgs = computed(() => store.state.imgs)
+const visible = computed(() => store.state.epd.editImgVisible)
+const index = computed(() => store.state.epd.imgIndex)
+const imgs = computed(() => store.state.epd.imgs)
 
 const init = () => {
   const timer = setInterval(() => {

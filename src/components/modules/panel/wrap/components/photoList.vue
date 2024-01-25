@@ -33,6 +33,7 @@
 import { defineComponent, toRefs, reactive, watch, nextTick } from 'vue'
 import DragHelper from '@/common/hooks/dragHelper'
 import setImageData from '@/common/methods/DesignFeatures/setImage'
+import { useStore } from 'vuex'
 
 export default defineComponent({
   props: {
@@ -50,6 +51,7 @@ export default defineComponent({
       list: [],
       listRef: null,
     })
+    const store = useStore()
 
     const dragHelper = new DragHelper()
     let isDrag = false
@@ -151,7 +153,7 @@ export default defineComponent({
       e.preventDefault()
       startPoint = { x: e.x, y: e.y }
       if (!state.list[i].isDelect) {
-        const img = await setImageData(state.list[i])
+        const img = await setImageData(state.list[i], store)
         dragHelper.start(e, img.canvasWidth)
         context.emit('drag', i)
       }

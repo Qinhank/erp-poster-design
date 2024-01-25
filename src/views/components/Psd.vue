@@ -87,7 +87,7 @@ export default defineComponent({
 
     function loadJS() {
       const link_element = document.createElement('script')
-      link_element.setAttribute('src', '/psd.js')
+      link_element.setAttribute('src', '//cdn.erp.jinweitec.com/static/psd.js')
       document.head.appendChild(link_element)
     }
     async function selectFile(file: any) {

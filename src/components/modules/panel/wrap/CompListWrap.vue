@@ -164,7 +164,7 @@ export default defineComponent({
       this.$store.commit('setShowMoveable', false) // 清理掉上一次的选择
       tempDetail = tempDetail || (await api.home.getTempDetail({ id: item.id, type: 1 }))
       // let group = JSON.parse(tempDetail.data)
-      const group: any = await getComponentsData(tempDetail.data)
+      const group: any = await getComponentsData(tempDetail.data, this.$store)
       let parent: any = { x: 0, y: 0 }
       const { width: pW, height: pH } = this.$store.getters.dPage
 
@@ -191,7 +191,7 @@ export default defineComponent({
       // let finalWidth = tempDetail.width
       let finalWidth = 0
       if (finalWidth) {
-        const img = await setImageData({ width, height, url: cover })
+        const img = await setImageData({ width, height, url: cover }, this.$store)
         finalWidth = img.canvasWidth
       }
       dragHelper.start(e, finalWidth)

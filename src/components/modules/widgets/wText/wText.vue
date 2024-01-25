@@ -54,8 +54,9 @@
 const NAME = 'w-text'
 
 import { mapGetters, mapActions } from 'vuex'
-import { fontWithDraw } from '@/utils/widgets/loadFontRule'
+// import { fontWithDraw } from '@/utils/widgets/loadFontRule'
 import getGradientOrImg from './getGradientOrImg.ts'
+import api from '@/api'
 
 export default {
   name: NAME,
@@ -95,6 +96,8 @@ export default {
       minHeight: 0,
       dir: 'horizontal',
     },
+    vars: {},
+    moduleText: '',
   },
   props: ['params', 'parent'],
   data() {
@@ -111,8 +114,21 @@ export default {
       return false
       // return this.editFont && fontWithDraw
     },
+    isEditModule() {
+      return this.$store.state.epd?.templateMode === 2
+    },
   },
   watch: {
+    isEditModule(n) {
+      if (n) {
+        this.updateWidgetData({
+          uuid: this.params.uuid,
+          key: 'text',
+          value: this.moduleText,
+          pushHistory: false,
+        })
+      }
+    },
     params: {
       async handler(nval) {
         this.updateText()
@@ -151,6 +167,9 @@ export default {
   updated() {
     this.updateRecord()
   },
+  created() {
+    this.getVars()
+  },
   async mounted() {
     this.updateRecord()
     // await this.$nextTick()
@@ -161,8 +180,37 @@ export default {
   methods: {
     ...mapActions(['updateWidgetData', 'pushHistory']),
     getGradientOrImg,
+    getVars() {
+      api.home.getVars().then((res) => {
+        this.vars = Object.entries(res.data).reduce((acc, [key, value]) => {
+          // 确保值是字符串或可以转换为字符串，因为对象的键必须是字符串或符号
+          if (typeof value !== 'string' && typeof value !== 'symbol') {
+            value = String(value)
+          }
+          acc[value] = key
+          return acc
+        }, {})
+      })
+    },
     renderText(text) {
-      return text.replace(/<wise id="[^"]+">([^<]+)<\/wise>/g, '\$1')
+      if (text.indexOf('wise') > -1) {
+        setTimeout(() => {
+          const vars = this.vars || {}
+          const data = this.$store.state?.epd?.templateData
+          this.moduleText = text
+          const _t = text.replace(/<wise[^>]*>([^<]+)<\/wise>/g, (match, group1) => {
+            return data[vars[group1]] || ''
+          })
+          if (_t !== this.params.text) {
+            this.updateWidgetData({
+              uuid: this.params.uuid,
+              key: 'text',
+              value: _t,
+              pushHistory: false,
+            })
+          }
+        }, 200)
+      }
     },
     updateRecord() {
       if (this.dActiveElement.uuid === this.params.uuid) {
@@ -177,13 +225,17 @@ export default {
     updateText(e) {
       const value = e ? e.target.innerHTML : this.params.text.replace(/\n/g, '<br/>')
       // const value = (e ? e.target.innerText : this.params.text).replace(/<br\/>/g, '\r\n').replace(/&nbsp;/g, ' ')
-      if (value !== this.params.text) {
-        this.updateWidgetData({
-          uuid: this.params.uuid,
-          key: 'text',
-          value,
-          pushHistory: false,
-        })
+      if (this.isEditModule) {
+        if (value !== this.params.text) {
+          this.updateWidgetData({
+            uuid: this.params.uuid,
+            key: 'text',
+            value,
+            pushHistory: false,
+          })
+        }
+      } else {
+        this.renderText(value)
       }
     },
     writingText(e) {

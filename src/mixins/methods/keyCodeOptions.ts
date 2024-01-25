@@ -5,28 +5,29 @@
  * @LastEditors: ShawnPhang <https://m.palxp.cn>
  * @LastEditTime: 2023-11-30 10:09:55
  */
-import store from '@/store'
+// import store from '@/store'
 
 export default function keyCodeOptions(e: any, params: any) {
-  const { f } = params
+  const { f, store } = params
+  const isEdit = store.state.epd.templateMode === 2
   switch (e.keyCode) {
     case 38:
-      udlr('top', -1 * f, e)
+      udlr('top', -1 * f, e, store)
       break
     case 40:
-      udlr('top', Number(f), e)
+      udlr('top', Number(f), e, store)
       break
     case 37:
-      udlr('left', -1 * f, e)
+      udlr('left', -1 * f, e, store)
       break
     case 39:
-      udlr('left', Number(f), e)
+      udlr('left', Number(f), e, store)
       break
     case 46:
     case 8:
       {
         if (store.getters.dActiveElement.isContainer) {
-          if (checkGroupChild(store.getters.dActiveElement.uuid, 'editable')) {
+          if (isEdit && checkGroupChild(store.getters.dActiveElement.uuid, 'editable', store)) {
             return
           }
         }
@@ -34,6 +35,9 @@ export default function keyCodeOptions(e: any, params: any) {
 
         if (type === 'w-text') {
           // 不在编辑状态则执行删除
+          if (!isEdit) {
+            store.dispatch('deleteWidget')
+          }
           !editable && store.getters.showMoveable && store.dispatch('deleteWidget')
         } else store.dispatch('deleteWidget')
       }
@@ -43,7 +47,7 @@ export default function keyCodeOptions(e: any, params: any) {
 /**
  * 对组合的子元素某个值进行判断
  */
-function checkGroupChild(pid: number | string, key: any) {
+function checkGroupChild(pid: number | string, key: any, store: any) {
   let itHas = false
   const childs = store.getters.dWidgets.filter((x: any) => x.parent === pid) || []
   childs.forEach((element: any) => {
@@ -54,11 +58,12 @@ function checkGroupChild(pid: number | string, key: any) {
 /**
  * TODO 键盘操作上下左右移动组件
  */
-function udlr(type: any, value: any, event: any) {
+function udlr(type: any, value: any, event: any, store: any) {
   if (store.getters.dActiveElement.uuid != -1) {
-    if (store.getters.dActiveElement.editable) {
+    const isEdit = store.state.epd.templateMode === 2
+    if (isEdit && store.getters.dActiveElement.editable) {
       return
-    } else if (store.getters.dActiveElement.isContainer && checkGroupChild(store.getters.dActiveElement.uuid, 'editable')) {
+    } else if (isEdit && store.getters.dActiveElement.isContainer && checkGroupChild(store.getters.dActiveElement.uuid, 'editable', store)) {
       return
     }
     event.preventDefault()

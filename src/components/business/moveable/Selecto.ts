@@ -2,7 +2,7 @@ import Selecto from 'selecto'
 import { getElementInfo } from 'moveable'
 import store from '@/store'
 
-export default function(moveable: any) {
+export default function (moveable: any) {
   const selecto = new Selecto({
     container: document.getElementById('page-design'),
     selectableTargets: ['.layer'],
@@ -23,14 +23,14 @@ export default function(moveable: any) {
     e.added.forEach((el) => {
       if (!Array.from(el.classList).includes('layer-lock') && !el.hasAttribute('child')) {
         el.classList.add('widget-selected')
-        store.dispatch('selectWidgetsInOut', {
+        window?.store.dispatch('selectWidgetsInOut', {
           uuid: el.getAttribute('data-uuid'),
         })
       }
     })
     e.removed.forEach((el) => {
       el.classList.remove('widget-selected')
-      store.dispatch('selectWidgetsInOut', {
+      window?.store.dispatch('selectWidgetsInOut', {
         uuid: el.getAttribute('data-uuid'),
       })
     })

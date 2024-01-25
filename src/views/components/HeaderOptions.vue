@@ -8,17 +8,17 @@
 <template>
   <div class="w-full flex items-center" style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc">
     <div class="top-title text-left p-0 font-bold text-[18px]">
-      <el-input v-if="tempid && !noMenu" v-model="title" placeholder="未命名的设计" class="input-wrap" />
+      <el-input v-if="tempid && !noMenu" v-model="title" class="input-wrap" placeholder="未命名的设计" />
     </div>
     <div class="top-icon-wrap">
       <template v-if="!noMenu">
         <!-- <span style="color: #999; font-size: 14px; margin-right: 0.5rem">{{ stateBollean ? '启用' : '停用' }}</span> <el-switch v-model="stateBollean" @change="stateChange" /> -->
         <!-- <div class="divide__line">|</div> -->
         <el-button plain type="primary" @click="openPsd">上传PSD模板</el-button>
-        <el-button plain type="primary" @click="addTemplate">新增模板</el-button>
+        <el-button plain type="primary" :loading="posting" @click="addTemplate">新增模板</el-button>
         <template v-if="tempid">
-          <el-button plain type="primary" @click="saveTemp">保存模板</el-button>
-          <el-button @click="deleteTemplate">删除</el-button>
+          <el-button plain type="primary" :loading="posting" @click="saveTemp">保存模板</el-button>
+          <el-button :loading="posting" @click="deleteTemplate">删除</el-button>
         </template>
         <!-- <div class="divide__line">|</div> -->
       </template>
@@ -32,7 +32,7 @@
     </div>
     <!-- 生成图片组件 -->
     <SaveImage ref="canvasImage" />
-    <!-- <Psd v-model="psdVisible" /> -->
+    <Psd v-model="psdVisible" />
   </div>
 </template>
 
@@ -42,21 +42,24 @@ import { defineComponent, reactive, toRefs, getCurrentInstance, ComponentInterna
 import { mapGetters, mapActions, useStore } from 'vuex'
 // import { useRoute, useRouter } from 'vue-router'
 // import _dl from '@/common/methods/download'
+import { ElMessageBox } from 'element-plus'
 import useNotification from '@/common/methods/notification'
 import SaveImage from '@/components/business/save-download/CreateCover.vue'
 import { useFontStore } from '@/common/methods/fonts'
+import Canvas2Image from '@/common/methods/canvas2image'
+// import dayjs from 'dayjs'
 // import copyRight from './CopyRight.vue'
 import _config from '@/config'
 // import useConfirm from '@/common/methods/confirm'
 import html2canvas from 'html2canvas'
-// import Psd from './Psd.vue'
+import Psd from './Psd.vue'
 // import wGroup from '@/components/modules/widgets/wGroup/wGroup.vue'
 
 export default defineComponent({
-  components: { SaveImage },
+  components: { SaveImage, Psd },
   props: ['modelValue', 'noMenu'],
-  emits: ['change', 'update:modelValue'],
-  setup(props, context) {
+  emits: ['change', 'update:modelValue', 'save'],
+  setup(props, { emit }) {
     const { proxy }: any = getCurrentInstance() as ComponentInternalInstance
     // const route = useRoute()
     // const router = useRouter()
@@ -66,19 +69,21 @@ export default defineComponent({
       title: '',
       loading: false,
       psdVisible: false,
+      posting: false,
     })
 
-    const tempid = computed(() => store.state.templateId)
+    const tempid = computed(() => store.state.epd.templateId)
+    const templateTitle = computed(() => store.state.epd.templateTitle)
 
     onMounted(() => {
       console.log(store)
     })
 
     watch(
-      () => tempid.value,
+      () => templateTitle.value,
       async (n) => {
-        const { title } = await api.home['getTempDetail']({ id: n })
-        state.title = title
+        // const { title } = await api.home['getTempDetail']({ id: n })
+        state.title = n
       },
     )
 
@@ -100,16 +105,51 @@ export default defineComponent({
     //   store.commit('setShowMoveable', true)
     // }
     async function createImg() {
-      const dom = document.getElementById('page-design-canvas')
-      const canvas = await html2canvas(dom, { useCORS: true, allowTaint: true, backgroundColor: null })
+      const shareContent: any = document.getElementById('page-design-canvas') // 需要截图的包裹的（原生的）DOM 对象
+      const width = shareContent?.offsetWidth // 获取dom 宽度
+      const height = shareContent?.offsetHeight // 获取dom 高度
+      const _canvas: any = document.createElement('canvas') // 创建一个canvas节点
+      const scale = 2 // 定义任意放大倍数 支持小数
+      _canvas.width = width * scale // 定义canvas 宽度 * 缩放
+      _canvas.height = height * scale // 定义canvas高度 *缩放
+      _canvas?.getContext('2d').scale(scale, scale) // 获取context,设置scale
+      const opts = {
+        scale: scale, // 添加的scale 参数
+        canvas: _canvas, // 自定义 canvas
+        // logging: true, //日志开关，便于查看html2canvas的内部执行流程
+        width: width, // dom 原始宽度
+        height: height,
+        useCORS: true, // 【重要】开启跨域配置
+      }
+
+      const canvas = await html2canvas(shareContent, opts)
+      const context: any = canvas.getContext('2d')
+      // 【重要】关闭抗锯齿
+      context.mozImageSmoothingEnabled = false
+      context.webkitImageSmoothingEnabled = false
+      context.msImageSmoothingEnabled = false
+      context.imageSmoothingEnabled = false
+      // 【重要】默认转化的格式为png,也可设置为其他格式
+      const img = Canvas2Image.convertToImage(canvas, canvas.width, canvas.height)
+      // document.body.appendChild(img)
+      // $(img)
+      //   .css({
+      //     width: canvas.width / 2 + 'px',
+      //     height: canvas.height / 2 + 'px',
+      //   })
+      //   .addClass('f-full')
+
+      // const dom = document.getElementById('page-design-canvas')
+      // const canvas = await html2canvas(dom, { useCORS: true, allowTaint: true, backgroundColor: null })
       // 创建图片
-      const image = canvas.toDataURL('image/jpg')
-      return image
+      // const image = canvas.toDataURL('image/jpg')
+      return img
     }
     // 保存模板
     async function saveTemp() {
       // const { tempid, tempType: type } = route.query
       let res = null
+      state.posting = true
       const image = await createImg()
       // const type = 2
       if (false) {
@@ -132,6 +172,7 @@ export default defineComponent({
       }
       res.stat != 0 && useNotification(res.msg || '成功')
       store.commit('setState', { key: 'templateDate', value: Date.now() })
+      state.posting = false
       return res
     }
     // 停用启用
@@ -185,25 +226,35 @@ export default defineComponent({
     // }
     async function download() {
       // 创建图片
+      state.loading = true
       const image = await createImg()
+      emit('save', image)
+      state.loading = false
       // 你可以下载图片或者以其他方式使用它
-      const link = document.createElement('a')
-      link.href = image
-      link.download = 'capture.jpg'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
+      // const link = document.createElement('a')
+      // link.href = image
+      // link.download = `${Date.now()}.jpg`
+      // document.body.appendChild(link)
+      // link.click()
+      // document.body.removeChild(link)
     }
     // function RandomNumber(min: number, max: number) {
     //   return Math.ceil(Math.random() * (max - min)) + min
     // }
 
     const deleteTemplate = async () => {
-      const res = await api.home.removeComp({ id: tempid.value })
-      if (res.code === 200) {
-        store.commit('setState', { key: 'templateDate', value: Date.now() })
-        store.commit('setState', { key: 'templateId', value: null })
-      }
+      ElMessageBox.confirm('确认要删除当前模板吗？', '删除确认', {
+        confirmButtonText: '确认删除',
+        cancelButtonText: '我再想想',
+        type: 'warning',
+      }).then(async () => {
+        try {
+          await api.home.removeComp({ id: tempid.value })
+          store.commit('setState', { key: 'templateDate', value: Date.now() })
+          store.commit('setState', { key: 'templateId', value: null })
+          useNotification('删除成功')
+        } catch (error) {}
+      })
     }
 
     const addTemplate = async () => {
@@ -280,6 +331,13 @@ export default defineComponent({
 })
 </script>
 
+<style lang="less">
+.input-wrap {
+  .el-input__wrapper {
+    flex-grow: inherit !important;
+  }
+}
+</style>
 <style lang="less" scoped>
 .top-icon-wrap {
   display: flex;

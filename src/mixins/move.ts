@@ -5,13 +5,15 @@
  * @LastEditors: ShawnPhang <site: book.palxp.com>
  * @LastEditTime: 2023-07-31 09:31:52
  */
-import store from '@/store'
+// import store from '@/store'
+// import { useStore } from 'vuex'
+// const store = window.store || {}
 
 const move = {
   methods: {
-    initmovement(e: any) {
+    initmovement(e: any, store: any) {
       // let target = store.state.pageDesign.dActiveElement
-      const target = store.getters.dActiveElement
+      const target = store.getters?.dActiveElement
 
       // 设置移动状态初始值
       store.dispatch('initDMove', {
@@ -28,17 +30,17 @@ const move = {
       document.addEventListener('mouseup', this.handlemouseup, true)
     },
 
-    handlemousemove(e: any) {
+    handlemousemove(e: any, store?: any) {
       e.stopPropagation()
       e.preventDefault()
 
-      store.dispatch('dMove', {
+      store?.dispatch('dMove', {
         x: e.pageX,
         y: e.pageY,
       })
     },
 
-    handlemouseup() {
+    handlemouseup(store: any) {
       document.removeEventListener('mousemove', this.handlemousemove, true)
       document.removeEventListener('mouseup', this.handlemouseup, true)
       store.dispatch('stopDMove')
@@ -48,14 +50,14 @@ const move = {
 
 const moveInit = {
   methods: {
-    initmovement(e: any) {
-      if (!store.getters.dAltDown) {
+    initmovement(e: any, store?: any) {
+      if (!store.getters?.dAltDown) {
         // 设置mouseevent给moveable初始
         // 在组合操作时排除
         store.commit('setMouseEvent', e)
       }
 
-      const target = store.getters.dActiveElement
+      const target = store.getters?.dActiveElement
       store.dispatch('initDMove', {
         startX: e.pageX,
         startY: e.pageY,

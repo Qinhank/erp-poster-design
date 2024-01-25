@@ -9,6 +9,7 @@
         <el-button plain type="primary" class="gounp__btn" @click="realCombined">成组</el-button>
         <icon-item-select label="" :data="alignIconList" @finish="alignAction" />
       </div>
+      <div v-show="false">{{ dActiveElement.type }}</div>
       <component :is="dActiveElement.type + '-style'" v-show="!showGroupCombined" v-if="dActiveElement.type" :noMenu="noMenu" />
     </div>
     <div v-show="activeTab === 1" class="layer-wrap">

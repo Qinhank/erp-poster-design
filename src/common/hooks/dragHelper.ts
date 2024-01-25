@@ -5,7 +5,7 @@
  * @LastEditors: ShawnPhang <https://m.palxp.cn>
  * @LastEditTime: 2023-11-22 18:11:15
  */
-import store from '@/store'
+// import store from '@/store'
 export default class dragHelper {
   private cloneEl: any = null
   private dragging: boolean = false
@@ -46,7 +46,7 @@ export default class dragHelper {
    */
   public start(e: any, finallySize: any) {
     if (!this.cloneEl) {
-      store.commit('setDraging', true)
+      window.store.commit('setDraging', true)
       ;(window as any).document.getElementById('app').classList.add('drag_active') // 整个鼠标全局变成抓取
       // 选中了元素
       this.cloneEl = e.target.cloneNode(true)
@@ -97,8 +97,8 @@ export default class dragHelper {
       return
     }
     this.dragging = false
-    store.commit('setDraging', false)
-    store.commit('selectItem', {})
+    window.store.commit('setDraging', false)
+    window.store.commit('selectItem', {})
     if (!this.cloneEl) {
       return
     }

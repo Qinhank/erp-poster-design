@@ -5,8 +5,8 @@
  * @LastEditors: ShawnPhang
  * @LastEditTime: 2022-03-07 14:57:51
  */
-import store from '@/store'
-export default async function setCompData(item: any) {
+// import store from '@/store'
+export default async function setCompData(item: any, store) {
   const group = typeof item === 'string' ? JSON.parse(item) : JSON.parse(JSON.stringify(item))
   let parent: any = {}
   Array.isArray(group) &&

@@ -65,7 +65,7 @@ export default {
       const item = list ? list[index] : state.recommendImgList[index]
       store.commit('setShowMoveable', false) // 清理掉上一次的选择
       let setting = JSON.parse(JSON.stringify(wImage.setting))
-      const img = await setImageData(item) // await getImage(item.url)
+      const img = await setImageData(item, this.$store) // await getImage(item.url)
       setting.width = img.width
       setting.height = img.height // parseInt(100 / item.value.ratio, 10)
       setting.imgUrl = item.url

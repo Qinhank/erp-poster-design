@@ -31,6 +31,8 @@ const all = {
     templateMode: 1,
     templateId: null,
     templateDate: Date.now(),
+    templateTitle: '',
+    templateData: {},
   },
   getters: {
     online: (state: any) => {

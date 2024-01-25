@@ -125,7 +125,7 @@ export default defineComponent({
       const item: any = state.imgList[index]
       store.commit('setShowMoveable', false) // 清理掉上一次的选择
       let setting = JSON.parse(JSON.stringify(wImage.setting))
-      const img: any = await setImageData(item)
+      const img: any = await setImageData(item, store)
       setting.width = img.width
       setting.height = img.height // parseInt(100 / item.value.ratio, 10)
       setting.imgUrl = item.url

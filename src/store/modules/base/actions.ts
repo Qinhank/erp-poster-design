@@ -14,6 +14,6 @@ export default {
     }, 600)
   },
   setFonts(store: Iprops, list: Type.Object) {
-    store.state.fonts = list
-  }
+    store.state.epd.fonts = list
+  },
 }

@@ -1,5 +1,5 @@
 // index.js
-import erpStore from './store'
+import { useMystore } from './store'
 import ErpPosterDesign from './views/Home.vue'
 import utils from './utils'
 import 'normalize.css/normalize.css'
@@ -10,7 +10,7 @@ import '@/assets/styles/index.less'
 // import registerModule from '@/components/modules/index'
 
 const MyPlugin = {
-  install(app: any) {
+  install(app: any, { store }: any) {
     const vue = app
     // if (typeof window !== 'undefined' && window?.Vue) {
     //   // window.Vue.use(install)
@@ -30,10 +30,11 @@ const MyPlugin = {
     // })
 
     // utils.install(app)
-    vue.use(erpStore)
+    // vue.use(erpStore)
     vue.use(utils)
     // 注册 Vuex 模块
     // store.registerModule('epd', erpStore)
+    useMystore(store)
     // console.log(store)
     // registerModule(vue)
 
